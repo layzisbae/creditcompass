@@ -1,0 +1,2812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b2545">
+<meta name="description" content="See which AP, IB and dual-credit courses count at 46 colleges Texas students apply to (Texas publics and privates, the Ivy League and other selective schools), toward your major, and how much time and money they save.">
+<title>CreditCompass: AP, IB &amp; dual credit at Texas and top national colleges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230b2545'/%3E%3Cpath d='M32 10 40 32 32 54 24 32Z' fill='%2314b8a6'/%3E%3Cpath d='M32 32 40 32 32 54 24 32Z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#0b2545; --navy-2:#13315c; --navy-3:#1d4e89;
+  --teal:#0d9488; --teal-2:#14b8a6; --teal-soft:#ccfbf1;
+  --bg:#f4f7fb; --card:#ffffff; --ink:#0f172a; --ink-2:#334155; --muted:#64748b; --line:#e2e8f0;
+  --major:#0d9488; --core:#3b82f6; --elective:#a78bfa; --excess:#f59e0b; --lost:#ef4444;
+  --radius:16px; --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.06);
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#0a1324; --card:#111d33; --ink:#e8eef8; --ink-2:#c4d0e3; --muted:#8fa1bd; --line:#22324f;
+  --teal-soft:#0f3b3a; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--teal)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 55%,#0f4c5c 100%);color:#fff;position:relative;overflow:hidden}
+header.top::after{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.35),transparent 65%);pointer-events:none}
+.brandrow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0 10px;position:relative;z-index:1}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand svg{width:44px;height:44px;flex:none}
+.brand h1{font-size:1.45rem;margin:0;letter-spacing:-.02em;font-weight:800}
+.brand h1 span{color:var(--teal-2)}
+.brand small{display:block;font-size:.78rem;color:#a9c3e6;font-weight:500;letter-spacing:.02em}
+.hdr-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 14px;border-radius:10px;cursor:pointer;font-weight:600;font-size:.88rem;display:inline-flex;align-items:center;gap:6px;transition:transform .15s,background .15s,border-color .15s;min-height:40px}
+.btn:hover{transform:translateY(-1px);border-color:var(--teal)}
+.btn:focus-visible,.tab:focus-visible,select:focus-visible,input:focus-visible,.chip:focus-visible{outline:3px solid var(--teal-2);outline-offset:2px}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn.primary:hover{background:#0b7f75}
+.btn.ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.16);border-color:#fff}
+.btn.sm{padding:6px 10px;min-height:34px;font-size:.82rem}
+.btn.icon{width:40px;justify-content:center;padding:0}
+.hero{position:relative;z-index:1;padding:8px 0 22px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.hero p{margin:0;max-width:640px;color:#d6e4f5;font-size:1.02rem}
+.hero p b{color:#fff}
+.pill{display:inline-flex;align-items:center;gap:6px;background:rgba(20,184,166,.18);border:1px solid rgba(20,184,166,.5);color:#99f6e4;padding:4px 10px;border-radius:999px;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+.disclaimer{background:#fff7ed;border-bottom:1px solid #fed7aa;color:#7c2d12;font-size:.88rem}
+[data-theme="dark"] .disclaimer{background:#2a1a0c;border-color:#5b3413;color:#fdba74}
+.disclaimer .wrap{display:flex;gap:10px;align-items:flex-start;padding-top:10px;padding-bottom:10px}
+.disclaimer svg{flex:none;margin-top:2px}
+nav.tabs{position:sticky;top:0;z-index:30;background:var(--card);border-bottom:1px solid var(--line)}
+.tabrow{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabrow::-webkit-scrollbar{display:none}
+.tab{appearance:none;border:0;background:none;padding:14px 16px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:8px;font-size:.95rem}
+.tab .num{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--ink-2);font-size:.75rem;font-weight:700}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--teal)}
+.tab[aria-selected="true"] .num{background:var(--teal);color:#fff}
+.stickybox{position:sticky;top:0;z-index:30}
+.summary{background:var(--navy);color:#fff}
+.summary .wrap{display:flex;gap:18px;align-items:center;padding-top:9px;padding-bottom:9px;flex-wrap:wrap;font-size:.9rem}
+.summary .lbl{color:#9fb6d6;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.summary .val{font-weight:700}
+.summary .sep{width:1px;height:26px;background:rgba(255,255,255,.18)}
+.summary .grow{flex:1}
+main{padding:24px 0 40px}
+.panel{display:none;animation:fade .28s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:1.45fr 1fr}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+.card h2{font-size:1.1rem;margin:0 0 4px;letter-spacing:-.01em}
+.card h3{font-size:1rem;margin:0 0 6px}
+.sub{color:var(--muted);font-size:.88rem;margin:0 0 14px}
+.section-title{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:0 0 14px;flex-wrap:wrap}
+.section-title h2{margin:0;font-size:1.35rem;letter-spacing:-.02em}
+.section-title p{margin:2px 0 0;color:var(--muted);font-size:.92rem}
+label.f{display:block;font-size:.78rem;font-weight:700;color:var(--ink-2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.input,select.input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);min-height:42px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.courses{display:flex;flex-direction:column;gap:8px}
+.course{display:grid;grid-template-columns:92px 1fr 92px 40px;gap:8px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.course select{min-height:40px;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--card);width:100%;min-width:0}
+.type-AP{border-left:4px solid #3b82f6}.type-IB{border-left:4px solid #a855f7}.type-DC{border-left:4px solid #0d9488}
+.rm{border:0;background:none;cursor:pointer;color:var(--muted);width:40px;height:40px;border-radius:9px;font-size:1.1rem}
+.rm:hover{background:#fee2e2;color:#b91c1c}
+.course-head{display:grid;grid-template-columns:92px 1fr 92px 40px;gap:8px;padding:0 9px 4px 13px;font-size:.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 12px;cursor:pointer;font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;min-height:40px;transition:all .15s}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.chip[aria-pressed="true"]{background:var(--teal-soft);border-color:var(--teal);color:var(--ink)}
+.chip[aria-pressed="true"] .dot{background:var(--teal)}
+.chip .tag{font-size:.64rem;color:var(--muted);font-weight:800;letter-spacing:.04em}
+.majors{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.major{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px;cursor:pointer;text-align:left;min-height:56px;transition:all .15s}
+.major b{display:block;font-size:.9rem}
+.major span{font-size:.74rem;color:var(--muted)}
+.major[aria-pressed="true"]{border-color:var(--teal);background:var(--teal-soft);box-shadow:inset 0 0 0 1px var(--teal)}
+.hint{font-size:.8rem;color:var(--muted);margin-top:8px}
+.cta{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+.metric{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.metric .k{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.metric .v{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-top:4px;line-height:1.1}
+.metric .d{font-size:.82rem;color:var(--muted);margin-top:4px}
+.metric.hero-m{background:linear-gradient(135deg,var(--navy),var(--navy-3));color:#fff;border:0}
+.metric.hero-m .k,.metric.hero-m .d{color:#b7cbe8}
+.metric.hero-m .v{color:#5eead4}
+.colleges{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.ccard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;position:relative;display:flex;flex-direction:column;min-width:0}
+.ccard.best{border-color:var(--teal);box-shadow:0 0 0 2px var(--teal),var(--shadow)}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:800;padding:4px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.badge.best{background:var(--teal);color:#fff}
+.badge.pub{background:#e0ecff;color:#1e40af}
+.badge.priv{background:#f3e8ff;color:#6b21a8}
+[data-theme="dark"] .badge.pub{background:#1e3a8a;color:#dbeafe}
+[data-theme="dark"] .badge.priv{background:#4c1d95;color:#f3e8ff}
+.chead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.chead h3{font-size:1.15rem;margin:0}
+.chead .meta{font-size:.8rem;color:var(--muted)}
+.big{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 12px}
+.big>div{background:var(--bg);border-radius:12px;padding:12px}
+.big .k{font-size:.72rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.big .v{font-size:1.55rem;font-weight:800;letter-spacing:-.02em}
+.big .v.money{color:var(--teal)}
+.stack{display:flex;height:14px;border-radius:999px;overflow:hidden;background:var(--line);margin:6px 0 10px}
+.stack span{display:block;height:100%;transition:width .5s ease}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px;text-align:center}
+.stats div{border:1px solid var(--line);border-radius:10px;padding:8px 4px}
+.stats b{display:block;font-size:1.1rem}
+.stats span{font-size:.66rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+details.bd{margin-top:14px;border-top:1px dashed var(--line);padding-top:10px}
+details.bd summary{cursor:pointer;font-weight:700;font-size:.9rem;color:var(--teal);list-style:none;display:flex;align-items:center;gap:6px;min-height:36px}
+details.bd summary::-webkit-details-marker{display:none}
+details.bd summary::before{content:"▸";transition:transform .2s}
+details.bd[open] summary::before{transform:rotate(90deg)}
+.note{font-size:.8rem;color:var(--muted);background:var(--bg);border-radius:10px;padding:8px 10px;margin-top:10px}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th,td{text-align:left;padding:8px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+td.num,th.num{text-align:right;white-space:nowrap}
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.cat{display:inline-block;font-size:.66rem;font-weight:800;padding:3px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;color:#fff;margin:1px 0}
+.cat.major{background:var(--major)}.cat.core{background:var(--core)}.cat.elective{background:#8b5cf6}.cat.excess{background:#d97706}.cat.lost{background:var(--lost)}
+.why{color:var(--muted);font-size:.8rem}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.85em}
+.code{font-weight:700;white-space:nowrap}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{font-family:var(--font)}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.toggle button{border:0;background:var(--card);padding:8px 12px;cursor:pointer;font-weight:600;font-size:.85rem;min-height:38px}
+.toggle button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.estbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:-4px 0 14px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.estbar[hidden]{display:none}
+.estsw{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font-weight:700;font-size:.88rem;min-height:38px;user-select:none}
+.estsw input{position:absolute;opacity:0;width:1px;height:1px}
+.estsw .knob{position:relative;width:42px;height:24px;border-radius:999px;background:#cbd5e1;transition:background .15s;flex:none}
+.estsw .knob::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .15s}
+.estsw input:checked + .knob{background:var(--teal)}
+.estsw input:checked + .knob::after{transform:translateX(18px)}
+.estsw input:focus-visible + .knob{outline:3px solid rgba(20,184,166,.5);outline-offset:2px}
+.estnote{font-size:.8rem;color:var(--muted)}
+.rank{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--line);font-weight:800;font-size:.78rem}
+tr.top .rank{background:var(--teal);color:#fff}
+.formula{background:var(--navy);color:#e2f2ff;border-radius:12px;padding:14px 16px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86rem;line-height:1.8;overflow-x:auto;white-space:nowrap}
+.formula b{color:#5eead4}
+.cost-in{width:90px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;text-align:right;background:var(--card)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.step .n{width:30px;height:30px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;font-weight:800;margin-bottom:8px}
+[data-theme="dark"] .step .n{color:#5eead4}
+.warn{border:1px solid #fdba74;background:#fff7ed;color:#7c2d12;border-radius:14px;padding:14px 16px;font-size:.9rem}
+[data-theme="dark"] .warn{background:#2a1a0c;border-color:#5b3413;color:#fdba74}
+ul.clean{margin:6px 0 0;padding-left:18px}
+ul.clean li{margin:6px 0}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.empty{text-align:center;padding:40px 20px;color:var(--muted)}
+.bargrow{transform-box:fill-box;transform-origin:left center;animation:grow .6s ease-out}@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;font-size:.9rem;opacity:0;transition:all .25s;z-index:50;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+@media (max-width:980px){.g2{grid-template-columns:1fr}.g4{grid-template-columns:repeat(2,1fr)}.colleges{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .wrap{padding:0 14px}
+  .brand h1{font-size:1.2rem}.brand small{display:none}.brand svg{width:36px;height:36px}
+  .hdr-actions{gap:6px}.hdr-actions .txt{display:none}
+  .hdr-actions .btn{width:38px;justify-content:center;padding:0}
+  .hero p{font-size:.92rem}
+  .metric{padding:14px}.metric .v{font-size:1.45rem}
+  .majors{grid-template-columns:1fr 1fr}
+  .course,.course-head{grid-template-columns:66px 1fr 58px 32px;gap:5px}
+  .course{padding:6px}
+  .course select{padding:8px 4px;font-size:.84rem}
+  .rm{width:32px}
+  .stats{grid-template-columns:repeat(5,1fr);gap:4px}.stats b{font-size:1rem}.stats span{font-size:.56rem}
+  .summary .wrap{gap:4px 14px;font-size:.82rem}.summary .sep{display:none}
+  .row2{grid-template-columns:1fr}
+  .tab{padding:12px 9px;font-size:.86rem;gap:5px}.tab .num{display:none}
+  .pill{display:none}.hero{padding:4px 0 14px}.hero p{font-size:.88rem}
+  .card,.ccard{padding:16px}
+  .hide-sm{display:none!important}
+  .steps .sub{font-size:.85rem}
+}
+body.present{font-size:18px}
+body.present .wrap{max-width:1360px}
+@media print{
+  @page{margin:12mm}
+  body{background:#fff;color:#000;font-size:11pt}
+  nav.tabs,.hdr-actions,.cta,.summary,.toast,.no-print,.rm,#addCourse{display:none!important}
+  header.top{background:#fff!important;color:#000}
+  header.top::after{display:none}
+  .brand,.brand small,.hero p,.hero p b{color:#000!important}
+  .pill{color:#0d9488;border-color:#0d9488}
+  .panel{display:block!important;animation:none;margin-bottom:16px}
+  .card,.ccard,.metric{box-shadow:none;break-inside:avoid}
+  .metric.hero-m{background:#fff;color:#000;border:2px solid #0d9488}
+  .metric.hero-m .v{color:#0d9488}
+  .colleges{grid-template-columns:1fr 1fr}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.tab .num{font-size:.7rem}
+.picker{border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:10px;margin-top:12px}
+.picker .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.picker .bar .input{flex:1;min-width:180px}
+.plist{max-height:300px;overflow:auto;margin-top:8px;padding-right:4px}
+.plist h4{margin:10px 0 4px;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.plist .opt{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:7px 10px;margin:3px 0;cursor:pointer;font-size:.86rem}
+.plist .opt:hover{border-color:var(--teal)}
+.plist .opt[disabled]{opacity:.55;cursor:default}
+.plist .opt small{color:var(--muted);font-size:.72rem;white-space:nowrap}
+.course.v3{grid-template-columns:52px 1fr 86px 40px}
+.course .ty{font-size:.7rem;font-weight:800;text-align:center;border-radius:7px;padding:5px 0;color:#fff}
+.ty.AP{background:#3b82f6}.ty.IB{background:#a855f7}.ty.DC{background:#0d9488}
+.course .nm{font-weight:600;font-size:.9rem;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.course .nm small{display:block;color:var(--muted);font-weight:500;font-size:.72rem}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.seg button{border:0;background:var(--card);padding:6px 10px;cursor:pointer;font-weight:700;font-size:.78rem;min-height:34px}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.cgroup{margin-top:12px}
+.cgroup .gh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.cgroup .gh b{font-size:.84rem}
+.cgroup .gh span{font-size:.75rem;color:var(--muted)}
+.linkbtn{border:0;background:none;color:var(--teal);font-weight:700;font-size:.78rem;cursor:pointer;padding:4px 6px;border-radius:6px}
+.linkbtn:hover{background:var(--teal-soft)}
+.chip.sm{padding:6px 10px;font-size:.82rem;min-height:34px}
+.badge.ivy{background:#dcfce7;color:#166534}.badge.sel{background:#fef3c7;color:#92400e}
+[data-theme="dark"] .badge.ivy{background:#14532d;color:#dcfce7}[data-theme="dark"] .badge.sel{background:#78350f;color:#fef3c7}
+.st{display:inline-flex;align-items:center;gap:4px;font-size:.66rem;font-weight:800;padding:3px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;border:1px solid}
+.st.verified{color:#047857;border-color:#6ee7b7;background:#ecfdf5}
+.st.partial{color:#b45309;border-color:#fcd34d;background:#fffbeb}
+.st.estimated{color:#475569;border-color:#cbd5e1;background:#f1f5f9}
+[data-theme="dark"] .st{background:transparent}
+.est{display:inline-block;font-size:.62rem;font-weight:800;color:#b45309;border:1px dashed #f59e0b;border-radius:6px;padding:0 5px;margin-left:4px;vertical-align:1px;text-transform:uppercase}
+.lab{display:inline-block;font-size:.66rem;font-weight:800;padding:3px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.lab.credit{background:#ccfbf1;color:#115e59}.lab.place{background:#e0e7ff;color:#3730a3}.lab.nothing{background:#fee2e2;color:#991b1b}
+[data-theme="dark"] .lab.credit{background:#134e4a;color:#ccfbf1}[data-theme="dark"] .lab.place{background:#312e81;color:#e0e7ff}[data-theme="dark"] .lab.nothing{background:#7f1d1d;color:#fee2e2}
+.cat.place{background:#6366f1}
+.hero-start{background:linear-gradient(135deg,var(--navy),var(--navy-3) 60%,#0f4c5c);color:#fff;border:0}
+.hero-start h2{font-size:1.5rem!important;color:#fff}
+.hero-start .sub{color:#c7d8ef}
+.qs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.qs .q{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px}
+.qs .q .n{width:28px;height:28px;border-radius:50%;background:#14b8a6;color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:6px}
+.qs .q p{margin:0;color:#d6e4f5;font-size:.88rem}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.trust div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+.trust b{display:block;font-size:1.5rem;letter-spacing:-.02em;color:var(--teal)}
+.trust span{font-size:.8rem;color:var(--muted)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sgrid div{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--bg)}
+.sgrid b{display:block;font-size:1.45rem;color:var(--navy-3)}
+[data-theme="dark"] .sgrid b{color:#93c5fd}
+.sgrid span{font-size:.8rem;color:var(--ink-2)}
+.sgrid small{display:block;font-size:.7rem;color:var(--muted);margin-top:2px}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+blockquote{margin:0;border-left:4px solid var(--teal);background:var(--bg);border-radius:0 12px 12px 0;padding:10px 12px;font-size:.88rem;color:var(--ink-2)}
+blockquote footer{border:0;padding:4px 0 0;font-size:.72rem;color:var(--muted)}
+dl.gloss{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:0}
+dl.gloss div{border-bottom:1px dashed var(--line);padding-bottom:8px}
+dl.gloss dt{font-weight:800;font-size:.9rem}
+dl.gloss dd{margin:2px 0 0;font-size:.84rem;color:var(--ink-2)}
+.road{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.road>div{border:1px solid var(--line);border-radius:14px;padding:14px}
+.road .free{border-color:var(--teal);background:var(--teal-soft)}
+.road h3{display:flex;justify-content:space-between;align-items:center}
+.road ul{margin:6px 0 0;padding-left:18px;font-size:.86rem}
+.soon{font-size:.64rem;font-weight:800;background:var(--navy);color:#fff;border-radius:999px;padding:3px 8px;text-transform:uppercase;letter-spacing:.04em}
+.ctrls{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:12px}
+.ctrls>div{min-width:150px}
+.ctrls .wide{flex:1;min-width:240px}
+.win{font-weight:800;color:var(--teal)}
+.srcs a{display:block;font-size:.76rem;word-break:break-all}
+.pre{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;max-height:340px;overflow:auto}
+tr.grp td{background:var(--bg);font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+@media (max-width:980px){.qs,.trust,.sgrid{grid-template-columns:1fr 1fr}.quotes,dl.gloss,.road{grid-template-columns:1fr}}
+@media (max-width:640px){.qs{grid-template-columns:1fr}.course.v3{grid-template-columns:40px 1fr 62px 32px}.sgrid{grid-template-columns:1fr 1fr}.trust b{font-size:1.2rem}}
+@media print{
+  .panel{display:none!important}.panel.active{display:block!important}
+  .picker,.cgroup .linkbtn{display:none!important}
+  .hero-start{background:#fff!important;color:#000}.hero-start h2,.hero-start .sub,.qs .q p{color:#000!important}
+}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brandrow">
+      <a class="brand" href="#" aria-label="CreditCompass home" onclick="go('start');return false;">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="29" fill="none" stroke="#5eead4" stroke-width="3"/>
+          <circle cx="32" cy="32" r="23" fill="rgba(255,255,255,.06)"/>
+          <g stroke="#9fb6d6" stroke-width="2" stroke-linecap="round">
+            <line x1="32" y1="5" x2="32" y2="10"/><line x1="32" y1="54" x2="32" y2="59"/>
+            <line x1="5" y1="32" x2="10" y2="32"/><line x1="54" y1="32" x2="59" y2="32"/>
+          </g>
+          <path d="M32 12 39 32 32 52 25 32Z" fill="#14b8a6" transform="rotate(35 32 32)"/>
+          <path d="M32 32 39 32 32 52 25 32Z" fill="#ffffff" transform="rotate(35 32 32)"/>
+          <circle cx="32" cy="32" r="3.2" fill="#0b2545" stroke="#fff" stroke-width="1.5"/>
+        </svg>
+        <div><h1>Credit<span>Compass</span></h1><small>Know what counts. Graduate sooner. Spend less.</small></div>
+      </a>
+      <div class="hdr-actions">
+        <button class="btn ghost sm" id="btnDemo" title="Load the demo student"><span aria-hidden="true">↺</span><span class="txt">Reset to demo</span></button>
+        <button class="btn ghost sm" id="btnClear" title="Start a blank profile"><span aria-hidden="true">✕</span><span class="txt">Clear</span></button>
+        <button class="btn ghost sm hide-sm" id="btnPresent" title="Larger text for projectors"><span aria-hidden="true">⛶</span><span class="txt">Present</span></button>
+        <button class="btn ghost sm hide-sm" id="btnPrint" title="Print or save as PDF"><span aria-hidden="true">⎙</span><span class="txt">Print</span></button>
+        <button class="btn ghost sm icon" id="btnTheme" title="Toggle dark / light" aria-label="Toggle dark mode">◐</button>
+      </div>
+    </div>
+    <div class="hero">
+      <div>
+        <div class="pill">● Texas + national · 46 colleges · 150 courses · 15 majors</div>
+        <p>See exactly which <b>AP, IB and dual-credit</b> courses count at each college, whether they apply <b>toward your major</b> or just sit as electives, and how many <b>dollars and semesters</b> they really save.</p>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="disclaimer" role="note">
+  <div class="wrap">
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 1 21h22L12 2Zm0 6 .9 7h-1.8L12 8Zm0 9.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+    <div><b>Built for DECA Innovation Plan.</b> Credit policies come from each college's official AP/IB/transfer-credit pages, checked Oct 2026. Rows tagged <span class="est" style="margin:0">est.</span> are modeled, not transcribed. Policies change every year, so confirm with the college and an advisor before you rely on them.</div>
+  </div>
+</div>
+
+<div class="stickybox">
+<nav class="tabs no-print" aria-label="Sections">
+  <div class="wrap tabrow" role="tablist">
+    <button class="tab" role="tab" id="tab-start" aria-controls="start" data-go="start"><span class="num">★</span>Start</button>
+    <button class="tab" role="tab" id="tab-profile" aria-controls="profile" data-go="profile"><span class="num">1</span>Profile</button>
+    <button class="tab" role="tab" id="tab-results" aria-controls="results" data-go="results"><span class="num">2</span>Results</button>
+    <button class="tab" role="tab" id="tab-compare" aria-controls="compare" data-go="compare"><span class="num">3</span>Compare</button>
+    <button class="tab" role="tab" id="tab-lookup" aria-controls="lookup" data-go="lookup"><span class="num">?</span>Score lookup</button>
+    <button class="tab" role="tab" id="tab-apdc" aria-controls="apdc" data-go="apdc"><span class="num">⇄</span>AP vs DC</button>
+    <button class="tab" role="tab" id="tab-counselor" aria-controls="counselor" data-go="counselor"><span class="num">✓</span>Counselors</button>
+    <button class="tab" role="tab" id="tab-sources" aria-controls="sources" data-go="sources"><span class="num">i</span>Sources &amp; method</button>
+  </div>
+</nav>
+<div class="summary" id="summaryBar" aria-live="polite"></div>
+</div>
+
+<main class="wrap">
+
+<!-- ============================== START ============================== -->
+<section class="panel" id="start" role="tabpanel" aria-labelledby="tab-start">
+  <div class="card hero-start">
+    <h2>Find out what your AP, IB and dual-credit work is really worth</h2>
+    <p class="sub" style="margin:0">Every AP exam, the IB subjects most students take and 70 Texas dual-credit courses, checked against 46 colleges Texans actually apply to: Texas publics and privates, the Ivy League and other selective schools.</p>
+    <div class="qs">
+      <div class="q"><div class="n">1</div><b>Add your courses</b><p>Search any AP, IB or dual-credit course and enter your score or grade.</p></div>
+      <div class="q"><div class="n">2</div><b>Pick a major &amp; colleges</b><p>15 majors and 46 colleges, grouped so you can add a whole group at once.</p></div>
+      <div class="q"><div class="n">3</div><b>See what counts</b><p>Hours toward your major, core and electives, plus dollars and semesters saved.</p></div>
+    </div>
+    <div class="cta" style="justify-content:flex-start">
+      <button class="btn primary" data-go="profile">Start my profile →</button>
+      <button class="btn ghost" id="btnDemo2">See the demo (Maya R.)</button>
+      <button class="btn ghost" data-go="lookup">What score do I need?</button>
+    </div>
+  </div>
+  <div class="trust" id="trust"></div>
+
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card">
+      <h2>Why CreditCompass</h2>
+      <p class="sub">What students told us. <span id="svCite"></span></p>
+      <div class="sgrid" id="svStats"></div>
+      <div class="quotes" id="svQuotes"></div>
+    </div>
+    <div class="card">
+      <h2>What's free, what's next</h2>
+      <p class="sub">No account, no payment, nothing to sign up for.</p>
+      <div class="road" id="roadmap"></div>
+      <p class="hint" id="svPremium"></p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <h2>Glossary</h2>
+    <p class="sub">The words colleges use, in plain English.</p>
+    <dl class="gloss" id="glossary"></dl>
+  </div>
+</section>
+
+<!-- ============================== PROFILE ============================== -->
+<section class="panel" id="profile" role="tabpanel" aria-labelledby="tab-profile">
+  <div class="section-title">
+    <div><h2>Student profile</h2><p>Enter courses and scores, pick an intended major and target colleges. Results update instantly.</p></div>
+  </div>
+  <div class="grid g2">
+    <div class="card">
+      <h2>Courses &amp; scores</h2>
+      <p class="sub">AP scores 1–5 · IB scores 1–7 (HL/SL) · Dual credit by final letter grade.</p>
+      <div class="row2">
+        <div><label class="f" for="stuName">Student</label><input class="input" id="stuName" placeholder="e.g. Maya R."></div>
+        <div><label class="f" for="stuYear">Class of</label><select class="input" id="stuYear"></select></div>
+      </div>
+      <div class="courses" id="courseList"></div>
+      <div class="picker" id="picker">
+        <label class="f" for="courseSearch">Add a course</label>
+        <div class="bar">
+          <input class="input" id="courseSearch" type="search" placeholder="Search, e.g. calculus, ENGL 1301, Spanish, HL" autocomplete="off">
+          <div class="seg" role="group" aria-label="Course type" id="typeSeg">
+            <button data-ty="ALL" aria-pressed="true">All</button><button data-ty="AP" aria-pressed="false">AP</button><button data-ty="IB" aria-pressed="false">IB</button><button data-ty="DC" aria-pressed="false">Dual</button>
+          </div>
+        </div>
+        <div class="plist" id="coursePick" role="listbox" aria-label="Courses"></div>
+      </div>
+      <p class="hint">Tip: a dual-credit course that duplicates an AP exam (e.g. ENGL 1301 + AP English Language) earns credit only once. CreditCompass flags it.</p>
+    </div>
+    <div class="grid" style="align-content:start">
+      <div class="card">
+        <h2>Intended major</h2>
+        <p class="sub">Decides which credits count <b>toward the major</b> vs. core or electives.</p>
+        <div class="majors" id="majorList"></div>
+        <div class="note" id="majorNote"></div>
+      </div>
+      <div class="card">
+        <h2>Target colleges</h2>
+        <p class="sub"><span id="colCount"></span></p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <input class="input" id="colSearch" type="search" placeholder="Search colleges or cities" style="flex:1;min-width:160px" autocomplete="off">
+          <button class="btn sm" id="selAll">Select all</button><button class="btn sm" id="selNone">None</button>
+        </div>
+        <div id="collegeList"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta"><button class="btn primary" data-go="results">See results →</button></div>
+</section>
+
+<!-- ============================== RESULTS ============================== -->
+<section class="panel" id="results" role="tabpanel" aria-labelledby="tab-results">
+  <div class="section-title">
+    <div><h2 id="resTitle">Results</h2><p id="resSub"></p></div>
+    <button class="btn sm no-print" data-go="profile">✎ Edit profile</button>
+  </div>
+  <div class="grid g4" id="metrics"></div>
+  <div class="colleges" id="collegeCards"></div>
+  <div class="cta no-print"><button class="btn" data-go="sources">How is this calculated?</button><button class="btn primary" data-go="compare">Compare colleges →</button></div>
+</section>
+
+<!-- ============================== COMPARE ============================== -->
+<section class="panel" id="compare" role="tabpanel" aria-labelledby="tab-compare">
+  <div class="section-title">
+    <div><h2>Compare &amp; explore</h2><p id="cmpSub">Ranked by estimated dollars saved from credits that actually apply to the degree.</p></div>
+    <div class="toggle no-print" role="group" aria-label="Which colleges">
+      <button id="cmpSel" aria-pressed="true">My colleges</button><button id="cmpAll" aria-pressed="false">Explore all 46</button>
+    </div>
+  </div>
+  <div class="estbar no-print" id="estBar" hidden>
+    <label class="estsw"><input type="checkbox" id="incEst"><span class="knob" aria-hidden="true"></span><span>Include estimated schools</span></label>
+    <span class="estnote" id="estNote"></span>
+  </div>
+  <div class="card chart"><div id="chart"></div>
+    <div class="legend" style="margin-top:8px"><span><i style="background:var(--teal)"></i>Estimated $ saved</span><span><i style="background:var(--navy-3)"></i>Applicable credit hours</span></div>
+  </div>
+  <div class="card" style="margin-top:18px">
+    <h2>Side-by-side</h2>
+    <p class="sub">Credits awarded ≠ credits that shorten your degree. "Applicable" = major + core + electives within the cap.</p>
+    <div class="tscroll"><table id="cmpTable"></table></div>
+  </div>
+</section>
+
+<!-- ============================== LOOKUP ============================== -->
+<section class="panel" id="lookup" role="tabpanel" aria-labelledby="tab-lookup">
+  <div class="section-title"><div><h2>What score do I need?</h2><p>Pick one exam or course and see the minimum for credit at all 46 colleges, and what you get at your score.</p></div></div>
+  <div class="card">
+    <div class="ctrls">
+      <div class="wide"><label class="f" for="lkCourse">Course</label><select class="input" id="lkCourse"></select></div>
+      <div><label class="f" for="lkScore">Your score / grade</label><select class="input" id="lkScore"></select></div>
+      <div><label class="f" for="lkGroup">Colleges</label><select class="input" id="lkGroup"><option value="all">All 46</option><option value="mine">My colleges</option></select></div>
+    </div>
+    <div class="legend" style="margin-bottom:10px"><span><span class="lab credit">Credit</span> earns hours</span><span><span class="lab place">Placement</span> skip ahead, 0 hrs</span><span><span class="lab nothing">Nothing</span> no credit</span><span><span class="est">est.</span> modeled, not transcribed</span></div>
+    <div class="tscroll"><table id="lkTable"></table></div>
+  </div>
+</section>
+
+<!-- ============================== AP vs DC ============================== -->
+<section class="panel" id="apdc" role="tabpanel" aria-labelledby="tab-apdc">
+  <div class="section-title"><div><h2>AP or dual credit?</h2><p>Same subject, two routes. See which one earns more hours at each college.</p></div></div>
+  <div class="card">
+    <div class="ctrls">
+      <div class="wide"><label class="f" for="pdSubj">Subject</label><select class="input" id="pdSubj"></select></div>
+      <div><label class="f" for="pdAp">Expected AP score</label><select class="input" id="pdAp"></select></div>
+      <div><label class="f" for="pdDc">Expected DC grade</label><select class="input" id="pdDc"></select></div>
+      <div><label class="f" for="pdScope">Colleges</label><select class="input" id="pdScope"><option value="all">All 46</option><option value="mine">My colleges</option></select></div>
+    </div>
+    <div class="grid g4" id="pdMetrics" style="margin-bottom:14px"></div>
+    <div class="tscroll"><table id="pdTable"></table></div>
+    <p class="hint">Hours shown are hours awarded for that subject alone. Dual credit puts a real college grade on a college transcript, which follows you; an AP score can stay private if you don't send it.</p>
+  </div>
+</section>
+
+<!-- ============================== COUNSELOR ============================== -->
+<section class="panel" id="counselor" role="tabpanel" aria-labelledby="tab-counselor">
+  <div class="section-title"><div><h2>Counselor mode</h2><p>Print-ready reports and a plain-text summary for advising meetings.</p></div></div>
+  <div class="grid g2">
+    <div class="card">
+      <h2>Student summary</h2>
+      <p class="sub">Paste into an email, a note or a student's file.</p>
+      <div class="pre" id="sumText"></div>
+      <div class="cta" style="justify-content:flex-start">
+        <button class="btn primary" id="btnCopy">⧉ Copy summary</button>
+        <button class="btn" id="btnPrint2">⎙ Print student report</button>
+        <button class="btn" id="btnPresent2">⛶ Presentation mode</button>
+      </div>
+    </div>
+    <div class="grid" style="align-content:start">
+      <div class="card">
+        <h2>For schools and districts</h2>
+        <p class="sub" id="b2bStat"></p>
+        <ul class="clean sub">
+          <li><b>One meeting, every college:</b> load a student, select a whole group (e.g. all Texas publics), and print.</li>
+          <li><b>Course planning:</b> the AP vs DC comparer and score lookup answer the two questions counselors hear most.</li>
+          <li><b>Sources on every school:</b> each policy links to the official page it came from, so you can verify in seconds.</li>
+          <li><b>Campus and district licenses (coming soon):</b> caseload dashboards and policy-change alerts for counseling teams.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Advising checklist</h2>
+        <ul class="clean sub">
+          <li>Send official AP scores (College Board) and IB results (IBO); send dual-credit transcripts from the college, not the high school.</li>
+          <li>Texas publics: Texas Core courses transfer as core (Educ. Code §61.822); AP minimums above 3 need an evidence-based exception, and IB Diploma holders get at least 24 hrs (§51.968).</li>
+          <li>Selective schools often give placement only, or limit exam credit. Expect 8 semesters unless the school says otherwise.</li>
+          <li>Pre-med and nursing: check whether target programs accept AP for prerequisites.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SOURCES & METHOD ============================== -->
+<section class="panel" id="sources" role="tabpanel" aria-labelledby="tab-sources">
+  <div class="section-title"><div><h2>Sources &amp; method</h2><p>Where every number comes from, and how to read it.</p></div></div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h3>Match each score to a policy</h3><p class="sub" style="margin:0">Each college's official credit chart sets a minimum score and what you get (e.g. AP Calculus BC 4 → Calculus I + II). Placement counts as 0 hours. Dual credit uses Texas Common Course Numbers and each college's transfer rules.</p></div>
+    <div class="step"><div class="n">2</div><h3>Sort credit by where it lands</h3><p class="sub" style="margin:0"><b>Major</b> requirements first, then <b>core</b> / gen-ed areas (each area capped), then <b>free electives</b> up to the major's elective room. Anything beyond is <b>awarded but may not shorten the degree</b>. College limits on exam credit are applied first.</p></div>
+    <div class="step"><div class="n">3</div><h3>Convert to dollars &amp; semesters</h3><p class="sub" style="margin:0">Applicable hours × cost per credit hour = dollars. Cost per hour = annual tuition &amp; fees ÷ 30 hours. Hours ÷ 15, rounded down = full semesters saved.</p></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card">
+      <h2>The formulas</h2>
+      <div class="formula">
+        applicable_hours = <b>major</b> + <b>core</b> + min(<b>elective</b>, elective_cap[major])<br>
+        cost_per_hour&nbsp;&nbsp;&nbsp;= annual_tuition_and_fees[college] ÷ <b>30</b><br>
+        dollars_saved&nbsp;&nbsp;&nbsp;= applicable_hours × cost_per_hour<br>
+        semesters_saved = <span id="fSem">floor</span>(applicable_hours ÷ <span id="fCps">15</span>)<br>
+        credits_lost&nbsp;&nbsp;&nbsp;&nbsp;= hours not earned (score too low, not accepted, duplicate, over a cap)
+      </div>
+      <ul class="clean sub" style="margin-top:12px">
+        <li><b>Tuition basis:</b> IPEDS 2024–25 tuition &amp; required fees from College Navigator (NCES). Texas publics use in-state; Georgia Tech, Michigan and Oklahoma use out-of-state, since that's what a Texan pays. Housing, books and aid aren't included.</li>
+        <li><b>Upper bound:</b> need-based aid lowers what many families pay, especially at private schools, so real dollar savings are often smaller.</li>
+        <li><b>Flat tuition &amp; 8 semesters:</b> most private and elite schools charge a flat rate and expect 8 semesters, so credit mainly buys flexibility (a minor, double major, research) unless you formally graduate early. Schools that don't let exam credit shorten the degree show $0 with a flexibility note.</li>
+        <li><b>Why round down?</b> A partial semester rarely lets you graduate earlier. You can switch to nearest in the settings.</li>
+        <li><b>Unit conversions:</b> quarter units, course units and "credits" are converted to semester hours approximately (e.g. Penn 1 c.u. ≈ 4 hrs).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Texas law</h2>
+      <ul class="clean sub">
+        <li><b>Texas Education Code §51.968:</b> Texas public universities may not require more than a 3 on an AP exam for lower-division credit unless the chief academic officer finds, based on evidence, that a higher score is needed. Students who complete the IB Diploma must get at least 24 semester hours (fewer only for exam scores below 4). The 24-hour IB Diploma minimum isn't modeled here; IB is scored subject by subject. <a href="https://statutes.capitol.texas.gov/Docs/ED/htm/ED.51.htm" target="_blank" rel="noopener">Read §51.968</a></li>
+        <li><b>Texas Education Code §61.822:</b> courses that complete the Texas Core Curriculum at one Texas public institution transfer as core to the others. <a href="https://statutes.capitol.texas.gov/Docs/ED/htm/ED.61.htm" target="_blank" rel="noopener">Read §61.822</a></li>
+      </ul>
+      <h2 style="margin-top:14px">Your settings</h2>
+      <div class="row2">
+        <div><label class="f" for="cps">Credits per semester</label><input class="input" id="cps" type="number" min="12" max="18" step="1"></div>
+        <div><label class="f" for="rounding">Semester rounding</label><select class="input" id="rounding"><option value="floor">Round down (conservative)</option><option value="round">Round to nearest</option><option value="exact">Exact (one decimal)</option></select></div>
+      </div>
+      <h3 style="margin-top:6px">Free-elective room by major</h3>
+      <div class="tscroll" style="max-height:260px"><table id="capTable"></table></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px">
+    <div class="section-title" style="margin-bottom:6px"><div><h2>Every college: sources, status &amp; cost</h2><p>Status: <span class="st verified">verified</span> chart transcribed from the official page · <span class="st partial">partial</span> some rules modeled · <span class="st estimated">estimated</span> official chart not available, modeled. Edit $/hr to override.</p></div><button class="btn sm no-print" id="resetCosts">Reset costs</button></div>
+    <div class="tscroll"><table id="costTable"></table></div>
+  </div>
+
+  <div class="grid g2" style="margin-top:18px">
+    <div class="card">
+      <h2>Major requirement logic</h2>
+      <p class="sub">Credit matching one of these counts <b>toward the major</b>. "A or B" means either course fills the slot. Simplified and shared across colleges.</p>
+      <div class="tscroll"><table id="majorTable"></table></div>
+    </div>
+    <div class="card">
+      <h2>Core / general-education areas</h2>
+      <p class="sub">Hours each area can absorb. Texas publics use the Texas Core Curriculum; overflow goes to the Component Area Option, then to free electives.</p>
+      <div class="tscroll"><table id="coreTable"></table></div>
+    </div>
+  </div>
+
+  <div class="warn" style="margin-top:18px">
+    <b>Disclaimer: built for DECA Innovation Plan.</b> Policies were checked against official college pages in October 2026, but minimum scores, course equivalents, degree requirements and tuition change every year and vary by catalog year, college and major. Rows marked est. are modeled. IB rules are modeled from each school's published minimums. Always confirm with the college and an academic advisor. Pre-med and nursing students: many medical and nursing schools do not accept AP credit for science prerequisites.
+    <div class="mono" style="margin-top:6px">Checked: October 2026 · Tuition basis: IPEDS 2024–25 · Model v3.0</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>CreditCompass</b> · Built for DECA Innovation Plan · v3.0 · Oct 2026</div>
+    <div>Not affiliated with any college, the College Board or the IBO. Confirm every policy with the college.</div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+"use strict";
+/* =====================================================================
+   CreditCompass v3 data model. Policies transcribed from official pages
+   (checked Oct 2026). Lines marked ~ or schools marked "estimated" are
+   modeled, not transcribed. Always confirm with the college.
+   ===================================================================== */
+const CHECKED="Oct 2026";
+const TAGS = {
+  // Mathematics
+  CALC1:{name:"Calculus I",hrs:4,area:"MATH",code:"MATH 2413"},
+  CALC2:{name:"Calculus II",hrs:4,area:"MATH",code:"MATH 2414"},
+  CALC3:{name:"Calculus III",hrs:4,area:"MATH",code:"MATH 2415"},
+  BUSCALC:{name:"Business Calculus",hrs:3,area:"MATH",code:"MATH 1325"},
+  PRECALC:{name:"Precalculus",hrs:4,area:"MATH",code:"MATH 2412"},
+  COLALG:{name:"College Algebra",hrs:3,area:"MATH",code:"MATH 1314"},
+  TRIG:{name:"Plane Trigonometry",hrs:3,area:"MATH",code:"MATH 1316"},
+  FINMATH:{name:"Math for Business & Social Sciences",hrs:3,area:"MATH",code:"MATH 1324"},
+  CONTMATH:{name:"Contemporary Mathematics",hrs:3,area:"MATH",code:"MATH 1332"},
+  STATS:{name:"Elementary Statistics",hrs:3,area:"MATH",code:"MATH 1342"},
+  LINALG:{name:"Linear Algebra",hrs:3,area:null,code:"MATH 2318"},
+  DIFFEQ:{name:"Differential Equations",hrs:3,area:null,code:"MATH 2320"},
+  // Communication & literature
+  ENGCOMP1:{name:"Composition I",hrs:3,area:"COMM",code:"ENGL 1301"},
+  ENGCOMP2:{name:"Composition II",hrs:3,area:"COMM",code:"ENGL 1302"},
+  SPCH:{name:"Public Speaking",hrs:3,area:"COMM",code:"SPCH 1315"},
+  SPCHCOM:{name:"Intro to Speech Communication",hrs:3,area:"COMM",code:"SPCH 1311"},
+  LIT:{name:"British Literature I",hrs:3,area:"LPC",code:"ENGL 2322"},
+  LIT2:{name:"British Literature II",hrs:3,area:"LPC",code:"ENGL 2323"},
+  AMLIT1:{name:"American Literature I",hrs:3,area:"LPC",code:"ENGL 2327"},
+  AMLIT2:{name:"American Literature II",hrs:3,area:"LPC",code:"ENGL 2328"},
+  WLIT1:{name:"World Literature I",hrs:3,area:"LPC",code:"ENGL 2332"},
+  WLIT2:{name:"World Literature II",hrs:3,area:"LPC",code:"ENGL 2333"},
+  PHIL:{name:"Introduction to Philosophy",hrs:3,area:"LPC",code:"PHIL 1301"},
+  // History & government
+  USHIST1:{name:"U.S. History I",hrs:3,area:"HIST",code:"HIST 1301"},
+  USHIST2:{name:"U.S. History II",hrs:3,area:"HIST",code:"HIST 1302"},
+  WORLD1:{name:"World Civilizations I",hrs:3,area:"LPC",code:"HIST 2321"},
+  WORLD2:{name:"World Civilizations II",hrs:3,area:"LPC",code:"HIST 2322"},
+  EURO:{name:"Western Civilization II",hrs:3,area:"LPC",code:"HIST 2312"},
+  GOVT1:{name:"Federal Government",hrs:3,area:"GOVT",code:"GOVT 2305"},
+  GOVT2:{name:"Texas Government",hrs:3,area:"GOVT",code:"GOVT 2306"},
+  COMPGOV:{name:"Intro to Political Science / Comparative",hrs:3,area:"SOC",code:"GOVT 2304"},
+  // Social & behavioral
+  MACRO:{name:"Principles of Macroeconomics",hrs:3,area:"SOC",code:"ECON 2301"},
+  MICRO:{name:"Principles of Microeconomics",hrs:3,area:"SOC",code:"ECON 2302"},
+  PSYC:{name:"General Psychology",hrs:3,area:"SOC",code:"PSYC 2301"},
+  LIFESPAN:{name:"Lifespan Growth & Development",hrs:3,area:"SOC",code:"PSYC 2314"},
+  SOCI:{name:"Introduction to Sociology",hrs:3,area:"SOC",code:"SOCI 1301"},
+  HUMGEO:{name:"Human Geography",hrs:3,area:"SOC",code:"GEOG 1302"},
+  // Creative arts
+  ARTAPP:{name:"Art Appreciation",hrs:3,area:"ARTS",code:"ARTS 1301"},
+  ARTH:{name:"Art History I",hrs:3,area:"ARTS",code:"ARTS 1303"},
+  STUDIO:{name:"Drawing I",hrs:3,area:null,code:"ARTS 1316"},
+  MUSAPP:{name:"Music Appreciation",hrs:3,area:"ARTS",code:"MUSI 1306"},
+  MUSTH:{name:"Music Theory I",hrs:3,area:null,code:"MUSI 1311"},
+  DRAMA:{name:"Introduction to Theater",hrs:3,area:"ARTS",code:"DRAM 1310"},
+  // Sciences
+  BIO:{name:"Biology I (majors)",hrs:4,area:"SCI",code:"BIOL 1406"},
+  BIO2:{name:"Biology II (majors)",hrs:4,area:"SCI",code:"BIOL 1407"},
+  BIONM1:{name:"Biology for Non-Science Majors I",hrs:4,area:"SCI",code:"BIOL 1408"},
+  BIONM2:{name:"Biology for Non-Science Majors II",hrs:4,area:"SCI",code:"BIOL 1409"},
+  AP1:{name:"Anatomy & Physiology I",hrs:4,area:"SCI",code:"BIOL 2401"},
+  AP2:{name:"Anatomy & Physiology II",hrs:4,area:"SCI",code:"BIOL 2402"},
+  CHEM:{name:"General Chemistry I",hrs:4,area:"SCI",code:"CHEM 1411"},
+  CHEM2:{name:"General Chemistry II",hrs:4,area:"SCI",code:"CHEM 1412"},
+  PHYS:{name:"Physics I (calculus-based)",hrs:4,area:"SCI",code:"PHYS 2425"},
+  PHYS2:{name:"Physics II (calculus-based)",hrs:4,area:"SCI",code:"PHYS 2426"},
+  PHYSALG:{name:"Physics I (algebra-based)",hrs:4,area:"SCI",code:"PHYS 1401"},
+  PHYSALG2:{name:"Physics II (algebra-based)",hrs:4,area:"SCI",code:"PHYS 1402"},
+  ENVSCI:{name:"Environmental Science",hrs:4,area:"SCI",code:"ENVR 1401"},
+  // Computing & business
+  CS1:{name:"Programming Fundamentals I",hrs:4,area:null,code:"COSC 1436"},
+  CS2:{name:"Programming Fundamentals II",hrs:4,area:null,code:"COSC 1437"},
+  BCIS:{name:"Business Computer Applications",hrs:3,area:null,code:"BCIS 1305"},
+  ACCT1:{name:"Financial Accounting",hrs:3,area:null,code:"ACCT 2301"},
+  ACCT2:{name:"Managerial Accounting",hrs:3,area:null,code:"ACCT 2302"},
+  BUSI:{name:"Business Principles",hrs:3,area:null,code:"BUSI 1301"},
+  // Other
+  KINE:{name:"Physical Activity",hrs:1,area:null,code:"KINE 1164"},
+  CRIJ:{name:"Intro to Criminal Justice",hrs:3,area:null,code:"CRIJ 1301"},
+  EDUC:{name:"Learning Framework",hrs:3,area:null,code:"EDUC 1300"}
+};
+/* World-language levels: X1..X4 (beginning I/II, intermediate I/II) */
+const LANGS={SPAN:"Spanish",FREN:"French",GERM:"German",CHIN:"Chinese",JAPN:"Japanese",ITAL:"Italian",LATI:"Latin"};
+Object.entries(LANGS).forEach(([k,n])=>{
+  [["Beginning",1,"1411",4],["Beginning",2,"1412",4],["Intermediate",3,"2311",3],["Intermediate",4,"2312",3]].forEach(([lvl,i,num,h])=>{
+    TAGS[k+i]={name:`${lvl} ${n} ${i%2?"I":"II"}`,hrs:h,area:"LPC",code:`${k==="LATI"?"LATI":k} ${num}`,lang:k,lvl:i};
+  });
+});
+
+/* Texas Core Curriculum component areas (hours each can absorb) */
+const CORE_AREAS = {
+  COMM:{name:"Communication (010)",hrs:6}, MATH:{name:"Mathematics (020)",hrs:3},
+  SCI:{name:"Life & Physical Sciences (030)",hrs:6}, LPC:{name:"Language, Philosophy & Culture (040)",hrs:3},
+  ARTS:{name:"Creative Arts (050)",hrs:3}, HIST:{name:"American History (060)",hrs:6},
+  GOVT:{name:"Government / Political Science (070)",hrs:6}, SOC:{name:"Social & Behavioral Sciences (080)",hrs:3},
+  CAO:{name:"Component Area Option (090)",hrs:6}
+};
+const PRIV_GENED = {COMM:3,MATH:3,SCI:8,LPC:6,ARTS:3,HIST:3,GOVT:0,SOC:6,CAO:0};
+const BAYLOR_CORE = {COMM:6,MATH:3,SCI:8,LPC:6,ARTS:0,HIST:3,GOVT:3,SOC:3,CAO:0};
+const NO_CORE = {COMM:0,MATH:0,SCI:0,LPC:0,ARTS:0,HIST:0,GOVT:0,SOC:0,CAO:0};
+
+/* All 43 current AP exams (College Board AP Central course list) */
+const AP_LIST = [
+ ["ART2D","AP 2-D Art and Design","Arts"],["ART3D","AP 3-D Art and Design","Arts"],["DRAW","AP Drawing","Arts"],
+ ["ARTH","AP Art History","Arts"],["MUSTH","AP Music Theory","Arts"],
+ ["ENG_LANG","AP English Language","English"],["ENG_LIT","AP English Literature","English"],
+ ["AFAM","AP African American Studies","History & Social Sciences"],["COMPGOV","AP Comparative Government","History & Social Sciences"],
+ ["EURO","AP European History","History & Social Sciences"],["HUG","AP Human Geography","History & Social Sciences"],
+ ["MACRO","AP Macroeconomics","History & Social Sciences"],["MICRO","AP Microeconomics","History & Social Sciences"],
+ ["PSYC","AP Psychology","History & Social Sciences"],["GOV","AP U.S. Government","History & Social Sciences"],
+ ["USH","AP U.S. History","History & Social Sciences"],["WORLD","AP World History: Modern","History & Social Sciences"],
+ ["CALC_AB","AP Calculus AB","Math & Computer Science"],["CALC_BC","AP Calculus BC","Math & Computer Science"],
+ ["CSA","AP Computer Science A","Math & Computer Science"],["CSP","AP Computer Science Principles","Math & Computer Science"],
+ ["PRECALC","AP Precalculus","Math & Computer Science"],["STATS","AP Statistics","Math & Computer Science"],
+ ["BIO","AP Biology","Sciences"],["CHEM","AP Chemistry","Sciences"],["ENVSCI","AP Environmental Science","Sciences"],
+ ["PHYS1","AP Physics 1","Sciences"],["PHYS2","AP Physics 2","Sciences"],
+ ["PHYSCE","AP Physics C: Electricity & Magnetism","Sciences"],["PHYSCM","AP Physics C: Mechanics","Sciences"],
+ ["CHIN","AP Chinese","World Languages"],["FREN","AP French","World Languages"],["GERM","AP German","World Languages"],
+ ["ITAL","AP Italian","World Languages"],["JAPN","AP Japanese","World Languages"],["LATIN","AP Latin","World Languages"],
+ ["SPAN","AP Spanish Language","World Languages"],["SPLIT","AP Spanish Literature","World Languages"],
+ ["RESEARCH","AP Research","AP Capstone"],["SEMINAR","AP Seminar","AP Capstone"],
+ ["BUSPF","AP Business with Personal Finance","Career Kickstart"],["CYBER","AP Cybersecurity","Career Kickstart"],["NETW","AP Networking","Career Kickstart"]
+];
+const LANG_OF={CHIN:"CHIN",FREN:"FREN",GERM:"GERM",ITAL:"ITAL",JAPN:"JAPN",LATIN:"LATI",SPAN:"SPAN",SPLIT:"SPAN"};
+const SHORT={};
+/* IB subjects (HL / SL) */
+const IB_LIST = [
+ ["ENG_HL","IB English A: Literature HL"],["ENG_SL","IB English A: Literature SL"],
+ ["ENGLL_HL","IB English A: Lang & Lit HL"],["ENGLL_SL","IB English A: Lang & Lit SL"],
+ ["MATH_HL","IB Math: Analysis & Approaches HL"],["MATH_SL","IB Math: Analysis & Approaches SL"],
+ ["MATHAI_HL","IB Math: Applications & Interpretation HL"],["MATHAI_SL","IB Math: Applications & Interpretation SL"],
+ ["BIO_HL","IB Biology HL"],["BIO_SL","IB Biology SL"],["CHEM_HL","IB Chemistry HL"],["CHEM_SL","IB Chemistry SL"],
+ ["PHYS_HL","IB Physics HL"],["PHYS_SL","IB Physics SL"],["ESS_SL","IB Environmental Systems & Societies SL"],
+ ["SEHS_SL","IB Sports, Exercise & Health Science SL"],["CS_HL","IB Computer Science HL"],["CS_SL","IB Computer Science SL"],
+ ["PSYC_HL","IB Psychology HL"],["PSYC_SL","IB Psychology SL"],["ECON_HL","IB Economics HL"],["ECON_SL","IB Economics SL"],
+ ["BM_HL","IB Business Management HL"],["BM_SL","IB Business Management SL"],["HIST_HL","IB History of the Americas HL"],
+ ["GPOL_HL","IB Global Politics HL"],["GEOG_HL","IB Geography HL"],["PHIL_HL","IB Philosophy HL"],["PHIL_SL","IB Philosophy SL"],
+ ["SPANB_HL","IB Spanish B HL"],["SPANB_SL","IB Spanish B SL"],["FRENB_HL","IB French B HL"],["FRENB_SL","IB French B SL"],
+ ["VA_HL","IB Visual Arts HL"],["VA_SL","IB Visual Arts SL"],["MUS_HL","IB Music HL"],["THEA_HL","IB Theatre HL"]
+];
+/* Dual credit: Texas Common Course Numbering (TCCN) */
+const DC_LIST = [
+ ["ENGL1301","ENGCOMP1"],["ENGL1302","ENGCOMP2"],["ENGL2322","LIT"],["ENGL2323","LIT2"],["ENGL2327","AMLIT1"],["ENGL2328","AMLIT2"],
+ ["ENGL2332","WLIT1"],["ENGL2333","WLIT2"],["SPCH1315","SPCH"],["SPCH1311","SPCHCOM"],
+ ["MATH1314","COLALG"],["MATH1316","TRIG"],["MATH1324","FINMATH"],["MATH1325","BUSCALC"],["MATH1332","CONTMATH"],["MATH1342","STATS"],
+ ["MATH2412","PRECALC"],["MATH2413","CALC1"],["MATH2414","CALC2"],["MATH2415","CALC3"],["MATH2318","LINALG"],["MATH2320","DIFFEQ"],
+ ["HIST1301","USHIST1"],["HIST1302","USHIST2"],["HIST2321","WORLD1"],["HIST2322","WORLD2"],["HIST2312","EURO"],
+ ["GOVT2305","GOVT1"],["GOVT2306","GOVT2"],["GOVT2304","COMPGOV"],["ECON2301","MACRO"],["ECON2302","MICRO"],
+ ["PSYC2301","PSYC"],["PSYC2314","LIFESPAN"],["SOCI1301","SOCI"],["GEOG1302","HUMGEO"],["PHIL1301","PHIL"],
+ ["ARTS1301","ARTAPP"],["ARTS1303","ARTH"],["ARTS1316","STUDIO"],["MUSI1306","MUSAPP"],["DRAM1310","DRAMA"],
+ ["BIOL1406","BIO"],["BIOL1407","BIO2"],["BIOL1408","BIONM1"],["BIOL1409","BIONM2"],["BIOL2401","AP1"],["BIOL2402","AP2"],
+ ["CHEM1411","CHEM"],["CHEM1412","CHEM2"],["PHYS1401","PHYSALG"],["PHYS1402","PHYSALG2"],["PHYS2425","PHYS"],["PHYS2426","PHYS2"],
+ ["ENVR1401","ENVSCI"],["COSC1436","CS1"],["COSC1437","CS2"],["BCIS1305","BCIS"],["ACCT2301","ACCT1"],["ACCT2302","ACCT2"],["BUSI1301","BUSI"],
+ ["SPAN1411","SPAN1"],["SPAN1412","SPAN2"],["SPAN2311","SPAN3"],["SPAN2312","SPAN4"],["FREN1411","FREN1"],["FREN1412","FREN2"],
+ ["KINE1164","KINE"],["CRIJ1301","CRIJ"],["EDUC1300","EDUC"]
+];
+const COURSES = [
+  ...AP_LIST.map(([k,n,g])=>({id:"AP_"+k, key:k, type:"AP", name:n, group:g})),
+  ...IB_LIST.map(([k,n])=>({id:"IB_"+k, key:k, type:"IB", name:n, group:k.endsWith("_HL")?"Higher Level":"Standard Level", hl:k.endsWith("_HL")})),
+  ...DC_LIST.map(([k,t])=>{ const code=k.replace(/(\D+)(\d+)/,"$1 $2"); return {id:"DC_"+k, key:k, type:"DC", name:code+" "+TAGS[t].name, tag:t, code, group:"TCCN · "+(TAGS[t].area?CORE_AREAS[TAGS[t].area].name.replace(/ \(\d+\)/,""):"Non-core / major")}; })
+];
+const COURSE = Object.fromEntries(COURSES.map(c=>[c.id,c]));
+COURSES.forEach(c=>{ SHORT[c.key]=c.name.replace(/^AP |^IB /,""); });
+const SCORES = {AP:["5","4","3","2","1"], IB:["7","6","5","4","3","2","1"], DC:["A","B","C","D","F"]};
+const GRADE_PTS = {A:4,B:3,C:2,D:1,F:0};
+const scoreVal = (type,s)=> type==="DC" ? GRADE_PTS[s] : Number(s);
+const showMin = v => Object.keys(GRADE_PTS).find(k=>GRADE_PTS[k]===v);
+
+/* ---------------------------------------------------------------------
+   Chart DSL (one exam per line):  KEY[,KEY2][~] score[cond]=tokens; score=tokens
+   Tokens: TAG | TAG@hrs | LANG*n@hrs (levels 1..n) | $ = exam language | # = exam name
+           En:label (elective hrs) | Cn:AREA:label (core-area hrs) | P:label (placement, 0 hrs)
+           "+" at the start of a tier adds to the previous tier. "none" = no credit.
+   ~ marks a line modeled/estimated rather than transcribed.
+   --------------------------------------------------------------------- */
+const TX_DEFAULT = `
+AFAM 3=E3:#
+ARTH 3=ARTH
+ART2D 3=STUDIO
+ART3D,DRAW 3=E3:#
+MUSTH 3=MUSTH
+ENG_LANG 3=ENGCOMP1
+ENG_LIT 3=LIT
+COMPGOV 3=COMPGOV
+EURO 3=EURO
+HUG 3=HUMGEO
+MACRO 3=MACRO
+MICRO 3=MICRO
+PSYC 3=PSYC
+GOV 3=GOVT1
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD1
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2
+CSA 3=CS1
+CSP 3=E3:#
+PRECALC 3=PRECALC@3
+STATS 3=STATS
+BIO 3=BIO;4=+BIO2
+CHEM 3=CHEM;4=+CHEM2
+ENVSCI 3=C3:SCI:#
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCM 3=PHYS
+PHYSCE 3=PHYS2
+CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN 3=$*2@8;4=$*3@11;5=$*4@14
+SPLIT 3=SPAN3,SPAN4
+RESEARCH,SEMINAR,BUSPF,CYBER,NETW 3=E3:#`;
+
+const IB_DEFAULT = `
+ENG_HL 4=ENGCOMP1;5=ENGCOMP1,LIT;6=ENGCOMP1,ENGCOMP2,LIT
+ENG_SL 4=ENGCOMP1
+ENGLL_HL 4=ENGCOMP1;5=ENGCOMP1,ENGCOMP2
+ENGLL_SL 4=ENGCOMP1
+MATH_HL 4=PRECALC;5=CALC1;6=CALC1,CALC2
+MATH_SL 4=COLALG;5=PRECALC;6=CALC1
+MATHAI_HL 4=STATS;5=STATS,BUSCALC
+MATHAI_SL 4=CONTMATH;5=STATS
+BIO_HL 4=BIO;5=BIO,BIO2
+BIO_SL 4=BIONM1
+CHEM_HL 4=CHEM;5=CHEM,CHEM2
+CHEM_SL 4=C4:SCI:Chemistry for non-majors
+PHYS_HL 4=PHYSALG;5=PHYSALG,PHYSALG2
+PHYS_SL 4=PHYSALG
+ESS_SL 4=ENVSCI
+SEHS_SL 4=E3:Kinesiology elective
+CS_HL 4=CS1;5=CS1,CS2
+CS_SL 4=E3:Computing elective
+PSYC_HL 4=PSYC;5=PSYC,LIFESPAN
+PSYC_SL 4=PSYC
+ECON_HL 4=MACRO,MICRO
+ECON_SL 4=MACRO
+BM_HL 4=BUSI;5=BUSI,E3:Management elective
+BM_SL 4=BUSI
+HIST_HL 4=USHIST1,USHIST2
+GPOL_HL 4=COMPGOV
+GEOG_HL 4=HUMGEO
+PHIL_HL 4=PHIL;5=PHIL,E3:Philosophy elective
+PHIL_SL 4=PHIL
+SPANB_HL 4=SPAN*2@8;5=SPAN*4@14
+SPANB_SL 4=SPAN*2@8
+FRENB_HL 4=FREN*2@8;5=FREN*4@14
+FRENB_SL 4=FREN*2@8
+VA_HL 4=ARTAPP,STUDIO
+VA_SL 4=ARTAPP
+MUS_HL 4=MUSAPP,MUSTH
+THEA_HL 4=DRAMA`;
+
+const S = (u)=>u; // source URL marker (all fetched Oct 2026)
+const CN = id => "https://nces.ed.gov/collegenavigator/?id="+id;
+const SRC_TX51968 = "https://statutes.capitol.texas.gov/Docs/ED/htm/ED.51.htm";
+const SRC_TX61822 = "https://statutes.capitol.texas.gov/Docs/ED/htm/ED.61.htm";
+const TXPUB_DC = {min:"C", v:true, as:"tag", note:"Texas public: completed Texas Core courses transfer as core (Educ. Code §61.822). Non-core courses apply per the degree plan. Minimum grade C is modeled."};
+
+const COLLEGES = [
+/* ============================ TEXAS PUBLIC ============================ */
+{id:"UT", name:"UT Austin", full:"The University of Texas at Austin", city:"Austin", group:"txpub", annual:11688, unitid:228778, tx:true, status:"verified",
+ srcs:["https://testingservices.utexas.edu/search-undergraduate-exams"], unl:"none~", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Most exams earn credit at a 3. Some only give lower-division electives until a 4. AP U.S. Government needs UT's separate Texas-government test for GOV 310L.",
+ codes:{CALC1:"M 408N",CALC2:"M 408S",ENGCOMP1:"RHE 306",USHIST2:"HIS 315L",WORLD1:"HIS 106C",GOVT1:"GOV 310L",MACRO:"ECO 304L",MICRO:"ECO 304K",PSYC:"PSY 301",BIO:"BIO 311C",BIO2:"BIO 311D",CHEM:"CH 301",CHEM2:"CH 302",PHYS:"PHY 303K + 105M",PHYS2:"PHY 303L + 105N",PHYSALG:"PHY 302K + 102M",PHYSALG2:"PHY 302L + 102N",CS1:"C S 312",STATS:"SDS 302",PRECALC:"M 305G",LIT:"E 316P",HUMGEO:"GRG 305",EURO:"HIS 309L",MUSTH:"M S 303F"},
+ chart:`
+ARTH 3=E3:ARH 301;4=E6:ARH 301 + 302/303
+BIO 3=BIO@3;5=BIO@3,BIO2@3
+CHEM 3=CHEM@3;4=CHEM@3,CHEM2@3,E2:CH 104M + 104N labs
+CHIN 3=$*2@12;4=$*3@15;5=$*4@18
+FREN,ITAL 3=$*1@6;4=$*2@12;5=$*3@15
+GERM 3=$*2@10;4=$*3@16
+JAPN 3=$*1@6;4=$*2@12;5=$*4@21
+LATIN 3=$*1@5;4=$*2@10;5=$*3@15
+SPAN 3=$*1@6;4=$*2@12;5=$*4@18
+SPLIT 3=SPAN*2@12;4=SPAN*3@18;5=SPAN*4@21
+CSA 3=E3:C S 302;4=CS1@3
+CSP 3=E3:C S 302
+MACRO 3=E3:ECO 301;4=MACRO
+MICRO 3=E3:ECO 301;4=MICRO
+ENG_LANG 3=ENGCOMP1
+ENG_LIT 3=E3:E 314T;4=LIT
+ENVSCI 3=C3:SCI:GEO 302P
+EURO 3=EURO
+USH 3=USHIST2
+WORLD 3=WORLD1
+HUG 3=HUMGEO
+CALC_AB 3=CALC1@4
+CALC_BC 3=CALC1@4;5=CALC1@4,CALC2@4
+PRECALC 3=E3:M 301;4=PRECALC@3
+MUSTH 3=MUSTH
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCM 3=PHYS
+PHYSCE 3=PHYS2
+PSYC 3=PSYC
+STATS 3=STATS
+ART2D,ART3D,DRAW 3=C3:ARTS:ART 319T
+GOV 3=P:GOV 310L only after passing UT's Texas-government test
+COMPGOV,RESEARCH,SEMINAR none`},
+
+{id:"TAMU", name:"Texas A&M", full:"Texas A&M University", city:"College Station", group:"txpub", annual:13154, unitid:228723, tx:true, status:"verified",
+ srcs:["https://testing.tamu.edu/credits/index.html"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"AP Calculus AB 3 earns Business Calculus; a 4 earns MATH 151 (engineering calculus). Japanese credit starts at a 4.",
+ codes:{CALC1:"MATH 151",CALC2:"MATH 152",BUSCALC:"MATH 142",STATS:"STAT 201",ENGCOMP1:"ENGL 104",ENGCOMP2:"ENGL 210",USHIST1:"HIST 105",USHIST2:"HIST 106",GOVT1:"POLS 206",MACRO:"ECON 203",MICRO:"ECON 202",PSYC:"PSYC 107",BIO:"BIOL 111",BIO2:"BIOL 112",CHEM:"CHEM 119",CHEM2:"CHEM 120",PHYS:"PHYS 206",PHYS2:"PHYS 207",PHYSALG:"PHYS 201",PHYSALG2:"PHYS 202",CS1:"CSCE 110",PRECALC:"MATH 150",ARTH:"ARTS 149",MUSTH:"MUSC 225"},
+ chart:`
+AFAM 3=E3:AFST 289
+RESEARCH,SEMINAR 3=E3:# (advisor-assigned)
+ARTH 3=ARTH;4=+E3:Art history II
+BIO 3=C3:SCI:BIOL 113;4=BIO,BIO2
+CALC_AB 3=BUSCALC;4=CALC1
+CALC_BC 3=CALC1;4=CALC1,CALC2
+CHEM 3=CHEM;4=CHEM,CHEM2
+CHIN,FREN,GERM,ITAL,LATIN 3=$*2@8;4=$*3@14
+JAPN 4=$*3@16
+COMPGOV 3=COMPGOV
+CSA,CSP 3=CS1
+ENG_LANG 3=ENGCOMP1;4=ENGCOMP1,ENGCOMP2
+ENG_LIT 3=ENGCOMP1;4=ENGCOMP1,LIT
+ENVSCI 3=C3:SCI:#
+EURO 3=EURO
+HUG 3=HUMGEO
+MACRO 3=MACRO
+MICRO 3=MICRO
+MUSTH 3=MUSTH
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCM 3=PHYS
+PHYSCE 3=PHYS2
+PRECALC 3=PRECALC@3
+PSYC 3=PSYC
+SPAN 3=$*2@8;4=$*3@11;5=$*4@14
+SPLIT 3=E3:Spanish literature;5=E6:Spanish literature
+STATS 3=STATS
+ART2D,DRAW 3=E3:# studio;4=E6:# studio
+ART3D 3=E3:#
+GOV 3=GOVT1
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD1`},
+
+{id:"TTU", name:"Texas Tech", full:"Texas Tech University", city:"Lubbock", group:"txpub", annual:11852, unitid:229115, tx:true, status:"verified",
+ srcs:["https://www.depts.ttu.edu/testing/uce.php"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Economics needs a 4. AP Biology 3 gives non-majors biology; majors biology needs a 5. No credit for Music Theory, Comparative Government, African American Studies or Capstone.",
+ codes:{CALC1:"MATH 1451",CALC2:"MATH 1452",STATS:"MATH 2300",PSYC:"PSY 1300",BIO:"BIOL 1403",BIO2:"BIOL 1404",PHYS:"PHYS 1408",PHYS2:"PHYS 2401",PHYSALG:"PHYS 1403",PHYSALG2:"PHYS 1404",CS1:"CS 1411",USHIST1:"HIST 2300",USHIST2:"HIST 2301",GOVT1:"POLS 1301",MACRO:"ECO 2302",MICRO:"ECO 2301"},
+ chart:`
+ART2D,DRAW,ART3D 3=E3:# studio
+ARTH 3=ARTH
+BIO 3=BIONM1,BIONM2;5=BIO,BIO2
+CHEM 3=C8:SCI:CHEM 1305/1306 + labs;4=CHEM,CHEM2
+CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN 3=$*3@10;4=$*4@13;5=$*4@13,E3:$ advanced credit
+SPLIT 3=SPAN*3@10;4=SPAN*4@13;5=SPAN*4@13,E3:SPAN advanced credit
+CSA 3=E3:CS 1305;4=CS1
+CSP 3=E3:CS 1305
+MICRO 4=MICRO
+MACRO 4=MACRO
+ENG_LANG,ENG_LIT 3=ENGCOMP1;4=ENGCOMP1,ENGCOMP2
+HUG 3=HUMGEO
+EURO 3=EURO
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD1
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2
+PRECALC 3=PRECALC@5
+STATS 3=STATS
+ENVSCI 3=E3:NRM 1300
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCM 3=PHYS
+PHYSCE 3=PHYS2
+GOV 3=GOVT1
+PSYC 3=PSYC`},
+
+{id:"UTD", name:"UT Dallas", full:"The University of Texas at Dallas", city:"Richardson", group:"txpub", annual:14644, unitid:228787, tx:true, status:"verified",
+ srcs:["https://transfercredit.utdallas.edu/search-by-test/ap-credit/"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Many science and economics exams give only elective credit at a 3; the named course needs a 4. AP Calculus AB 3 earns Precalculus. No CS Principles or Capstone credit.",
+ codes:{CALC1:"MATH 2413",CALC2:"MATH 2414",PRECALC:"MATH 2312",CS1:"CS 1436",CS2:"CS 1337",PHYS:"PHYS 2325 + 2125",PHYS2:"PHYS 2326 + 2126",PHYSALG:"PHYS 1301 + 1101",PHYSALG2:"PHYS 1302 + 1102",STATS:"STAT 1342",CHEM:"CHEM 1311 + 1111",CHEM2:"CHEM 1312 + 1112",BIO:"BIOL 2311 + 1111",BIO2:"BIOL 2312 + 1112",ENGCOMP1:"RHET 1302",ENGCOMP2:"RHET 2302",USHIST1:"HIST 1301",USHIST2:"HIST 1302",WORLD2:"HIST 2322"},
+ chart:`
+ARTH 3=E3:Art history elective;4=ARTH
+ART2D 3=E3:2-D design elective;4=E3:ARTS 2380
+ART3D 3=E3:ARTS 2381
+DRAW 3=E3:Drawing elective;4=STUDIO
+BIO 3=E3:Biology elective;4=BIO,BIO2;5=BIO,BIO2,E2:Biology lab credit
+CHEM 3=E3:Chemistry elective;4=CHEM;5=CHEM,CHEM2
+CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN 3=$*2@6;4=$*3@9;5=$*4@12
+SPLIT 3=SPAN*2@6;4=SPAN*3@9;5=SPAN*4@12
+CSA 3=E3:Computer science elective;4=CS1,CS2@3
+MACRO 3=E3:Economics elective (macro);4=MACRO
+MICRO 3=E3:Economics elective (micro);4=MICRO
+ENG_LANG,ENG_LIT 3=ENGCOMP1;5=ENGCOMP1,ENGCOMP2
+ENVSCI 3=C3:SCI:GEOS 2302
+EURO 3=EURO
+COMPGOV 3=E3:Government elective
+GOV 3=GOVT1
+HUG 3=HUMGEO
+PRECALC 3=PRECALC@3
+CALC_AB 3=PRECALC@3;4=PRECALC@3,CALC1
+CALC_BC 3=PRECALC@3,CALC1;4=CALC1,CALC2
+MUSTH 3=MUSTH
+PHYS1 3=E3:Physics elective (1);4=PHYSALG
+PHYS2 3=E3:Physics elective (2);4=PHYSALG2
+PHYSCM 3=E3:Physics elective (C-Mech);4=PHYS
+PHYSCE 3=E3:Physics elective (C-E&M);4=PHYS2
+PSYC 3=PSYC
+STATS 3=E3:Statistics elective;4=STATS
+USH 3=USHIST1;4=USHIST1,USHIST2
+WORLD 3=WORLD2`},
+
+{id:"UH", name:"Univ. of Houston", full:"University of Houston", city:"Houston", group:"txpub", annual:9717, unitid:225511, tx:true, status:"verified",
+ srcs:["http://publications.uh.edu/content.php?catoid=44&navoid=15687"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Credit mostly at a 3. AP U.S. Government 4+ also needs UH's Texas-government exam for GOVT 2306. No Precalculus or African American Studies credit listed.",
+ codes:{CS1:"COSC 1336",CS2:"COSC 1437",CALC1:"MATH 1431",CALC2:"MATH 1432",BUSCALC:"MATH 1313",PHYS:"PHYS 1321 + 1121",PHYS2:"PHYS 1322 + 1122",ARTH:"ARTH 1380",LIT:"ENGL 2316"},
+ chart:`
+ART2D,ART3D,DRAW 3=C3:ARTS:ARTS 1397
+ARTH 3=ARTH;4=+E3:ARTH survey II
+BIO 3=BIO,BIO2
+CHEM~ 3=C3:SCI:CHEM 1305;4=CHEM@3
+CHIN,SPAN 3=$*1@5;4=$*2@8;5=$*3@11
+CSA 3=CS1@3;4=CS1@3,CS2
+CSP 3=CS1@3
+MACRO 3=MACRO
+MICRO 3=MICRO
+ENG_LANG 3=ENGCOMP1;4=ENGCOMP1,ENGCOMP2
+ENG_LIT 3=LIT
+FREN 3=FREN3,FREN4;4=FREN3,FREN4,E3:French advanced
+HUG 3=HUMGEO
+GERM,ITAL 3=$*2@10;4=$*3@13
+GOV 3=GOVT1;4=GOVT1,P:GOVT 2306 also needs UH's Texas-government exam
+USH 3=USHIST1;4=USHIST1,USHIST2
+EURO 3=EURO
+WORLD 3=WORLD1
+JAPN 3=$*1@5;4=$*2@10
+LATIN 3=$*2@6;4=$*3@9;5=$*4@12
+CALC_AB 3=BUSCALC;4=CALC1
+CALC_BC 3=C4:CAO:Calculus core credit;4=CALC1,CALC2
+STATS 3=STATS
+MUSTH 3=E6:MUSI 1303 + 1301
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCM 3=C4:SCI:Physics core credit (mechanics);4=PHYS
+PHYSCE 3=C4:SCI:Physics core credit (E&M);4=PHYS2
+COMPGOV 3=COMPGOV;5=+E3:POLS 3311
+PSYC 3=PSYC
+SPLIT 3=SPAN3;4=SPAN3,SPAN4
+ENVSCI 3=E3:Environmental science elective
+RESEARCH,SEMINAR 3=E3:# elective`},
+
+{id:"TXST", name:"Texas State", full:"Texas State University", city:"San Marcos", group:"txpub", annual:11450, unitid:228459, tx:true, status:"verified",
+ srcs:["https://www.txst.edu/temc/services/testing-lab-services/exams-for-credit/ap.html"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Generous: every world-language exam earns 14 hours at a 3, and almost everything else credits at a 3.",
+ codes:{CALC1:"MATH 2471",CALC2:"MATH 2472",CS1:"CS 1428",STATS:"MATH 2328",COLALG:"MATH 1315",PRECALC:"MATH 2417"},
+ chart:`
+AFAM 3=E3:AAS 2310
+ARTH 3=ARTH
+DRAW 3=STUDIO
+ART2D 3=E3:ART 1301 (2-D)
+ART3D 3=E3:ARTS 1302
+BIO 3=C4:SCI:BIO 1330 + lab;4=BIO,BIO2
+CHEM 3=C3:SCI:CHEM 1320;4=CHEM;5=CHEM,CHEM2
+CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN 3=$*4@14
+SPLIT 3=SPAN*4@14
+CSA 3=CS1
+CSP 3=E3:CS 1319
+MICRO 3=MICRO
+MACRO 3=MACRO
+ENG_LANG 3=ENGCOMP1
+ENG_LIT 3=ENGCOMP2
+USH 3=USHIST1;4=USHIST1,USHIST2
+EURO 3=EURO;4=+E3:HIST 2320
+WORLD 3=WORLD1;4=WORLD1,WORLD2
+ENVSCI 3=C3:SCI:GEO 2310
+HUG 3=HUMGEO
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2
+MUSTH 3=MUSTH@4;4=MUSTH@4,E3:MU 1315
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCM 3=PHYS
+PHYSCE 3=PHYS2
+PRECALC 3=COLALG;4=PRECALC
+PSYC 3=PSYC
+RESEARCH,SEMINAR 3=E2:# honors elective
+STATS 3=STATS
+GOV 3=GOVT1`},
+
+{id:"UTSA", name:"UTSA", full:"The University of Texas at San Antonio", city:"San Antonio", group:"txpub", annual:9011, unitid:229027, tx:true, status:"verified",
+ srcs:["https://catalog.utsa.edu/undergraduate/nationalstandardizedtests/","https://testing.utsa.edu/2026-2028-credit-by-exam-charts-rev-5-06-2026-ap/"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"World languages earn credit from a score of 2. AP Seminar + Research both at 3+ (with the Capstone certificate) earn WRC 1013.",
+ codes:{CALC1:"MAT 1213",CALC2:"MAT 1223",CS1:"CS 1063",CS2:"CS 1083",STATS:"STA 1053",PRECALC:"MAT 1093",ENGCOMP1:"WRC 1013",LIT:"ENG 2013",USHIST1:"HIS 1043",USHIST2:"HIS 1053",WORLD2:"HIS 2133",EURO:"HIS 2563",HUMGEO:"GES 2623",GOVT1:"POL 1013",COMPGOV:"POL 2633",MACRO:"ECO 2013",MICRO:"ECO 2023",PSYC:"PSY 1013",CHEM:"CHE 1103 + 1121",CHEM2:"CHE 1113 + 1131",BIO:"BIO 1203 + 1201",BIO2:"BIO 1223 + 1221"},
+ chart:`
+SEMINAR 3[RESEARCH>=3]=ENGCOMP1
+RESEARCH 3[SEMINAR>=3]=ENGCOMP1
+AFAM 3=E3:AAS 2013
+ARTH 3=E3:AHC elective
+ART2D 3=E3:ART 1003
+ART3D 3=E3:ART 1013
+DRAW 3=E3:ART 1213
+BIO 3=C6:SCI:BIO 1233 + 1243;5=BIO,BIO2
+CHEM 3=C7:SCI:CHE 1004 + 1073;4=+CHEM;5=+CHEM2
+CHIN,ITAL,JAPN 2=$*2@8;3=$*4@14
+FREN 2=$*2@8;3=$*4@14,E3:FRN 3023
+GERM 2=$*2@8;3=$*4@14;4=+E3:GER 3023;5=+E6:GER upper-division electives
+SPAN 2=$*2@8;3=$*4@14;4=+E3:SPN upper-division elective
+LATIN 3=LATI1
+SPLIT 3=E3:SPN literature elective
+CSA 3=CS1@3,CS2@3
+MACRO 3=MACRO
+MICRO 3=MICRO
+ENG_LANG 3=ENGCOMP1
+ENG_LIT 3=LIT
+ENVSCI 3=C6:SCI:ES 2013 + 2023
+HUG 3=HUMGEO
+USH 3=USHIST1,USHIST2
+EURO 3=EURO
+WORLD 3=WORLD2
+PRECALC 3=PRECALC@3
+CALC_AB 3=CALC1@3
+CALC_BC 3=CALC1@3;4=CALC1@3,CALC2@3
+PHYS1,PHYSCM 3=C3:SCI:PHY 1603
+COMPGOV 3=COMPGOV
+GOV 3=GOVT1
+PSYC 3=PSYC
+STATS 3=STATS`},
+
+{id:"UNT", name:"UNT", full:"University of North Texas", city:"Denton", group:"txpub", annual:11309, unitid:227216, tx:true, status:"verified",
+ srcs:["https://catalog.unt.edu/content.php?catoid=37&navoid=4279&print="], unl:"none~", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Credit at 3+ for nearly every exam; several sciences step up to the majors course at a 4. Music Theory and Capstone are not on the catalog table.",
+ codes:{CALC1:"MATH 1710",CALC2:"MATH 1720",CS1:"CSCE 1030",STATS:"MATH 1680",PRECALC:"MATH 1650",ENGCOMP1:"ENGL 1310",ENGCOMP2:"ENGL 1320",LIT:"ENGL 2331",MACRO:"ECON 1110",MICRO:"ECON 1100",GOVT1:"PSCI 2305",USHIST1:"HIST 2610",USHIST2:"HIST 2620",WORLD1:"HIST 1050",WORLD2:"HIST 1060",HUMGEO:"GEOG 2170",PSYC:"PSYC 1630",BIO:"BIOL 1710",BIO2:"BIOL 1720 + 1760",CHEM:"CHEM 1410/1430",CHEM2:"CHEM 1420/1440",PHYSALG:"PHYS 1410/1430",PHYSALG2:"PHYS 1420/1440",PHYS:"PHYS 1710/1730",PHYS2:"PHYS 2220/2240",STUDIO:"ART 1600"},
+ chart:`
+ENG_LANG 3=ENGCOMP1;5=ENGCOMP1,ENGCOMP2
+ENG_LIT 3=LIT
+ARTH 3=ARTH
+DRAW 3=STUDIO
+ART2D 3=E3:ART 1800
+ART3D 3=E3:ART 1700
+CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN 3=$*2@6;4=$*3@9;5=$*4@12
+SPLIT 3=E3:SPAN 3110
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2@3
+PRECALC 3=PRECALC@5
+STATS 3=STATS
+BIO 3=C6:SCI:BIOL 1112 + 1142;4=BIO,BIO2
+CHEM 3=C3:SCI:CHEM 1360;4=CHEM;5=CHEM,CHEM2
+CSA 3=E3:CSCE 1010;4=CS1
+CSP 3=E3:CSCE 1010
+ENVSCI 3=C3:SCI:BIOL 1132
+PHYS1 3=C3:SCI:PHYS 1210;4=PHYSALG
+PHYS2 3=C3:SCI:PHYS 1315;4=PHYSALG2
+PHYSCM 3=PHYSALG;4=PHYS
+PHYSCE 3=PHYSALG2;4=PHYS2
+AFAM 3=E3:History elective (AAS)
+MACRO 3=MACRO
+MICRO 3=MICRO
+COMPGOV 3=E3:Political science elective
+GOV 3=GOVT1
+EURO 3=E6:History electives (European)
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD1,WORLD2
+HUG 3=HUMGEO
+PSYC 3=PSYC`},
+
+{id:"UTA", name:"UT Arlington", full:"The University of Texas at Arlington", city:"Arlington", group:"txpub", annual:11950, unitid:228769, tx:true, status:"verified",
+ srcs:["https://www.uta.edu/administration/registrar/students/transfer/prior-learning-credits-exams"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"World languages earn credit from a 2. AP Seminar 3+ earns ENGL 1301. An IB Diploma with 4+ on every exam earns at least 24 hours.",
+ codes:{CALC1:"MATH 1426",CALC2:"MATH 2425",CS1:"CSE 1310",STATS:"MATH 1308",LIT:"ENGL 2303",BIO:"BIOL 1441",CHEM:"CHEM 1441",CHEM2:"CHEM 1442"},
+ chart:`
+AFAM 3=E3:AAST 4350
+ARTH 3=ARTH
+ART2D 3=E3:ART 1305
+ART3D 3=E3:ART 1306
+DRAW 3=STUDIO
+BIO 3=BIO
+CHEM 3=CHEM;5=CHEM,CHEM2
+CHIN,FREN,GERM,ITAL,JAPN,SPAN 2=$*2@8;3=$*3@11;4=$*4@14
+LATIN 3=$*2@8;4=$*4@14
+CSA 3=CS1@3
+MACRO 3=MACRO
+MICRO 3=MICRO
+ENG_LANG,SEMINAR 3=ENGCOMP1;5=ENGCOMP1,ENGCOMP2
+ENG_LIT 3=LIT
+ENVSCI 3=C3:SCI:ENVR 1301
+HUG 3=HUMGEO
+GOV 3=GOVT1
+EURO 3=EURO
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD2
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2
+PRECALC 3=FINMATH
+STATS 3=STATS
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCM 3=PHYS
+PHYSCE 3=PHYS2
+PSYC 3=PSYC
+SPLIT 3=E3:SPAN 3320`},
+
+{id:"UTEP", name:"UTEP", full:"The University of Texas at El Paso", city:"El Paso", group:"txpub", annual:9744, unitid:228796, tx:true, status:"verified",
+ srcs:["https://www.utep.edu/admissions/resources/credit-by-exam/index.html","https://www.utep.edu/admissions/_Files/docs/advance-placement-examinations.pdf","https://www.utep.edu/admissions/_Files/docs/credit-by-exam-ib.pdf"], unl:"none~", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Official UTEP AP chart (last updated 4/11/2024; still the version linked in Oct 2026). Credit at a 3 on every listed exam. Spanish Language 3 earns 12 hrs and Spanish Literature 4 earns 18 hrs; Chinese 4 earns 15 hrs. AP Business with Personal Finance, Cybersecurity and Networking aren't on the chart yet, so no credit is assumed (estimated). IB uses the Texas IB rules; UTEP's IB chart is an older, partly outdated list. Checked Oct 2026.",
+ codes:{CALC1:"MATH 1411",CALC2:"MATH 1312",PRECALC:"MATH 1508",STATS:"STAT 1380",CS1:"CS 1401",ENGCOMP1:"RWS 1301",ENGCOMP2:"RWS 1302",BIO:"BIOL 1305",BIO2:"BIOL 1306",CHEM:"CHEM 1305",CHEM2:"CHEM 1306",ENVSCI:"ESCI 1301 + 1101",PHYSALG:"PHYS 1403",PHYSALG2:"PHYS 1404",PHYS:"PHYS 2420",PHYS2:"PHYS 2421",ARTH:"ART 1300",HUMGEO:"GEOG 1310",MACRO:"ECON 2303",MICRO:"ECON 2304",MUSTH:"MUST 1311",PSYC:"PSYC 1301",GOVT1:"POLS 2310",USHIST1:"HIST 1301",USHIST2:"HIST 1302",WORLD1:"HIST 2301",WORLD2:"HIST 2302",LATI3:"LATN 2303",LATI4:"LATN 2304",SPAN1:"SPAN 1301",SPAN2:"SPAN 1302",SPAN3:"SPAN 2301",SPAN4:"SPAN 2302",FREN1:"FREN 1301",FREN2:"FREN 1302",FREN3:"FREN 2301",FREN4:"FREN 2302",GERM1:"GERM 1301",GERM2:"GERM 1302",GERM3:"GERM 2301",GERM4:"GERM 2302",CHIN1:"CHIN 1301",CHIN2:"CHIN 1302",CHIN3:"CHIN 2301",CHIN4:"CHIN 2302"},
+ chart:`
+AFAM 3=E3:AFST 2300
+ARTH 3=ARTH
+DRAW,ART2D,ART3D 3=E3:ART 3 hrs elective
+BIO 3=BIO@3,BIO2@3
+CALC_AB 3=CALC1@4
+CALC_BC 3=CALC1@4,CALC2@3
+RESEARCH 3=E3:Departmental elective (Capstone Research)
+SEMINAR 3=E3:UNIV 1301
+CHEM 3=CHEM@3,CHEM2@3
+CHIN 3=CHIN*4@12;4=CHIN*4@12,E3:ASIA 3350
+COMPGOV 3=E3:POLS 3 hrs elective
+CSA 3=CS1@4
+CSP 3=E3:CS 1310
+ENG_LANG,ENG_LIT 3=ENGCOMP1,ENGCOMP2
+ENVSCI 3=ENVSCI@4
+EURO 3=E6:HIST 6 hrs elective
+FREN 3=FREN*4@12;4=FREN*4@12,E3:FREN 3357;5=FREN*4@12,E6:FREN 3355 + 3357
+GERM 3=GERM*4@12
+HUG 3=HUMGEO
+ITAL 3=E6:LING 2303 + 2304 (Italian);4=E9:LING 2303 + 2304 + 2320 (Italian)
+JAPN 3=E6:LING 2303 + 2304 (Japanese);4=E9:LING 2303 + 2304 + 2320 (Japanese)
+LATIN 3=LATI3@3,LATI4@3
+MACRO 3=MACRO
+MICRO 3=MICRO
+MUSTH 3=MUSTH@3;4=MUSTH@3,E3:MUST 1312;5=MUSTH@3,E7:MUST 1312 + 1313 + 1111
+PHYS1 3=PHYSALG@4
+PHYS2 3=PHYSALG2@4
+PHYSCE 3=PHYS2@4
+PHYSCM 3=PHYS@4
+PRECALC 3=PRECALC@5
+PSYC 3=PSYC
+SPAN 3=SPAN*4@12;5=SPAN*4@12,E3:SPAN 3357
+SPLIT 3=SPAN*4@12;4=SPAN*4@12,E6:SPAN 3357 + 3300
+STATS 3=STATS
+GOV 3=GOVT1
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD1,WORLD2`},
+
+{id:"UTRGV", name:"UTRGV", full:"The University of Texas Rio Grande Valley", city:"Edinburg", group:"txpub", annual:9987, unitid:227368, tx:true, status:"verified",
+ srcs:["https://www.utrgv.edu/admissions/credit-by-exam/index.htm"], unl:"none~", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Credit at a 3 for every listed exam, including Business with Personal Finance, Cybersecurity and Networking. Biology, Chemistry and Environmental Science each earn 8 hours.",
+ codes:{CS1:"CSCI 1470",PRECALC:"MATH 2412",LIT:"ENGL 2341",COMPGOV:"POLS 2330",STATS:"MATH 1342"},
+ chart:`
+AFAM 3=E3:HIST 1076A
+ART2D 3=E3:ARTS 1311
+ART3D 3=E3:ARTS 1312
+DRAW 3=STUDIO
+ARTH 3=ARTAPP,ARTH
+BIO 3=BIO,BIO2
+BUSPF 3=E3:MGMT 1076A
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2
+PRECALC 3=PRECALC
+CHEM 3=CHEM,CHEM2
+CHIN,JAPN,ITAL,LATIN 3=E6:FORL 1311 + 1312 ($)
+COMPGOV 3=COMPGOV
+CSA 3=CS1
+CSP 3=E1:CSCI 1101
+CYBER 3=E4:CYBI 1101 + 1076A
+MACRO 3=MACRO
+MICRO 3=MICRO
+ENG_LANG 3=ENGCOMP1
+ENG_LIT 3=LIT
+ENVSCI 3=ENVSCI,C4:SCI:ENVR 1402
+EURO 3=E3:HIST 1076B
+FREN 3=$*2@6;4=$*3@9;5=$*4@12
+GERM 3=$1@3;4=$*2@6;5=$*2@6,E3:FORL 1311
+HUG 3=E3:GEOG 1076A
+MUSTH 3=E3:MUSI 1076A
+NETW 3=E3:CSCI 1076A
+PHYSCE 3=PHYS2
+PHYSCM 3=PHYS
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PSYC 3=PSYC
+SPAN,SPLIT 3=SPAN*2@6;4=SPAN*3@9;5=SPAN*4@12
+STATS 3=STATS
+GOV 3=GOVT1
+USH 3=USHIST1;4=USHIST1,USHIST2
+WORLD 3=WORLD1`},
+
+{id:"SHSU", name:"Sam Houston State", full:"Sam Houston State University", city:"Huntsville", group:"txpub", annual:9228, unitid:227881, tx:true, status:"verified",
+ srcs:["https://www.shsu.edu/offices-departments/testing-center/credit-by-exam/ap"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC, hrsCap:30,
+ note:"Minimum 3 for credit; world languages scale 3 → 4 hrs, 4 → 8, 5 → 14. Studio art needs a portfolio review (art majors need a 4). Over 30 exam hours needs a petition.",
+ codes:{CALC1:"MATH 1420",CALC2:"MATH 1430",PRECALC:"MATH 1410",PSYC:"PSYC 1301",PHYS:"PHYS 1411",PHYS2:"PHYS 1422",GOVT1:"POLS 2305",HUMGEO:"GEOG 1300",WORLD1:"HSTY 2312"},
+ chart:`
+AFAM 3=E3:HSTY 3393
+ART2D,ART3D,DRAW 3=P:Studio art credit needs a departmental portfolio review
+ARTH 3=ARTH
+BIO 3=BIO,BIO2
+CHEM 3=CHEM,CHEM2
+CHIN,ITAL,JAPN,LATIN 3=$1;4=$*2@8;5=$*4@14
+SPAN~,FREN~,GERM~ 3=$1;4=$*2@8;5=$*4@14
+COMPGOV 3=E3:POLS 2000
+CSA,CSP 3=CS1
+ENG_LANG 3=ENGCOMP1
+ENG_LIT 3=ENGCOMP2
+ENVSCI 3=C4:SCI:BIOL 1401
+GOV 3=GOVT1
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD1
+HUG 3=HUMGEO
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2
+MACRO 3=MACRO
+MICRO 3=MICRO
+PHYS1 3=C3:SCI:PHYS 1301
+PHYS2 3=C3:SCI:PHYS 1302
+PHYSCM 3=PHYS
+PHYSCE 3=PHYS2
+PRECALC 3=PRECALC
+PSYC 3=PSYC
+STATS 3=STATS`},
+
+{id:"ETAMU", name:"East Texas A&M", full:"East Texas A&M University", city:"Commerce", group:"txpub", annual:10026, unitid:224554, tx:true, status:"verified",
+ srcs:["https://www.etamu.edu/advanced-placement-program/"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Unusually generous math and computing awards: AP Calculus BC 4 = 14 hrs, AP CS Principles 3 = 14 hrs. No Music Theory, Human Geography or Comparative Gov credit listed.",
+ codes:{PRECALC:"MATH 2312",COLALG:"MATH 1314",GOVT1:"PSCI 2035",ARTH:"ART 1303",BIO:"BSC 1406",WORLD1:"HIST 265"},
+ chart:`
+GOV 3=GOVT1
+USH 3=USHIST1;4=USHIST1,USHIST2
+ARTH 3=ARTH
+ART2D 3=E3:ART 1311
+ART3D 3=E3:ART 1312
+DRAW 3=STUDIO
+BIO 3=BIO
+CALC_AB 3=COLALG@2,PRECALC@2;4=COLALG,PRECALC@3,CALC1
+CALC_BC 3=COLALG,PRECALC@3,CALC1;4=COLALG,PRECALC@3,CALC1,CALC2
+CHEM 3=C3:SCI:CHEM 1305;4=CHEM;5=CHEM,CHEM2
+CSA 3=E3:COSC 1301,CS1,CS2@4
+CSP 3=E3:COSC 1301,CS1,CS2@4,E3:COSC 2336
+MACRO 3=MACRO
+MICRO 3=MICRO
+ENVSCI 3=C3:SCI:ENVS 1301
+FREN,SPAN 3=$*2@6;4=$*4@12
+ENG_LANG,ENG_LIT 3=ENGCOMP1;4=ENGCOMP1,ENGCOMP2
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCE 3=PHYS2
+PHYSCM 3=PHYS
+PSYC 3=PSYC
+STATS 3=STATS
+WORLD 3=WORLD1`},
+
+{id:"TWU", name:"Texas Woman's", full:"Texas Woman's University", city:"Denton", group:"txpub", annual:8640, unitid:229179, tx:true, status:"verified",
+ srcs:["https://catalog.twu.edu/undergraduate/admission-information/credit-by-examination/"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"Credit at a 3 for almost every exam. Spanish Language/Literature combined max 12 hrs. IB Diploma with 4+ on all exams earns at least 24 hrs. Music Theory and Physics 2 rows have no credit listed.",
+ codes:{CALC1:"MATH 2014",CALC2:"MATH 2024",CS1:"CSCI 1421 + 1423",PRECALC:"MATH 1313",STATS:"MATH 1703",ENGCOMP1:"ENG 1013",ENGCOMP2:"ENG 1023",LIT:"ENG 2153",GOVT1:"POLS 2013",USHIST1:"HIST 1013",USHIST2:"HIST 1023",WORLD1:"HIST 2013",WORLD2:"HIST 2023",MACRO:"ECO 1023",MICRO:"ECO 1013",PSYC:"PSY 1013",BIO:"BIOL 1111 + 1113",CHEM:"CHEM 1111 + 1113",CHEM2:"CHEM 1121 + 1123",PHYS:"PHYS 2151 + 2153",PHYS2:"PHYS 2161 + 2163",ARTH:"ART 2713",STUDIO:"ART 1303",SPAN1:"SPAN 1013",SPAN2:"SPAN 1023",SPAN3:"SPAN 2033",SPAN4:"SPAN 2043"},
+ chart:`
+ARTH 3=ARTH
+ART2D 3=E3:ART 1203
+ART3D 3=E3:ART 1213
+DRAW 3=STUDIO
+ENG_LANG 3=ENGCOMP1;5=ENGCOMP1,ENGCOMP2
+ENG_LIT 3=LIT
+COMPGOV 3=E3:POLS 3723
+EURO 3=EURO,E3:HIST 2000 (European II)
+HUG 3=E3:SOCI 2000 (human geography)
+MACRO 3=MACRO
+MICRO 3=MICRO
+PSYC 3=PSYC
+GOV 3=GOVT1
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD1,WORLD2
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2
+CSA 3=CS1
+CSP 3=E3:CSCI 1000
+PRECALC 3=PRECALC@3
+STATS 3=STATS
+BIO 3=BIO
+CHEM 3=CHEM,CHEM2
+ENVSCI 3=C3:SCI:BIOL 1023
+PHYS1 3=C3:SCI:PHYS 1133
+PHYSCE 3=PHYS2
+PHYSCM 3=PHYS
+CHIN,GERM,ITAL,JAPN,LATIN 3=E3:FL 1000 ($);4=E6:FL 1000 ($);5=E9:FL 1000 ($)
+FREN 3=FREN1@3;4=FREN*2@6;5=FREN*3@9
+SPAN,SPLIT 3=SPAN1@3;4=SPAN*2@6;5=SPAN*4@12
+MUSTH,PHYS2 none`},
+
+{id:"SFA", name:"Stephen F. Austin", full:"Stephen F. Austin State University", city:"Nacogdoches", group:"txpub", annual:11128, unitid:228431, tx:true, status:"verified",
+ srcs:["https://catalog.sfasu.edu/content.php?catoid=39&navoid=1770"], unl:"none", ib:{mode:"tx"}, dc:TXPUB_DC,
+ note:"AP U.S. Government 3 earns BOTH Federal and Texas Government. Biology, Drawing and 2-D Design need a 4. AP Spanish Literature 3 earns 12 hrs.",
+ codes:{CALC1:"MATH 2313 + 2113",CALC2:"MATH 2314 + 2114",BIO:"BIOL 1306 + 1106",CHEM:"CHEM 1311 + 1111",CS1:"CSCI 1302",CS2:"CSCI 2302",ENVSCI:"ENVR 1301",LIT:"ENGL 2341",ARTAPP:"ARTS 1301",PHYS:"PHYS 2325 + 2125",PHYS2:"PHYS 2326 + 2126",PHYSALG:"PHYS 1301 + 1101",PHYSALG2:"PHYS 1302 + 1102",MUSTH:"MUTC 1116/1211"},
+ chart:`
+DRAW 4=STUDIO
+ART2D 4=E3:ARTS 1311
+ART3D 3=E3:ARTS 1312
+ARTH 3=ARTAPP
+BIO 4=BIO
+CALC_AB 3=CALC1
+CALC_BC 3=CALC1,CALC2
+CHEM 3=C8:SCI:CHEM 1305/1105 + 1307/1107;4=CHEM
+CSA 3=E3:CSIT 1300;4=E3:CSIT 1300,CS1@3;5=CS1@3,CS2@3
+CSP 3=E3:CSIT 1300
+MACRO 3=MACRO
+MICRO 3=MICRO
+ENG_LANG 3=ENGCOMP1;4=ENGCOMP1,ENGCOMP2
+ENG_LIT 3=ENGCOMP1;4=ENGCOMP1,LIT
+ENVSCI 3=C3:SCI:ENVR 1301
+FREN,GERM,LATIN,SPAN 3=$*2@6;4=$*3@9;5=$*4@12
+GOV 3=GOVT1,GOVT2
+EURO 3=EURO
+USH 3=USHIST1;4=USHIST1,USHIST2
+WORLD 3=WORLD1;4=WORLD1,WORLD2
+HUG 3=HUMGEO
+MUSTH 3=MUSTH;4=MUSTH@6
+PHYS1 3=PHYSALG
+PHYS2 3=PHYSALG2
+PHYSCM 3=PHYS
+PHYSCE 3=PHYS2
+PRECALC 3=PRECALC
+PSYC 3=PSYC
+SPLIT 3=SPAN*4@12;4=SPAN*4@12,E3:SPAN 3304
+STATS 3=STATS`},
+/* ============================ TEXAS PRIVATE ============================ */
+{id:"BAY", name:"Baylor", full:"Baylor University", city:"Waco", group:"txpriv", annual:58100, unitid:223232, tx:true, status:"verified", core:"BAYLOR",
+ srcs:["https://studenttesting.web.baylor.edu/ap-exams/ap-incoming-2026-27-students"], unl:"none", ib:{mode:"tx",min:5,est:true}, dc:{min:"C", v:false, as:"tag", note:"Baylor reviews college courses course-by-course; grade C modeled (estimated)."},
+ note:"Most credit needs a 4. AP Calculus BC 3 already earns Calculus I + II; all four physics exams 3+ earn the algebra-based PHY 1405.",
+ codes:{CALC1:"MTH 1321",CALC2:"MTH 1322",STATS:"STA 2381",ENGCOMP1:"ENG 1310",ENGCOMP2:"ENG 1302",USHIST1:"HIS 2365",USHIST2:"HIS 2366",GOVT1:"PSC 2302",MACRO:"ECO 2306",MICRO:"ECO 2307",PSYC:"PSY 1305",BIO:"BIO 1305 + 1105",BIO2:"BIO 1306 + 1106",CHEM:"CHE 1301 + 1316",CHEM2:"CHE 1302 + 1317",PHYSALG:"PHY 1405",CS1:"CSI 1430",PRECALC:"MTH 1308",WORLD1:"HIS 1305",HUMGEO:"GEOG 1300",ARTH:"ARTH 1300",MUSTH:"MUS 1311"},
+ chart:`
+AFAM 4=E6:HIS 2345 + 2346
+ARTH 4=ARTH
+BIO 3=C4:SCI:BIO 1401;4=BIO;5=BIO,BIO2
+CALC_AB 4=CALC1
+CALC_BC 3=CALC1,CALC2
+RESEARCH,SEMINAR 3=E3:ELE 1000 (#)
+CHEM 3=C4:SCI:CHE 1300/1100;4=CHEM;5=CHEM,CHEM2
+CHIN,FREN,GERM,ITAL,JAPN,SPAN 3=$3@3;5=$3@3,$4@3
+LATIN 4=LATI3@3
+SPLIT 3=SPAN3@3,SPAN4@3
+CSA 4=CS1
+MACRO 4=MACRO
+MICRO 4=MICRO
+ENG_LANG 4=ENGCOMP1
+ENG_LIT 4=ENGCOMP2
+ENVSCI 4=C3:SCI:Environmental science (ENV)
+EURO 4=E3:HIS 1307 (European)
+GOV 3=GOVT1
+HUG 3=HUMGEO
+MUSTH 4=MUSTH@3
+PHYS1,PHYS2,PHYSCM,PHYSCE 3=PHYSALG
+PRECALC 4=PRECALC@3
+PSYC 4=PSYC
+STATS 4=STATS
+USH 4=USHIST1,USHIST2
+WORLD 4=WORLD1,E3:HIS 1307 (European)`},
+
+{id:"RICE", name:"Rice", full:"Rice University", city:"Houston", group:"txpriv", annual:64144, unitid:227757, tx:true, status:"verified", core:"PRIV", examNoCore:true,
+ srcs:["https://registrar.rice.edu/students/ap-credit","https://rice.box.com/s/75shbdx33r2t8i75j1uc6uvqkqf4cyd5","https://registrar.rice.edu/students/ib_credit","https://rice.box.com/s/olzszk0t7r9zqmi8b2b2rov0opg77nb2","https://registrar.rice.edu/students/transfer-credit-at-rice/undergraduate","https://ga.rice.edu/undergraduate-students/academic-policies-procedures/transfer-credit/"],
+ unl:"none", ib:{mode:"hl",min:6,est:false}, dc:{min:"C", v:true, as:"elective", note:"Rice reviews college courses taken in high school only if your high school sends a letter saying the course was NOT used for high-school graduation requirements (grade C- or better). Direct-match intro courses can become Rice equivalents; others come in as TRAN general-elective credit, so dual credit is modeled as electives."},
+ note:"Official Fall 2026 to Spring 2027 Registrar lists (updated 8/10/2026). AP credit needs a 4 or 5 on every exam; no limit on AP hours. IB credit needs the full IB Diploma plus a 6 or 7 on a Higher Level exam (SL never counts). AP/IB credit counts toward the 120 hours and prerequisites but generally not distribution requirements (only Physics C carries Distribution III). Only one AP CS exam counts, only one IB Math HL counts, and only one physics sequence counts. Not modeled here: the IB Diploma requirement, the Calculus BC AB-subscore rule, and losing AP physics credit if you retake physics at Rice. Checked Oct 2026.",
+ codes:{CALC1:"MATH 105",CALC2:"MATH 106",BIO:"BIOS 101",BIO2:"BIOS 102",CHEM:"CHEM 111 + 113",CHEM2:"CHEM 112 + 114",PHYS:"PHYS 101 + 103",PHYS2:"PHYS 102 + 104",PHYSALG:"PHYS 141",PHYSALG2:"PHYS 142",STATS:"STAT 180",MACRO:"ECON 113",MICRO:"ECON 111",PSYC:"PSYC 100",GOVT1:"POLI 110",COMPGOV:"POLI 112",EURO:"HIST 103",USHIST1:"HIST 105",WORLD1:"HIST 107",ARTH:"HART 100",MUSTH:"MUSI 107",ENVSCI:"CEVE 100"},
+ ibchart:`
+ENG_HL 6=E3:ENGL 121 (English credit)
+ENGLL_HL 6=E3:ENGL 122 (English credit)
+MATH_HL,MATHAI_HL 6=CALC1@3
+BIO_HL 6=BIO@3,BIO2@3
+CHEM_HL 6=CHEM@4,CHEM2@4
+PHYS_HL 6=PHYSALG@3,PHYSALG2@3
+CS_HL 6=E3:COMP 105 (computer science credit)
+ECON_HL 6=MICRO@3,MACRO@3
+HIST_HL 6=USHIST1@3
+GPOL_HL 6=E3:POLI 111 (international relations)
+SPANB_HL 6=E3:SPAN 222 (Spanish language credit)
+FRENB_HL 6=E3:FREN 222 (French language credit)
+MUS_HL 6=MUSTH@3
+PSYC_HL,BM_HL,PHIL_HL,VA_HL,THEA_HL,GEOG_HL none`,
+ chart:`
+AFAM,ART2D,ART3D,DRAW,HUG,RESEARCH,SEMINAR none
+ARTH 4=ARTH@3
+BIO 4=BIO@3,BIO2@3
+CALC_AB 4=CALC1@3
+CALC_BC 4=CALC1@3,CALC2@3
+CHEM 4=CHEM@4,CHEM2@4
+CHIN 4=E3:CHIN 222 (Chinese language credit)
+CSA,CSP 4=E3:COMP 105 (computer science credit)
+MACRO 4=MACRO@3
+MICRO 4=MICRO@3
+ENG_LANG 4=E3:ENGL 121 (English credit)
+ENG_LIT 4=E3:ENGL 122 (English credit)
+ENVSCI 4=ENVSCI@3
+FREN 4=E3:FREN 222 (French language credit)
+GERM 4=E3:GERM 222 (German language credit)
+ITAL 4=E3:ITAL 222 (Italian language credit)
+JAPN 4=E3:JAPA 222 (Japanese language credit)
+LATIN 4=E3:LATI 104 (Elementary Latin)
+SPAN 4=E3:SPAN 222 (Spanish language credit)
+SPLIT 4=E3:SPAN 225 (Intermediate Spanish)
+GOV 4=GOVT1@3
+COMPGOV 4=COMPGOV@3
+EURO 4=EURO@3
+USH 4=USHIST1@3
+WORLD 4=WORLD1@3
+MUSTH 4=MUSTH@3
+PHYS1 4=PHYSALG@3
+PHYS2 4=PHYSALG2@3
+PHYSCM 4=PHYS@4
+PHYSCE 4=PHYS2@4
+PSYC 4=PSYC@3
+STATS 4=STATS@4`},
+
+{id:"SMU", name:"SMU", full:"Southern Methodist University", city:"Dallas", group:"txpriv", annual:67040, unitid:228246, tx:true, status:"verified", core:"PRIV",
+ srcs:["https://smu.catalog.acalog.com/content.php?catoid=71&navoid=6942"], unl:"none~", ib:{mode:"hl",min:5,est:true}, dc:{min:"C", v:false, as:"tag", note:"SMU evaluates college courses taken in high school as transfer work; C modeled (estimated)."},
+ note:"Credit needs a 4 in almost every subject (Chemistry needs a 5). Languages give 8 hrs plus placement into the 3rd or 4th term.",
+ chart:`
+AFAM 4=E3:ETST 10XX
+ART2D,ART3D,DRAW 4=C3:ARTS:Studio art (ASDR/ASPH/ASPT 1300)
+ARTH 4=ARTH,E3:ARHS 1304
+MUSTH 4=E3:MUTH 10XX
+BIO 4=BIO
+CHEM 5=CHEM
+ENVSCI 4=C3:SCI:GEOL 1315
+PHYS1 4=C3:SCI:SCI 10XX (Physics 1)
+PHYS2 4=C3:SCI:SCI 10YY (Physics 2)
+PHYSCM 4=PHYS@3
+PHYSCE 4=PHYS2@3
+CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN 4=$*2@8,P:Placement into 3rd-term course;5=$*2@8,P:Placement into 4th-term course
+SPLIT 4=SPAN*2@8
+CSA 4=CS1@3
+CSP 4=E3:CS 10XX
+PRECALC 4=PRECALC@3
+CALC_AB 4=CALC1@3
+CALC_BC 3=P:Calc I credit only with an AB subscore of 4+;4=CALC1@3,CALC2@3
+STATS 4=STATS
+MACRO 4=MACRO
+MICRO 4=MICRO
+ENG_LANG,ENG_LIT 4=E6:WRTR 10XX + 10YY (writing)
+EURO 4=E6:HIST 20XX/20YY (European)
+HUG 4=E3:HUM 10XX
+PSYC 4=PSYC
+GOV 4=GOVT1
+COMPGOV 4=COMPGOV
+USH 4=USHIST1,USHIST2
+WORLD 4=C3:LPC:HUM 10YY (World)`},
+
+{id:"TCU", name:"TCU", full:"Texas Christian University", city:"Fort Worth", group:"txpriv", annual:61740, unitid:228875, tx:true, status:"verified", core:"PRIV",
+ srcs:["https://admissions.tcu.edu/apply/first-year/college-credits/credit-by-exam.php","https://registrar.tcu.edu/prospective-students/transfer-credit.php"], unl:"none~", ib:{mode:"hl",min:5,est:true}, dc:{min:"C", v:true, as:"tag", note:"TCU accepts college courses taken while in high school from accredited colleges (grade C or better)."},
+ note:"Mixed minimums: English, calculus, statistics, U.S. Government and languages credit at a 3; most others need a 4.",
+ chart:`
+AFAM 4=E3:CRES 20103
+ARTH 3=ARTH
+DRAW 3=STUDIO
+RESEARCH,SEMINAR 4=E3:TRAN 10001 (#)
+MUSTH 3=E3:MUSI 10003;4=E6:MUSI 10003 + THEA 31503
+BIO 3=C3:SCI:BIOL 10003;4=BIO;5=BIO,BIO2
+CHEM 4=CHEM@3;5=CHEM@3,CHEM2@5
+ENVSCI 4=C3:SCI:ENSC 10143
+PHYS1 4=PHYSALG
+PHYS2 4=PHYSALG2
+PHYSCM 4=PHYS
+PHYSCE 4=PHYS2
+CHIN,FREN,GERM,ITAL,LATIN 3=$*2@6;4=$*3@9;5=$*4@12
+SPAN,SPLIT 3=SPAN*2@6;4=SPAN*4@12
+CSA 4=CS1@3
+CYBER 4=E3:CITE 10000
+CALC_AB 3=BUSCALC;4=CALC1
+CALC_BC 3=CALC1;5=CALC1,CALC2
+PRECALC 4=PRECALC@4
+STATS 3=STATS
+MACRO 4=MACRO
+MICRO 4=MICRO
+ENG_LANG 3=ENGCOMP1;4=ENGCOMP1,ENGCOMP2
+ENG_LIT 3=ENGCOMP1;4=ENGCOMP1,LIT
+USH 4=USHIST1,USHIST2
+EURO 4=EURO
+WORLD 4=WORLD1
+HUG 4=HUMGEO
+GOV 3=C3:GOVT:POSC 10000 (U.S.)
+COMPGOV 3=C3:SOC:POSC 10000 (Comparative)
+PSYC 4=PSYC`},
+
+{id:"TRIN", name:"Trinity", full:"Trinity University", city:"San Antonio", group:"txpriv", annual:53676, unitid:229267, tx:true, status:"verified", core:"PRIV",
+ srcs:["https://trinity.edu/registrar/external-credits"], unl:"none~", ib:{mode:"hl",min:5,est:true}, dc:{min:"C", v:true, as:"tag", note:"Trinity accepts dual credit only if it was not used to meet high-school graduation/admission minimums."},
+ note:"Most exams need a 4 or 5. All three AP history exams (5) share one 3-hr HIST-1390 credit. Calc BC earns Calc I only with an AB subscore of 4+.",
+ chart:`
+AFAM 4=E3:AFAM-1380
+DRAW 5=E4:ART-1309
+ARTH 5=E4:ARTH-1306
+MUSTH 4=MUSTH@2
+BIO 4=BIO@3
+CHEM 4=CHEM@3
+ENVSCI 4=C3:SCI:ENVI-1305
+PHYSCM 4=PHYS@3
+PHYSCE 4=PHYS2@3
+CHIN,FREN,GERM 4=E3:$-3300 (AP credit)
+LATIN 4=E3:LATN-4391
+SPAN 4=E4:SPAN-3401
+SPLIT 4=E3:SPAN-4391
+CSA 4=CS1@3
+CSP 4=E3:CSCI-1301
+CALC_AB 4=CALC1@3
+CALC_BC 4=CALC1@3,CALC2@3
+MICRO 4=MICRO
+MACRO 4=MACRO
+ENG_LANG 5=ENGCOMP2@3
+ENG_LIT 4=LIT@3;5=LIT@3,LIT2@3
+USH,EURO,WORLD 5=E3:HIST-1390 (AP history)
+GOV 5=GOVT1
+COMPGOV 5=COMPGOV
+PSYC 5=PSYC`},
+
+{id:"SWU", name:"Southwestern", full:"Southwestern University", city:"Georgetown", group:"txpriv", annual:53813, unitid:228343, tx:true, status:"partial", core:"PRIV",
+ srcs:["https://www.southwestern.edu/academics/records-registrar/transfer-credit-ap-ib/","https://www.southwestern.edu/live/files/12078-ap-exam-course-equivalency-chart-june-2025pdf"], unl:{min:4}, ib:{mode:"hl",min:5,est:true},
+ dc:{min:"C", v:true, as:"tag", excl:["MATH1314","MATH1316"], note:"Southwestern needs an official college transcript; developmental courses and College Algebra/Trig don't transfer. The final 32 credits must be taken at SU."},
+ note:"Each accepted AP exam earns 4 credits (Southwestern courses are 4 credits). Exams not on the June 2025 chart are estimated.",
+ chart:`
+PSYC 4=PSYC@4
+STATS 4=STATS@4
+RESEARCH,SEMINAR 4=E4:ELEC-004 (#)
+SPAN 4=E4:SPA 164;5=E4:SPA 214
+SPLIT 4=E4:Spanish literature
+ART2D,ART3D,DRAW 4=E4:ART68-004
+USH,WORLD 4=E4:HIS16-004 (#)
+ENG_LANG 4=E4:English elective
+PHYS1,PHYS2 4=C4:SCI:PHY53-004 (#)
+MACRO,MICRO 4=E4:ECO31-004 (#)
+CALC_BC 4=CALC2@4`},
+
+/* ============================ IVY LEAGUE ============================ */
+{id:"HARV", name:"Harvard", full:"Harvard University", city:"Cambridge, MA", group:"ivy", annual:61676, unitid:166027, status:"verified", core:"NONE", examNoCore:true, maxSem:0,
+ srcs:["https://college.harvard.edu/resources/faq/can-i-fulfill-academic-requirements-previous-coursework","https://placement.college.harvard.edu/faq/"], unl:"place", ib:{mode:"place"}, dc:{ok:false, v:true, note:"Harvard does not accept credit for coursework completed before matriculation."},
+ note:"No degree credit for AP, IB or dual credit. Scores are used for placement and, in some cases, the language requirement.", chart:``},
+
+{id:"YALE", name:"Yale", full:"Yale University", city:"New Haven, CT", group:"ivy", annual:67250, unitid:130794, status:"verified", core:"NONE", examNoCore:true,
+ srcs:["https://catalog.yale.edu/ycps/table-of-acceleration-credit/","https://college.yale.edu/academics/acceleration"], unl:"none", ib:{mode:"hl",min:6,est:true}, dc:{ok:false, v:false, note:"Yale does not award credit for college courses taken in high school (estimated from acceleration rules)."},
+ note:"Only 'acceleration credit' (1 credit ≈ 3 hrs here), max 2 per subject, and only useful if you choose to graduate early. Most subjects need a 5.",
+ chart:`
+ENG_LANG,ENG_LIT 5=E3:English acceleration credit
+ARTH 5=E3:History of Art acceleration credit
+CHIN,FREN,GERM,JAPN,LATIN,SPAN 5=E6:$ acceleration credits
+ITAL 5=E3:Italian acceleration credit
+CALC_AB 5=CALC1@3
+CALC_BC 4=CALC1@3;5=CALC1@3,CALC2@3
+MUSTH 5=E3:Music acceleration credit
+PHYSCM 5[CALC_BC>=4]=PHYS@3
+PHYSCE 5[CALC_BC>=4]=PHYS2@3
+CHEM,CSA,CSP,MACRO,MICRO,PHYS1,PHYS2 none`},
+
+{id:"PRIN", name:"Princeton", full:"Princeton University", city:"Princeton, NJ", group:"ivy", annual:62688, unitid:186131, status:"verified", core:"NONE", examNoCore:true, maxSem:0,
+ srcs:["https://advising.princeton.edu/placement/advanced-standing","https://advising.princeton.edu/placement/advanced-placement"], unl:"place", ib:{mode:"place"}, dc:{ok:false, v:false, note:"No credit units for pre-college coursework (estimated)."},
+ note:"Advanced standing is discontinued from the Class of 2029: scores give placement and requirement fulfillment only, no units of credit.", chart:``},
+
+{id:"COLU", name:"Columbia", full:"Columbia University", city:"New York, NY", group:"ivy", annual:71845, unitid:190150, status:"partial", core:"NONE", examNoCore:true, maxSem:0, hrsCap:16,
+ srcs:["https://www.cc-seas.columbia.edu/csa/transferfaqs"], unl:{min:4}, ib:{mode:"hl",min:6,est:true}, dc:{ok:false, v:false, note:"Not modeled as counting (estimated)."},
+ note:"Verified: up to 16 AP points can apply; AP can't satisfy the Core except the language requirement; students are expected to graduate in eight semesters. The exam-by-exam chart was not retrieved, so equivalents are estimated.", chart:``},
+
+{id:"PENN", name:"Penn", full:"University of Pennsylvania", city:"Philadelphia, PA", group:"ivy", annual:68686, unitid:215062, status:"verified", core:"NONE", examNoCore:true,
+ srcs:["https://admissions.upenn.edu/how-to-apply/first-year-applicants/pre-college-credits"], unl:"none", ib:{mode:"hl",min:6,est:true}, dc:{ok:false, v:false, note:"Not modeled as counting (estimated)."},
+ note:"Credit only for a 5 in a handful of subjects (1 course unit ≈ 4 hrs here). Many 5s give a waiver, not credit. No credit for Biology, English, history, Calc AB or Gov.",
+ chart:`
+ARTH 5=P:Waiver for ARTH 1010/1020
+CSA 5=CS1@4
+MICRO 5=P:ECON 0100 waiver
+MACRO 5=P:ECON 0200 waiver
+FREN 4=P:Fulfills language requirement;5=E4:FREN 1000
+GERM 5=E4:GERM 0400
+ITAL 4=P:Fulfills language requirement;5=E4:ITAL 1000
+JAPN 5=E4:JPAN 0400
+SPAN 4=P:Fulfills language requirement;5=E4:SPAN 1000
+SPLIT 4=P:Fulfills language requirement;5=E4:SPAN 1200
+CALC_BC 5=CALC1@4
+PHYS1 5=PHYSALG@6
+PHYS2 5=PHYSALG2@6
+PHYSCM 5=PHYS@6
+PHYSCE 5=PHYS2@6
+PSYC 5=P:PSYC 0001 waiver
+STATS 5=P:STAT 1010/1110 waiver
+CHEM 5=P:EAS 091 credit for Engineering students only`},
+
+{id:"BROWN", name:"Brown", full:"Brown University", city:"Providence, RI", group:"ivy", annual:71412, unitid:217156, status:"verified", core:"NONE", examNoCore:true, maxSem:0,
+ srcs:["https://college.brown.edu/design-your-education/academic-policies/test-scores/advanced-placement-exams"], unl:"place", ib:{mode:"place"}, dc:{ok:false, v:false, note:"Not modeled as counting (estimated)."},
+ note:"Brown gives placement credit only (0.0 course credit): it lets you skip intro courses but doesn't count toward the 30 courses.", chart:``},
+
+{id:"DART", name:"Dartmouth", full:"Dartmouth College", city:"Hanover, NH", group:"ivy", annual:68268, unitid:182670, status:"verified", core:"NONE", examNoCore:true, maxSem:0,
+ srcs:["https://registrar.dartmouth.edu/students/enrollment/prematriculation-credits-exemptions","https://registrar.dartmouth.edu/students/enrollment/prematriculation-credits-exemptions/credit-entranceexemption-charts"], unl:"none", ib:{mode:"place"}, dc:{ok:false, v:false, note:"Not modeled as counting (estimated)."},
+ note:"'Credit on entrance' lets you skip courses but does not count toward the 35 courses required to graduate.",
+ chart:`
+CALC_AB 4=P:Math 3 credit on entrance (placement Math 8)
+CALC_BC 4=P:Math 3 + Math 8 credit on entrance
+CHEM 4=P:Chemistry 5 credit on entrance
+CSA 4=P:Computer Science 1 credit on entrance
+MICRO 5=P:Economics 1 credit on entrance
+ENVSCI 4=P:Environmental Studies 2 credit on entrance
+HUG 4=P:Exemption from Geography 02.01;5=P:Geography 02.01 credit on entrance
+FREN 4=P:French 2 exemption;5=P:French 3 exemption
+GERM 4=P:German 1-2 exemption;5=P:German 1-3 exemption
+ITAL 4=P:Italian 2 exemption;5=P:Italian 3 exemption
+LATIN 4=P:Latin 3 exemption
+PHYSCM 4=P:Physics 3 credit on entrance
+PHYSCE 4=P:Physics 4 credit on entrance
+SPLIT 4=P:Spanish 3 exemption;5=P:Spanish 9 credit on entrance
+SPAN 4=P:Spanish 3 exemption
+STATS 4=P:Math 10 credit on entrance`},
+
+{id:"CORN", name:"Cornell", full:"Cornell University", city:"Ithaca, NY", group:"ivy", annual:69314, unitid:190415, status:"partial", core:"PRIV",
+ srcs:["https://courses.cornell.edu/enrollment-credit-requirements/advanced-placement-standing/"], unl:"none~", ib:{mode:"hl",min:6,est:true}, dc:{as:"elective", min:"C", v:false, note:"Varies by Cornell college; modeled as elective credit (estimated)."},
+ note:"Each Cornell college decides how AP credit counts. Key STEM rows are transcribed; others are not modeled.",
+ chart:`
+BIO 4=E4:Biology (general elective);5=E8:Biology (general elective)
+CHEM 5=CHEM@4
+CSA 5=CS1@4
+CSP none
+MICRO 5=MICRO
+MACRO 5=MACRO
+ENG_LANG,ENG_LIT 4=P:Varies by Cornell college
+CALC_AB 4=CALC1@4
+CALC_BC 4=CALC1@4,CALC2@4`},
+
+/* ============================ OTHER SELECTIVE ============================ */
+{id:"STAN", name:"Stanford", full:"Stanford University", city:"Stanford, CA", group:"sel", annual:65910, unitid:243744, status:"partial", core:"NONE", examNoCore:true, hrsCap:30, capShared:true,
+ srcs:["https://studentservices.stanford.edu/my-academics/earn-my-degree/undergraduate-degree-progress/test-transfer-credit/external-test-0","https://bulletin.stanford.edu/academic-polices/transfer-test-credit/undergraduate-test"], unl:"none~", ib:{mode:"hl",min:6,est:true}, dc:{as:"elective", min:"C", v:true, note:"College courses can transfer as elective units within Stanford's combined 45-quarter-unit (≈30 semester hrs) limit."},
+ note:"Stanford uses quarter units (×2/3 = semester hrs). Only a few departments award AP credit.",
+ chart:`
+CHEM 5=CHEM@4,CHEM2@3
+CSA,CSP 4=E3:CS 105/106A (one CS exam only)
+MACRO 5[MICRO>=5]=P:ECON 1 satisfied (needs 5 on both)
+MICRO 5[MACRO>=5]=E3:ECON 1 (5 on Micro and Macro)
+CALC_AB 5=CALC1@4
+CALC_BC 4=CALC1@4;5=CALC1@4,CALC2@3`},
+
+{id:"MIT", name:"MIT", full:"Massachusetts Institute of Technology", city:"Cambridge, MA", group:"sel", annual:62396, unitid:166683, status:"verified", core:"NONE", examNoCore:true,
+ srcs:["https://firstyear.mit.edu/academics-exploration/ap-transfer-credit/advanced-placement/","https://firstyear.mit.edu/academics-exploration/ap-transfer-credit/"], unl:"none", ib:{mode:"hl",min:7,est:true}, dc:{ok:false, v:false, note:"Not modeled as counting (estimated)."},
+ note:"Only a 5 counts. Calc BC 5 = 18.01; 5 on both Physics C exams = 8.01; humanities/arts/language 5s = 9 MIT units (≈3 hrs) of unrestricted elective, never HASS.",
+ chart:`
+CALC_BC 5=CALC1@4
+CALC_AB 5=P:Placement into accelerated 18.01A/18.02A
+PHYSCM 5[PHYSCE>=5]=PHYS@4
+PHYSCE 5[PHYSCM>=5]=P:Counted with Physics C: Mechanics (8.01)
+AFAM,ARTH,ART2D,ART3D,DRAW,MUSTH,ENG_LANG,ENG_LIT,EURO,USH,WORLD,GOV,COMPGOV,HUG,MACRO,MICRO,PSYC,CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN,SPLIT 5=E3:# (9 MIT units elective)
+SEMINAR 5[RESEARCH>=5]=E3:Capstone (9 MIT units elective)
+BIO,CHEM,CSA,CSP,ENVSCI,STATS,PHYS1,PHYS2,PRECALC,RESEARCH none`},
+
+{id:"UCHI", name:"UChicago", full:"University of Chicago", city:"Chicago, IL", group:"sel", annual:70662, unitid:144050, status:"verified", core:"NONE", hrsCap:12,
+ srcs:["http://collegecatalog.uchicago.edu/thecollege/apibalevelexams/","http://collegecatalog.uchicago.edu/thecollege/examinationcreditandtransfercredit/"], unl:"none", ib:{mode:"hl",min:7,est:false}, dc:{ok:false, v:false, note:"Not modeled as counting (estimated)."},
+ note:"Most credit needs a 5 and is general elective (100 units ≈ 3 hrs). Calculus gives placement, languages satisfy Language Competence. At least 3800 of 4200 units must come from courses (≈12 hrs max from exams).",
+ chart:`
+AFAM,ARTH,DRAW,ART2D,ART3D,ENG_LANG,ENG_LIT,ENVSCI,EURO,MUSTH,USH,WORLD 5=E3:# (100 units elective)
+BIO 4=BIO@3
+CALC_AB 5=P:MATH 15100 placement
+CALC_BC 4=P:MATH 15200 placement
+CHEM 5=CHEM@3
+CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN,SPLIT 5=P:Satisfies Language Competence requirement
+MACRO 5[MICRO>=5]=E3:Economics (Micro + Macro, 100 units)
+MICRO 5[MACRO>=5]=P:Counted with AP Macro
+GOV 5[COMPGOV>=5]=E3:Government (U.S. + Comparative, 100 units)
+COMPGOV 5[GOV>=5]=P:Counted with AP U.S. Gov
+PHYSCM 5=PHYS@3
+PHYSCE 5=PHYS2@3
+STATS 5=STATS@3
+CSA,CSP,HUG,PHYS1,PHYS2,PRECALC,PSYC,RESEARCH,SEMINAR none`},
+
+{id:"DUKE", name:"Duke", full:"Duke University", city:"Durham, NC", group:"sel", annual:68758, unitid:198419, status:"verified", core:"NONE", examNoCore:true, hrsCap:6, capShared:true,
+ srcs:["https://trinity.duke.edu/undergraduate/academic-policies/credit-AP-IPC-PMC","https://trinity.duke.edu/undergraduate/academic-policies/AP-credit-by-department"], unl:"none", ib:{mode:"hl",min:6,est:true}, dc:{as:"elective", min:"C", v:true, note:"Pre-Matriculation Credit (college courses in high school) is treated like AP, within the same limit."},
+ note:"Only 2 pre-college credits (≈6 hrs) can count toward graduation, across AP, IB and dual credit combined, and they never satisfy Areas of Knowledge or Modes of Inquiry. Economics and Human Geography: no credit.",
+ chart:`
+AFAM 4=E3:AAAS 99
+ARTH 5=E3:ARTHIST 20
+ART2D,ART3D,DRAW 5=E3:ARTSVIS 21
+MUSTH 4=E3:MUSIC 161
+BIO 4=BIO@3
+CHEM 4=CHEM@3
+ENVSCI 4=E3:ENVIRON 20
+PHYSCM 4=PHYS@3
+PHYSCE 4=PHYS2@3
+CHIN 4=E3:CHINESE 203
+FREN 5=E3:FRENCH 20
+GERM 4=E3:GERMAN 29
+ITAL 4=E3:ITALIAN 203
+JAPN 4=E3:JAPANESE 203
+LATIN 4=E3:LATIN 25
+SPAN 5=E3:SPANISH 204
+SPLIT 4=E3:SPANISH 204
+CSA 4=CS1@3
+CSP 5=E3:COMPSCI 20
+CALC_AB 5=CALC1@3
+CALC_BC 4=CALC1@3;5=CALC1@3,CALC2@3
+STATS 5=STATS@3
+ENG_LIT 4=E3:ENGLISH 20
+ENG_LANG 4=E3:ENGLISH 22
+EURO 4=E6:HIST 25 + 26
+USH 4=E6:HIST 23 + 24
+WORLD 4=E3:HISTORY 21
+GOV 4=E3:POLSCI 20
+COMPGOV 4=E3:POLSCI 21
+PSYC 5=PSYC@3
+MACRO,MICRO,HUG,PHYS1,PHYS2 none`},
+
+{id:"NWU", name:"Northwestern", full:"Northwestern University", city:"Evanston, IL", group:"sel", annual:68322, unitid:147767, status:"verified", core:"PRIV",
+ srcs:["https://weinberg.northwestern.edu/undergraduate/first-year/credits/apib-credit-2026-27.html"], unl:"none", ib:{mode:"hl",min:6,est:false}, dc:{as:"elective", min:"C", v:false, note:"Modeled as elective credit (estimated)."},
+ note:"Weinberg College chart. Most credit needs a 5 (1 NU unit ≈ 3 hrs). Some exams also satisfy a distribution area. IB: Higher Level 6–7 only.",
+ chart:`
+AFAM,ARTH,ART2D,ART3D,DRAW,ENVSCI,HUG,MUSTH 5=E3:# (1 unit)
+PSYC 5=PSYC@3
+MACRO 5=MACRO@3
+MICRO 5=MICRO@3
+GOV 5=GOVT1@3
+COMPGOV 5=COMPGOV@3
+EURO,USH,WORLD 5=E6:# (2 units)
+BIO 5=E3:BIOL_SCI 1XX
+CHEM 5=CHEM@3
+PHYS1 5=PHYSALG
+PHYS2 5=PHYSALG2
+PHYSCM 5=PHYS
+PHYSCE 5=PHYS2
+CHIN,FREN,GERM,ITAL,JAPN,LATIN,SPAN 4=E3:$ (1 unit);5=E6:$ (2 units)
+SPLIT 4=E3:Spanish literature (1 unit);5=E6:Spanish literature (2 units)
+CSA 4=CS1@3
+CSP 4=E3:COMP_SCI 1CP
+CALC_AB 4=CALC1@3;5=CALC1@3,CALC2@3
+CALC_BC 4=CALC1@3,CALC2@3;5=CALC1@3,CALC2@3,CALC3@3
+STATS 4=STATS@3
+ENG_LANG 5=E6:ENGLISH 1LC
+ENG_LIT 5=E6:ENGLISH 1LT`},
+
+{id:"JHU", name:"Johns Hopkins", full:"Johns Hopkins University", city:"Baltimore, MD", group:"sel", annual:65230, unitid:162928, status:"verified", core:"NONE", examNoCore:true,
+ srcs:["https://e-catalogue.jhu.edu/ksas-wse/undergraduate-policies/academic-policies/external-credit-policies/"], unl:"none~", ib:{mode:"hl",min:6,est:true}, dc:{as:"tag", min:"C", v:true, cap:12, note:"Up to 12 credits from approved college courses taken at other institutions."},
+ note:"STEM exams with 4–5 earn real course credit (e.g. Calc BC 5 = 8 credits). For Arts & Sciences, exam credit doesn't fill distribution areas.",
+ chart:`
+BIO 5=BIO@3,BIO2@3
+CHEM 4=CHEM@4;5=CHEM@4,CHEM2@4
+ENVSCI 4=C4:SCI:TR.270.100
+CSA 5=CS1@3
+CALC_AB 5=CALC1@4
+CALC_BC 3=CALC1@4;5=CALC1@4,CALC2@4
+PHYSCM 4=PHYS@4
+PHYSCE 4=PHYS2@4
+STATS 4=STATS@4`},
+
+{id:"VAND", name:"Vanderbilt", full:"Vanderbilt University", city:"Nashville, TN", group:"sel", annual:67498, unitid:221999, status:"verified", core:"NONE", examNoCore:true, hrsCap:18,
+ srcs:["https://registrar.vanderbilt.edu/advanced-credit-and-course-placement/","https://cdn.vanderbilt.edu/vu-sub/wp-content/uploads/sites/299/2026/09/05100540/Undergraduate-Catalog-2025-26.pdf"], unl:"none", ib:{mode:"hl",min:6,est:true}, dc:{as:"elective", min:"C", v:false, note:"Modeled as elective (estimated)."},
+ note:"Arts & Science: max 18 hrs from AP/IB combined, and exam credit can't fulfill the College Core (from Fall 2025). Most exams need a 4 or 5.",
+ chart:`
+AFAM 4=E3:AADS (no equivalent)
+ARTH 4=ARTH@3,E3:HART 1105
+ART2D,ART3D,DRAW 4=E3:ARTS studio (no equivalent)
+CSA 5=CS1@3
+CSP 5=E3:CS 1000
+MACRO 4=MACRO
+MICRO 4=MICRO
+ENG_LANG 4=ENGCOMP2@3
+ENG_LIT 4=LIT@3,E3:ENGL 1230W
+COMPGOV 4=COMPGOV
+GOV 4=GOVT1
+EURO 4=E3:HIST European (no equivalent)
+USH 4=E3:HIST U.S. (no equivalent)
+WORLD 4=E3:HIST World (no equivalent)
+CHIN 4=CHIN3@5;5=CHIN3@5,CHIN4@5
+FREN 4=E6:FREN 2203 + 2501W
+GERM 4=GERM3@3,GERM4@3
+ITAL 4=E6:ITA 2203 + 2501W
+JAPN 4=JAPN3@3;5=JAPN3@3,JAPN4@3
+LATIN 4=E3:LAT 2202
+SPAN 4=E3:SPAN 2010 (non-equivalent);5=E3:SPAN 2012 (non-equivalent)
+SPLIT 5=E3:SPAN 2011 (non-equivalent)
+CALC_AB 5=CALC1@4
+CALC_BC 5=CALC1@4,CALC2@4
+MUSTH 5=MUSTH@3
+PSYC 5=PSYC
+BIO 4=E3:BSCI 1509
+CHEM 5=CHEM@4,CHEM2@4
+ENVSCI 4=E3:EES (no equivalent)
+PHYS1 5=E4:PHYS 1010 + lab (not for physics/engineering)
+PHYS2 5=E4:PHYS (no equivalent; not for physics/engineering)
+PHYSCE 5=PHYS2@4
+PHYSCM 5=PHYS@4
+STATS 4=STATS@3
+HUG,PRECALC none`},
+
+{id:"WASHU", name:"WashU", full:"Washington University in St. Louis", city:"St. Louis, MO", group:"sel", annual:65790, unitid:179867, status:"partial", core:"NONE", examNoCore:true, hrsCap:15, capShared:true,
+ srcs:["https://bulletin.wustl.edu/undergrad/admissions/"], unl:{min:4}, ib:{mode:"hl",min:6,est:true}, dc:{as:"elective", min:"C", v:true, note:"College credit earned after sophomore year of high school (not used for HS graduation) counts as pre-matriculation credit, within the 15-unit limit."},
+ note:"Verified: max 15 units of pre-matriculation credit (AP + IB + college courses) count toward graduation, never toward distribution requirements. Exam-by-exam equivalents are estimated.", chart:``},
+
+{id:"EMORY", name:"Emory", full:"Emory University", city:"Atlanta, GA", group:"sel", annual:64280, unitid:139658, status:"partial", core:"NONE", examNoCore:true, hrsCap:12,
+ srcs:["https://apply.emory.edu/apply/requirements/credits","https://college.catalog.emory.edu/ecaspolicies/ap"], unl:"flat3", ib:{mode:"hl",min:5,est:true}, dc:{ok:false, v:true, note:"Emory does not award credit for college courses taken before high-school graduation that counted toward the diploma (modeled as not counting)."},
+ note:"Verified: 3 hrs per accepted score of 4+, max 12 hrs, and exam credit can't satisfy general education except First-Year Writing. Which exams map to which courses is estimated. Only one exam per field (e.g. one English).",
+ chart:`
+ENG_LANG,ENG_LIT 4=ENGCOMP1@3`},
+
+{id:"ND", name:"Notre Dame", full:"University of Notre Dame", city:"Notre Dame, IN", group:"sel", annual:65025, unitid:152080, status:"partial", core:"PRIV",
+ srcs:["https://advising.nd.edu/first-year-and-incoming-students/requirements-and-credits/advanced-credit-and-placements/advanced-credit-exams/"], unl:"none~", ib:{mode:"hl",min:6,est:true}, dc:{as:"elective", min:"C", v:false, note:"Modeled as elective credit (estimated)."},
+ note:"Most credit needs a 5; a 4 gives elective credit in Biology and Chemistry. World-language rows are estimated.",
+ chart:`
+BIO 4=E3:BIOS 10101;5=BIO,BIO2
+CALC_AB 5=CALC1@4
+CALC_BC 5=CALC1@4,CALC2@4
+CHEM 4=E3:CHEM 10101;5=CHEM@4
+MACRO 5=MACRO
+MICRO 5=MICRO
+ENG_LANG 4=ENGCOMP1@3
+FREN~,GERM~,ITAL~,LATIN~ 4=E6:$ credit
+COMPGOV 5=COMPGOV
+GOV 5=GOVT1
+EURO 5=EURO
+USH 5=USHIST1@3
+WORLD 5=WORLD1
+MUSTH 5=MUSTH@3
+PHYS1 5=PHYSALG@3
+PHYS2 5=PHYSALG2@3
+PHYSCM 4=PHYS@4
+PHYSCE 4=PHYS2@4
+PSYC 5=PSYC`},
+
+{id:"GTWN", name:"Georgetown", full:"Georgetown University", city:"Washington, DC", group:"sel", annual:68017, unitid:131496, status:"partial", core:"PRIV",
+ srcs:["https://bulletin.georgetown.edu/admissions/advanced-credit/"], unl:{min:4}, ib:{mode:"hl",min:6,est:true}, dc:{as:"elective", min:"C", v:false, cap:12, note:"Modeled as up to 12 elective credits (estimated)."},
+ note:"Credit usually needs a 4 or 5; many awards are free electives. Chinese needs a placement test plus a Georgetown course. Unlisted exams are estimated.",
+ chart:`
+CALC_AB 5=CALC1@4
+CALC_BC 4=CALC1@4
+BIO 4=E3:Biology (free elective);5=E4:Biology (free elective)
+CHEM 5=E3:Chemistry (free elective)
+RESEARCH,SEMINAR none
+CHIN 4=P:Credit only after placement test + a Georgetown course`},
+
+{id:"CALT", name:"Caltech", full:"California Institute of Technology", city:"Pasadena, CA", group:"sel", annual:65898, unitid:110404, status:"verified", core:"NONE", examNoCore:true, maxSem:0,
+ srcs:["https://www.catalog.caltech.edu/current/information-for-undergraduate-students/admission-to-the-first-year-class/","https://registrar.caltech.edu/current-students/faq"], unl:"place", ib:{mode:"place"}, dc:{ok:false, v:false, note:"Not modeled as counting (estimated)."},
+ note:"Caltech does not grant credit for AP or IB; placement into advanced courses is by Caltech's own exams.", chart:``},
+
+{id:"GT", name:"Georgia Tech", full:"Georgia Institute of Technology", city:"Atlanta, GA", group:"sel", annual:34484, unitid:139755, oos:true, status:"verified", core:"PRIV",
+ srcs:["https://catalog.gatech.edu/academics/undergraduate/credit-tests-scores/advanced-placement-exams/"], unl:"none", ib:{mode:"hl",min:6,est:true}, dc:{as:"tag", min:"C", v:false, note:"Transfer work evaluated course-by-course (estimated)."},
+ note:"Out-of-state tuition used. Most credit needs a 4. Physics C at a 4 needs a GT validation test; a 5 earns credit outright. No credit for Statistics, Italian or Drawing.",
+ chart:`
+AFAM 4=E3:HTS 1XXX (AAS)
+ARTH 4=E3:ID 2242
+ART2D,ART3D 4=E3:ARCH 1XXX (#)
+MUSTH 4=MUSTH@3
+BIO 4=BIO@4
+CHEM 4=C4:SCI:CHEM 1211K;5=CHEM@4
+ENVSCI 4=C4:SCI:EAS 1600
+PHYSCM 4=P:Score of 4: GT placement test to validate credit;5=PHYS@4
+PHYSCE 4=P:Score of 4: GT placement test to validate credit;5=PHYS2@4
+PHYS1 4=PHYSALG@4
+PHYS2 4=E3:PHYS 2XXX
+CHIN,JAPN 3=$*2@8;4=$2@4,$3@3,$4@3;5=$3@3,$4@3,E3:$ 3XXX
+FREN,GERM,SPAN 3=$*2@6;4=$2@3,$3@3,$4@3;5=$3@3,$4@3,E3:$ 3XXX
+SPLIT 3=SPAN*2@6;4=SPAN2@3,SPAN3@3,SPAN4@3;5=SPAN3@3,SPAN4@3,E3:SPAN 3XXX
+LATIN 4=E6:LATN 2XXX
+CALC_AB 4=CALC1@4
+CALC_BC 4=CALC1@4,CALC2@4
+PRECALC 4=PRECALC@4
+CSA 4=CS1@3
+CSP 4=E3:CS 1XXX
+ENG_LANG,ENG_LIT 4=ENGCOMP1@3
+EURO 4=E3:HTS 1031
+COMPGOV,GOV 4=E3:INTA 1200 / POL 1101 (one only)
+HUG 4=E3:SS 1XXX
+MACRO 4=MACRO
+MICRO 4=MICRO
+PSYC 4=PSYC
+USH 4=USHIST1@3
+WORLD 4=E3:HTS 1XXX (World)
+ITAL,STATS,DRAW none`},
+
+{id:"TUL", name:"Tulane", full:"Tulane University", city:"New Orleans, LA", group:"sel", annual:68678, unitid:160755, status:"verified", core:"PRIV",
+ srcs:["https://catalog.tulane.edu/newcomb-tulane/ap-ib-a-level-equivalencies/","https://admission.tulane.edu/academics/earning-college-credit"], unl:"none", ib:{mode:"hl",min:5,est:true}, dc:{as:"elective", min:"C", v:false, note:"Modeled as elective credit (estimated)."},
+ note:"Credit at a 4 for most exams; Calc BC 3 counts only with an AB subscore of 4+.",
+ chart:`
+ARTH 4=ARTH@3
+DRAW,ART2D 4=E3:ARST 1101
+ART3D 4=E4:ARST 1490
+MUSTH 4=MUSTH@3
+BIO 4=E3:CELL 1500;5=BIO@4,BIO2@3
+CHEM 4=CHEM@4;5=CHEM@4,CHEM2@4
+ENVSCI 4=C4:SCI:EENS 1300
+PHYS1 4=PHYSALG
+PHYS2 4=PHYSALG2
+PHYSCM 4=PHYS
+PHYSCE 4=PHYS2
+CHIN,GERM,ITAL,JAPN,LATIN 4=E4:$ 2030
+FREN 4=E4:FREN 2030;5=E3:FREN 3150
+SPAN,SPLIT 4=E4:SPAN 2030
+CSA 4=CS1@3
+CSP 4=E3:CMPS 1950
+CALC_AB 4=CALC1@4
+CALC_BC 3=P:Calc I credit only with an AB subscore of 4+;4=CALC1@4,CALC2@4
+STATS 4=STATS
+MICRO 4=MICRO
+MACRO 4=MACRO
+ENG_LANG,ENG_LIT 4=ENGCOMP1@4
+EURO 4=EURO
+USH 4=USHIST1@3
+GOV 4=GOVT1
+COMPGOV 4=COMPGOV
+PSYC 4=PSYC`},
+
+{id:"USC", name:"USC", full:"University of Southern California", city:"Los Angeles, CA", group:"sel", annual:72097, unitid:123961, status:"verified", core:"PRIV", hrsCap:32, capShared:true,
+ srcs:["https://arr.usc.edu/ap-exam-credit-at-usc/"], unl:"flat4", ib:{mode:"hl",min:5,est:true}, dc:{as:"elective", min:"C", v:true, note:"College courses before HS graduation count as electives, within the combined 32-unit limit."},
+ note:"Every AP exam with a 4 or 5 earns 4 units of elective credit (no course equivalents). Some also satisfy a GE category or the language requirement. Max 32 units from exams + dual credit.",
+ chart:`
+ARTH 4=C4:ARTS:GE-A Arts (elective units)
+BIO 4=C4:SCI:GE-D Life Sciences (elective units)
+CHEM,PHYS1,PHYS2,PHYSCM,PHYSCE 4=C4:SCI:GE-E Physical Sciences (#)
+CALC_AB,CALC_BC,MACRO,MICRO,PRECALC,STATS 4=C4:MATH:GE-F Quantitative Reasoning (#)
+AFAM,EURO,USH,WORLD 4=C4:HIST:GE-H Traditions & Historical Foundations (#)
+CHIN,FREN,GERM,ITAL,JAPN,SPAN,SPLIT 4=C4:LPC:Third-level language requirement ($)
+SEMINAR 4=E4:AP Seminar (elective units)
+RESEARCH none`},
+
+{id:"UMICH", name:"Michigan", full:"University of Michigan–Ann Arbor", city:"Ann Arbor, MI", group:"sel", annual:60946, unitid:170976, oos:true, status:"partial", core:"PRIV",
+ srcs:["https://admissions.umich.edu/apply/first-year-applicants/ap-ib-credit/ap-guidelines"], unl:"none~", ib:{mode:"hl",min:6,est:true}, dc:{as:"tag", min:"C", v:false, note:"Transfer work evaluated course-by-course (estimated)."},
+ note:"LSA guidelines; out-of-state tuition used. Key rows transcribed; exams not modeled here are treated as no credit (estimated).",
+ chart:`
+AFAM 4=P:AAS 201X credit after completing an AAS course
+BIO 3=C4:SCI:Biology 100;4=BIO@4;5=BIO@5,E1:Biology 196
+CHEM 4=CHEM@5
+CHIN 3=P:UM placement test decides
+CSA 5=CS1@4
+CSP 4=E4:EECS 101x
+MACRO 4=E2:Economics departmental credit (macro)
+MICRO 4=E2:Economics departmental credit (micro)
+CALC_AB 5=CALC1@4
+CALC_BC 4=CALC1@4;5=CALC1@4,CALC2@4
+PHYSCM 5=PHYS@5
+PHYSCE 5=PHYS2@5`},
+
+{id:"OU", name:"Oklahoma", full:"University of Oklahoma", city:"Norman, OK", group:"sel", annual:27377, unitid:207500, oos:true, status:"verified", core:"PRIV",
+ srcs:["https://ou.edu/registrar/academic-records/transferring-credit/prior-learning-assessment-credits/advanced-placement"], unl:"none", ib:{mode:"tx",est:true}, dc:{as:"tag", min:"C", v:false, note:"Transfer work evaluated course-by-course (estimated)."},
+ note:"Out-of-state tuition used. Oklahoma law (HB 2750) bars requiring more than a 3, so every exam credits at a 3; since April 2026 unmatched exams earn ACE-recommended electives.",
+ chart:`
+ART2D,ART3D,DRAW 3=E3:ART 1999
+AFAM 3=E3:AFAM 1999
+ARTH 3=ARTH,E3:A HI 1999
+BUSPF 3=E6:ACCT 1999 + FIN 1999
+BIO 3=BIONM1@3,E1:BIOL 1999;4=BIO@4
+RESEARCH 3=E6:UNIV 3999
+SEMINAR 3=E3:UNIV 1999
+CHEM 3=CHEM@5,E3:CHEM 1999;4=CHEM@5,CHEM2@5
+CHIN 3=$*2@10;4=$*2@10,$3@3;5=$*4@16
+CSA 3=CS1@3,E1:C S 1999
+CSP 3=E3:C S 1999
+CYBER 3=E3:CYBS 1999
+MACRO 3=MACRO
+MICRO 3=MICRO
+ENG_LANG,ENG_LIT 3=ENGCOMP1,E3:ENGL 1999;5=ENGCOMP1,ENGCOMP2
+ENVSCI 3=C3:SCI:GEOL 1013
+EURO 3=EURO,E3:HIST 1233
+FREN 3=FREN1@5,E1:FR 1999;4=$*2@10;5=$*4@16
+GERM 3=$*2@10,E2:GERM 1999;4=$*3@13,E3:GERM 1999;5=$*4@16,E4:GERM 1999
+COMPGOV 3=COMPGOV
+GOV 3=GOVT1
+HUG 3=HUMGEO
+ITAL 3=ITAL1@5,E1:ITAL 1999;4=$*2@10;5=$*3@13
+JAPN 3=$*2@10;4=$*3@13;5=$*4@16
+LATIN 3=$*2@10;4=$*3@13;5=$*4@16
+CALC_AB 3=BUSCALC,E1:MATH 1999;4=CALC1@4
+CALC_BC 3=CALC1@4,E4:MATH 1999;4=BUSCALC,CALC2@3,E2:MATH 1999;5=CALC1@4,CALC2@4
+PRECALC 3=COLALG,E1:MATH 1999;4=PRECALC@3,E1:MATH 1999
+MUSTH 3=MUSTH@4;5=MUSTH@8
+PHYS1 3=C4:SCI:PHYS 1114;4=PHYSALG
+PHYS2 3=C4:SCI:PHYS 1114;4=PHYSALG2
+PHYSCM 3=C4:SCI:PHYS 1114;4=PHYS@4;5=PHYS@5
+PHYSCE 3=C4:SCI:PHYS 1114;4=PHYS2@4;5=PHYS2@5
+PSYC 3=PSYC
+SPAN 3=$*3@13;4=$*4@16;5=$*4@16,E3:SPAN 3073
+SPLIT 3=E9:SPAN 3853 + 1999;4=E12:SPAN 3853 + 1999;5=E15:SPAN 3853 + 1999
+STATS 3=STATS;5=STATS,P:ECON 2843 instead of PSY 2003
+USH 3=USHIST1,USHIST2
+WORLD 3=WORLD1,E3:HIST 1999`}
+];
+
+const COL = Object.fromEntries(COLLEGES.map(c=>[c.id,c]));
+const GROUPS = [
+  {id:"txpub", name:"Texas public universities", short:"TX public"},
+  {id:"txpriv", name:"Texas private universities", short:"TX private"},
+  {id:"ivy", name:"Ivy League", short:"Ivy"},
+  {id:"sel", name:"Other selective schools Texans apply to", short:"Selective"}
+];
+/* Majors: each entry in req is a requirement group; "A|B" = either course fills it.
+   LANG1 / LANG2 = first / second semester of any world language. */
+const MAJORS = [
+  {id:"UND", name:"Undecided", icon:"🧭", req:[], electiveCap:24, why:"No major courses yet. Credit goes to core / gen-ed first, then to the larger elective room most undecided plans allow."},
+  {id:"CS", name:"Computer Science", icon:"💻", req:["CALC1","CALC2","CS1","CS2","PHYS","STATS","LINALG"], electiveCap:6, why:"Calculus I/II, two programming courses, calculus-based physics, statistics and linear algebra appear in most CS plans."},
+  {id:"BUS", name:"Business", icon:"📈", req:["MICRO","MACRO","CALC1|BUSCALC","STATS","ACCT1","BCIS"], electiveCap:9, why:"Micro, macro, business calculus, statistics, accounting and business computing."},
+  {id:"ACCT", name:"Accounting / Finance", icon:"🧾", req:["ACCT1","ACCT2","MICRO","MACRO","BUSCALC|CALC1","STATS","BCIS","BUSI"], electiveCap:6, why:"Both accounting principles courses plus the business foundation (econ, calculus, statistics, computing)."},
+  {id:"BIO", name:"Biology", icon:"🧬", req:["BIO","BIO2","CHEM","CHEM2","CALC1|BUSCALC","STATS","PHYS|PHYSALG","PHYS2|PHYSALG2"], electiveCap:6, why:"Biology and chemistry sequences, calculus, statistics and a year of physics (either track)."},
+  {id:"PMED", name:"Pre-Med / Biomed", icon:"🩻", req:["BIO","BIO2","CHEM","CHEM2","PHYS|PHYSALG","PHYS2|PHYSALG2","CALC1","STATS","PSYC","SOCI"], electiveCap:6, why:"Typical medical-school prerequisites plus psychology and sociology for the MCAT.", warn:"Many medical schools want science prerequisites taken in college. Using AP/IB credit for them can mean taking upper-level courses instead, so check each med school."},
+  {id:"ENG", name:"Engineering (general)", icon:"⚙️", req:["CALC1","CALC2","CALC3","CHEM","PHYS","PHYS2","CS1","DIFFEQ"], electiveCap:3, why:"Calculus sequence, chemistry, calculus-based physics, programming and differential equations. Algebra-based physics doesn't count."},
+  {id:"MECH", name:"Mechanical / Aerospace", icon:"✈️", req:["CALC1","CALC2","CALC3","DIFFEQ","LINALG","PHYS","PHYS2","CHEM","CS1"], electiveCap:3, why:"Full math sequence through linear algebra, calculus-based physics, chemistry and programming."},
+  {id:"EE", name:"Electrical / Computer Eng.", icon:"🔌", req:["CALC1","CALC2","CALC3","DIFFEQ","LINALG","PHYS","PHYS2","CHEM","CS1","CS2"], electiveCap:3, why:"Mechanical-style math and physics core plus a second programming course."},
+  {id:"CHE", name:"Chemical Engineering", icon:"⚗️", req:["CALC1","CALC2","CALC3","DIFFEQ","CHEM","CHEM2","PHYS","PHYS2"], electiveCap:3, why:"Calculus through differential equations, two semesters of chemistry and physics."},
+  {id:"CHM", name:"Chemistry", icon:"🧪", req:["CHEM","CHEM2","CALC1","CALC2","PHYS","PHYS2","BIO"], electiveCap:9, why:"General chemistry, calculus, calculus-based physics and a biology course."},
+  {id:"PHY", name:"Physics", icon:"🔭", req:["PHYS","PHYS2","CALC1","CALC2","CALC3","DIFFEQ","LINALG","CHEM","CS1"], electiveCap:9, why:"Calculus-based physics with the full math sequence, chemistry and programming."},
+  {id:"ARCH", name:"Architecture", icon:"🏛️", req:["CALC1|PRECALC","PHYS|PHYSALG","ARTH","STUDIO"], electiveCap:6, why:"Calculus or precalculus, a physics course, art history and studio drawing."},
+  {id:"PSY", name:"Psychology", icon:"🧠", req:["PSYC","STATS","BIO|BIONM1","LANG1","LANG2","LIFESPAN"], electiveCap:15, why:"Intro psych, statistics, a biology course, lifespan development and a world language for the B.A."},
+  {id:"NUR", name:"Nursing", icon:"🩺", req:["CHEM","PSYC","STATS","AP1","AP2","LIFESPAN","BIO|BIONM1"], electiveCap:0, why:"Chemistry, psychology, statistics, anatomy & physiology, lifespan development and biology. Almost no free electives.", warn:"Many nursing programs won't use AP credit for science prerequisites."}
+];
+const MAJ = Object.fromEntries(MAJORS.map(m=>[m.id,m]));
+
+const DEMO = {
+  name:"Maya R.", year:"2027", major:"CS", colleges:["UT","TAMU","UTD","UH"],
+  courses:[
+    {id:"AP_CALC_BC",score:"5"},{id:"AP_CSA",score:"4"},{id:"AP_ENG_LANG",score:"4"},{id:"AP_USH",score:"3"},
+    {id:"AP_STATS",score:"4"},{id:"AP_PHYS1",score:"2"},{id:"AP_MACRO",score:"3"},{id:"AP_SPAN",score:"4"},
+    {id:"IB_BIO_HL",score:"4"},{id:"DC_ENGL1301",score:"A"},{id:"DC_GOVT2305",score:"A"},{id:"DC_ENGL1302",score:"B"}
+  ]
+};
+
+/* CreditCompass student survey, n=312, Oct 2026 (exact counts from the response sheet) */
+const SURVEY = {
+  cite:"CreditCompass student survey, n=312, Oct 2026",
+  stats:[
+    {v:"77.6%", k:"say earning college credit was one of the main reasons they chose AP, IB or dual credit", n:"242 of 312"},
+    {v:"51.3%", k:"rate their confidence that they know which credits will count at 3 or lower out of 5", n:"160 of 312"},
+    {v:"40.1%", k:"have never looked up a college's AP/IB/dual-credit policy", n:"125 of 312"},
+    {v:"54.5%", k:"find comparing policies across colleges hard, or haven't tried", n:"170 of 312"},
+    {v:"88.1%", k:"say they're likely to use a free tool like this", n:"275 of 312"},
+    {v:"84.3%", k:"want their school counselor to have access to it", n:"263 of 312"}
+  ],
+  premium:"Premium interest: 32.4% yes · 37.5% maybe · 30.1% no (101 / 117 / 94 of 312)",
+  quotes:[
+    "Not exactly sure where to start. There just needs to be some kind of guide or resource where everything's in one place.",
+    "picking between dc and ap and which one gives you better/more/easier acceptable college credit",
+    "Trying to find out whether the college credit actually count towards general studies or my major.",
+    "Figuring out if the credits count toward out-of-state colleges."
+  ]
+};
+
+const GLOSSARY = [
+  ["AP (Advanced Placement)","College-level high-school courses from the College Board, ending in a May exam scored 1–5. Colleges choose which scores earn credit."],
+  ["IB (International Baccalaureate)","Two-year courses at Higher Level (HL) or Standard Level (SL), scored 1–7. Many selective colleges only credit HL exams."],
+  ["Dual credit (DC)","A real college course, often taught at your high school, that counts for high school and college at the same time. You earn a college grade and transcript."],
+  ["Core / gen-ed","Courses every student takes regardless of major (writing, math, science, history...). Texas publics share the 42-hour Texas Core Curriculum."],
+  ["Elective","Hours in a degree plan you can fill with any course. Extra credit beyond your elective room usually doesn't make you graduate sooner."],
+  ["Placement","Permission to skip into a higher course with no credit hours. It saves a class slot, not tuition."],
+  ["Credit hour","The unit colleges count. A typical class is 3 hours; a bachelor's degree is about 120. Full time is about 15 per semester."],
+  ["Texas Core","Texas's shared 42-hour core. A completed core course at one Texas public school transfers as core to any other (Texas Education Code §61.822)."]
+];
+
+const ROADMAP = {
+  free:["Every AP, IB and Texas dual-credit course","All 46 colleges with official sources","Major-by-major savings, lookup and AP vs DC comparer","Counselor printouts"],
+  premium:["Saved plans","Alerts when a college changes its policy","Personalized exam recommendations"]
+};
+
+/* AP vs dual credit comparer pairs */
+const PAIRS = [
+  {id:"comp", name:"English composition", ap:"AP_ENG_LANG", dc:["DC_ENGL1301","DC_ENGL1302"]},
+  {id:"calc", name:"Calculus I", ap:"AP_CALC_AB", dc:["DC_MATH2413"]},
+  {id:"calc2", name:"Calculus I + II", ap:"AP_CALC_BC", dc:["DC_MATH2413","DC_MATH2414"]},
+  {id:"stat", name:"Statistics", ap:"AP_STATS", dc:["DC_MATH1342"]},
+  {id:"ush", name:"U.S. History", ap:"AP_USH", dc:["DC_HIST1301","DC_HIST1302"]},
+  {id:"gov", name:"U.S. Government", ap:"AP_GOV", dc:["DC_GOVT2305"]},
+  {id:"macro", name:"Macroeconomics", ap:"AP_MACRO", dc:["DC_ECON2301"]},
+  {id:"micro", name:"Microeconomics", ap:"AP_MICRO", dc:["DC_ECON2302"]},
+  {id:"psyc", name:"Psychology", ap:"AP_PSYC", dc:["DC_PSYC2301"]},
+  {id:"bio", name:"Biology", ap:"AP_BIO", dc:["DC_BIOL1406","DC_BIOL1407"]},
+  {id:"chem", name:"Chemistry", ap:"AP_CHEM", dc:["DC_CHEM1411","DC_CHEM1412"]},
+  {id:"phys", name:"Physics (algebra-based)", ap:"AP_PHYS1", dc:["DC_PHYS1401"]},
+  {id:"span", name:"Spanish", ap:"AP_SPAN", dc:["DC_SPAN1411","DC_SPAN1412"]},
+  {id:"cs", name:"Programming", ap:"AP_CSA", dc:["DC_COSC1436"]}
+];
+
+/* =====================================================================
+   Policy engine: parses each college's chart once, resolves every
+   AP / IB / DC course, then sorts credit into major / core / elective.
+   ===================================================================== */
+const PARSED = {};
+function parseChart(str){
+  const map={};
+  (str||"").split("\n").forEach(line=>{
+    line=line.trim(); if(!line) return;
+    const sp=line.indexOf(" "); if(sp<0) return;
+    const keys=line.slice(0,sp), body=line.slice(sp+1).trim();
+    const tiers=[];
+    if(body!=="none"){
+      let prev=[];
+      body.split(";").forEach(part=>{
+        part=part.trim(); const eq=part.indexOf("="); if(eq<0) return;
+        const lhs=part.slice(0,eq).trim(); let rhs=part.slice(eq+1).trim();
+        const m=lhs.match(/^(\d+)(?:\[([A-Z0-9_]+)>=(\d+)\])?$/); if(!m) return;
+        let toks = rhs==="none" ? [] : rhs.split(",").map(s=>s.trim()).filter(Boolean);
+        if(rhs.startsWith("+")){ toks=[...prev, ...rhs.slice(1).split(",").map(s=>s.trim()).filter(Boolean)]; }
+        prev=toks;
+        tiers.push({s:Number(m[1]), cond:m[2]?[m[2],Number(m[3])]:null, toks});
+      });
+    }
+    const list=keys.split(","), lineEst=keys.endsWith("~")&&list.length===1;
+    list.forEach(k=>{ const est=k.endsWith("~")||lineEst; map[k.replace(/~$/,"")]={tiers, est}; });
+  });
+  return map;
+}
+const DEF_AP = parseChart(TX_DEFAULT), DEF_IB = parseChart(IB_DEFAULT);
+function chartOf(c){ return PARSED[c.id] || (PARSED[c.id]=parseChart(c.chart)); }
+function raise(p,n){ return {tiers:p.tiers.map(t=>({...t, s:Math.max(t.s,n)})), est:true}; }
+
+function langName(key){ return LANGS[LANG_OF[key]]||""; }
+function fill(label,key){ return label.replace(/#/g, SHORT[key]||key).replace(/\$/g, langName(key)); }
+function splitHrs(h,n){ const b=Math.floor(h/n), r=h-b*n; return Array.from({length:n},(_,i)=>b+(i<r?1:0)); }
+/* token -> list of award objects */
+function tokAwards(tok, key, college){
+  let m;
+  if(tok.startsWith("P:")) return [{place:true, hrs:0, name:fill(tok.slice(2),key), code:"Placement", dk:"P:"+key}];
+  if((m=tok.match(/^E(\d+(?:\.\d+)?):(.*)$/))) { const n=fill(m[2],key); return [{hrs:Number(m[1]), name:n, code:"Elective credit", dk:"L:"+n}]; }
+  if((m=tok.match(/^C(\d+(?:\.\d+)?):([A-Z]+):(.*)$/))) { const n=fill(m[3],key); return [{hrs:Number(m[1]), area:m[2], name:n, code:"Gen-ed credit", dk:"L:"+n}]; }
+  if((m=tok.match(/^(\$|[A-Z]{4})\*(\d)@(\d+)$/))){
+    const L=m[1]==="$"?LANG_OF[key]:m[1], n=Number(m[2]);
+    return splitHrs(Number(m[3]),n).map((h,i)=>tagAward(L+(i+1),h,college));
+  }
+  if((m=tok.match(/^\$(\d)(?:@(\d+))?$/))) return [tagAward(LANG_OF[key]+m[1], m[2]?Number(m[2]):null, college)];
+  if((m=tok.match(/^([A-Z0-9]+)(?:@(\d+(?:\.\d+)?))?$/)) && TAGS[m[1]]) return [tagAward(m[1], m[2]?Number(m[2]):null, college)];
+  return [];
+}
+function tagAward(tag,h,college){
+  const t=TAGS[tag]; if(!t) return {hrs:0,name:tag,code:tag,dk:"T:"+tag};
+  const code = (college.codes&&college.codes[tag]) || (college.tx ? t.code : "≈ "+t.name);
+  return {tag, hrs: h==null ? t.hrs : h, name:t.name, code, area:t.area, dk:"T:"+tag};
+}
+
+/* Resolve one exam/course for a college.
+   Returns {kind:"credit"|"place"|"none", awards, est, reason, minScore} */
+function examPolicy(college, course){
+  const key=course.key;
+  if(course.type==="AP"){
+    const ch=chartOf(college);
+    if(ch[key]) return {...ch[key], est: ch[key].est || college.status==="estimated", src:"chart"};
+    const u=college.unl;
+    if(u==="place") return {tiers:[{s:1,toks:["P:Placement / requirement use only (no degree credit)"]}], est:false, src:"place"};
+    if(u==="flat3"||u==="flat4"){ const h=u==="flat3"?3:4; return key==="RESEARCH"&&u==="flat4" ? {tiers:[], est:false, src:"none"} : {tiers:[{s:4,toks:["E"+h+":# (general credit)"]}], est:u==="flat3", src:"flat"}; }
+    if(u==="default" && DEF_AP[key]) return {...DEF_AP[key], est:true, src:"default"};
+    if(u && typeof u==="object" && u.min && DEF_AP[key]) return {...raise(DEF_AP[key],u.min), src:"default"};
+    return {tiers:[], est: u!=="none" || college.status!=="verified", src:"none"};
+  }
+  if(course.type==="IB"){
+    const ib=college.ib||{mode:"none"}, est=ib.est!==false;
+    if(ib.mode==="place") return {tiers:[{s:5,toks:["P:Placement only for IB (no degree credit)"]}], est, src:"place"};
+    if(college.ibchart){
+      const ich=PARSED[college.id+"#IB"] || (PARSED[college.id+"#IB"]=parseChart(college.ibchart));
+      if(ich[key]) return {...ich[key], est: ich[key].est || est, src:"ibchart"};
+      return {tiers:[], est, src:"none", reason: course.hl ? college.name+"'s official IB list gives no credit for this exam." : "Standard Level exams don't earn credit here; Higher Level only."};
+    }
+    const d=DEF_IB[key]; if(!d) return {tiers:[], est, src:"none"};
+    if(ib.mode==="hl"){ if(!course.hl) return {tiers:[], est, src:"none", reason:"Standard Level exams don't earn credit here; Higher Level only."}; return {...raise(d,ib.min||6), est, src:"ib"}; }
+    if(ib.mode==="tx") return ib.min ? {...raise(d,ib.min), est, src:"ib"} : {...d, est, src:"ib"};
+    return {tiers:[], est, src:"none"};
+  }
+  return null;
+}
+function apScoreOf(profile, key){ const e=profile.courses.find(c=>c.id==="AP_"+key); return e?Number(e.score):0; }
+function resolveAt(college, course, score, profile){
+  /* -> {status:"ok"|"lost", awards, est, reason} */
+  if(course.type==="DC"){
+    const dc=college.dc||{ok:false,v:false,note:"Not modeled."}, est=!dc.v;
+    if(dc.ok===false) return {status:"lost", est, reason:dc.note, hrs:TAGS[course.tag].hrs};
+    if((dc.excl||[]).includes(course.key) || (dc.excl||[]).includes(course.tag)) return {status:"lost", est, reason:"This course doesn't transfer here. "+dc.note, hrs:TAGS[course.tag].hrs};
+    const min=GRADE_PTS[dc.min||"C"];
+    if(GRADE_PTS[score]<min) return {status:"lost", est, reason:"Grade "+score+" is below the minimum grade of "+(dc.min||"C")+".", hrs:TAGS[course.tag].hrs};
+    const a = dc.as==="elective" ? {hrs:TAGS[course.tag].hrs, name:course.code+" (transfer elective)", code:"Elective credit", dk:"T:"+course.tag} : tagAward(course.tag,null,college);
+    a.dc=true;
+    return {status:"ok", est, awards:[a]};
+  }
+  const p=examPolicy(college, course), v=Number(score);
+  let tier=null;
+  p.tiers.forEach(t=>{ if(v>=t.s && (!t.cond || apScoreOf(profile,t.cond[0])>=t.cond[1])) tier=t; });
+  const nominal = ()=>{ const top=p.tiers.length?p.tiers[p.tiers.length-1]:(DEF_AP[course.key]||DEF_IB[course.key]||{tiers:[]}).tiers?.slice(-1)[0]; return top? top.toks.flatMap(t=>tokAwards(t,course.key,college)).reduce((s,a)=>s+a.hrs,0) : 3; };
+  if(!p.tiers.length) return {status:"lost", est:p.est, hrs:nominal(), reason: p.reason || (p.est ? college.name+"'s chart doesn't list this exam, so no credit is assumed (estimated)." : "No credit for this exam at "+college.name+" (official chart).")};
+  if(!tier){
+    const real=p.tiers.filter(t=>t.toks.length); const min=real.length?Math.min(...real.map(t=>t.s)):null;
+    return {status:"lost", est:p.est, hrs:nominal(), reason: min ? "Score of "+score+" is below "+college.name+"'s minimum of "+min+" for this exam." : "No credit for this exam at "+college.name+"."};
+  }
+  if(!tier.toks.length) return {status:"lost", est:p.est, hrs:nominal(), reason:"No credit at this score at "+college.name+"."};
+  return {status:"ok", est:p.est, awards:tier.toks.flatMap(t=>tokAwards(t,course.key,college))};
+}
+
+/* Core / gen-ed model */
+function coreModel(college){
+  if(college.core==="BAYLOR") return {caps:{...BAYLOR_CORE}, name:"Baylor Core (approx.)"};
+  if(college.core==="PRIV") return {caps:{...PRIV_GENED}, name:"general education (approx.)"};
+  if(college.core==="NONE") return {caps:{...NO_CORE}, name:"gen-ed (exam credit can't fill it)"};
+  if(college.tx && college.group==="txpub") return {caps:Object.fromEntries(Object.entries(CORE_AREAS).map(([k,a])=>[k,a.hrs])), name:"Texas Core"};
+  return {caps:{...PRIV_GENED}, name:"general education (approx.)"};
+}
+const costOf = c => { const o=state.settings.costs[c.id]; return (o>0)? o : Math.round(c.annual/30); };
+const capOf  = m => { const o=state.settings.caps[m.id]; return (typeof o==="number" && o>=0)? o : m.electiveCap; };
+function matchGroup(g, a){
+  return g.split("|").some(alt=> alt==="LANG1" ? TAGS[a.tag]?.lvl===1 : alt==="LANG2" ? TAGS[a.tag]?.lvl===2 : alt===a.tag);
+}
+function evaluate(college, profile){
+  const major=MAJ[profile.major]||MAJORS[0];
+  const cm=coreModel(college), caps=cm.caps;
+  const rows=[], awards=[], seen={};
+  let examUsed=0, dcUsed=0;
+  profile.courses.forEach(entry=>{
+    const course=COURSE[entry.id]; if(!course) return;
+    const r=resolveAt(college, course, entry.score, profile);
+    if(r.status==="lost"){ rows.push({course, entry, status:"lost", est:r.est, hrs:r.hrs||0, reason:r.reason}); return; }
+    const got=[];
+    r.awards.forEach(a0=>{
+      const a={...a0, cat:null, reason:"", exam:course.type!=="DC"};
+      if(seen[a.dk]){ a.cat="lost"; a.reason="Duplicate: already awarded via "+seen[a.dk]+". Credit counts only once."; got.push(a); return; }
+      seen[a.dk]=course.name;
+      if(a.place){ a.cat="place"; a.reason="Lets you skip ahead or meet a requirement, but adds no credit hours."; got.push(a); return; }
+      // caps
+      const shared = college.capShared;
+      let room=Infinity;
+      if(college.hrsCap && (a.exam || shared)) room=Math.min(room, college.hrsCap-(shared?examUsed+dcUsed:examUsed));
+      if(!a.exam && college.dc && college.dc.cap) room=Math.min(room, college.dc.cap-dcUsed);
+      if(room<a.hrs){
+        const keep=Math.max(0,room);
+        a.overCap=a.hrs-keep; a.full=a.hrs; a.hrs=keep;
+        if(keep===0){ a.cat="lost"; a.hrs=0; a.reason="Over "+college.name+"'s limit on credit from exams / prior coursework."; }
+      }
+      if(a.exam) examUsed+=a.hrs; else dcUsed+=a.hrs;
+      awards.push(a); got.push(a);
+    });
+    rows.push({course, entry, status:"ok", est:r.est, got});
+  });
+  const live=awards.filter(a=>!a.cat);
+  // 1. major requirement groups
+  major.req.forEach(g=>{
+    const a=live.find(x=>!x.cat && x.tag && matchGroup(g,x));
+    if(a){ a.cat="major"; a.reason="Required for "+major.name+": "+a.name+"."; }
+  });
+  // 2. core, overflow to Component Area Option (Texas Core only)
+  const used={}; Object.keys(caps).forEach(k=>used[k]=0);
+  live.forEach(a=>{
+    if(a.cat || !a.area || !a.hrs) return;
+    if(college.examNoCore && a.exam) return;
+    if(caps[a.area]>0 && used[a.area]+a.hrs<=caps[a.area]){ used[a.area]+=a.hrs; a.cat="core"; a.reason="Fills "+cm.name+": "+CORE_AREAS[a.area].name.replace(/ \(\d+\)/,"")+"."; }
+    else if(caps.CAO && used.CAO+a.hrs<=caps.CAO){ used.CAO+=a.hrs; a.cat="core"; a.reason=CORE_AREAS[a.area].name.replace(/ \(\d+\)/,"")+" is full, so it applies to the Component Area Option."; }
+  });
+  // 3. electives up to the major's cap
+  const cap=capOf(major); let left=cap;
+  live.forEach(a=>{
+    if(a.cat) return;
+    const pre = a.area && college.examNoCore && a.exam ? "Exam credit can't satisfy "+college.name+"'s gen-ed requirements. " : a.area ? "Gen-ed area already full. " : "Not a "+major.name+" requirement. ";
+    if(a.hrs<=left){ left-=a.hrs; a.cat="elective"; a.reason=pre+"Counts as a free elective."; }
+    else if(left>0){ a.partial=left; left=0; a.cat="elective"; a.reason=pre+"Only "+a.partial+" of "+a.hrs+" hrs fit the "+cap+"-hr elective room; the rest may not shorten the degree."; }
+    else { a.cat="excess"; a.reason=pre+"Awarded, but "+major.name+"'s "+cap+" free-elective hrs are already used, so it may not reduce degree time."; }
+  });
+  const t={major:0,core:0,elective:0,excess:0,lost:0,awarded:0,place:0,est:0};
+  awards.forEach(a=>{
+    t.awarded+=a.hrs;
+    if(a.overCap) t.lost+=a.overCap;
+    if(a.cat==="place"){ t.place++; return; }
+    if(a.partial!==undefined){ t.elective+=a.partial; t.excess+=a.hrs-a.partial; } else if(a.cat!=="lost") t[a.cat]+=a.hrs;
+  });
+  rows.forEach(r=>{ if(r.est) t.est++; if(r.status==="lost") t.lost+=r.hrs; else r.got.forEach(g=>{ if(g.place) t.place+=0; if(g.cat==="lost"&&!g.overCap) t.lost+=g.full||g.hrs; }); });
+  // placement awards are counted inside rows; count rows with placement
+  t.place=rows.filter(r=>r.status==="ok"&&r.got.some(g=>g.cat==="place")).length;
+  const R=x=>Math.round(x*10)/10;
+  Object.keys(t).forEach(k=>t[k]=R(t[k]));
+  t.applicable=R(t.major+t.core+t.elective);
+  t.cost=costOf(college);
+  t.flex = college.maxSem===0;
+  t.dollars = t.flex ? 0 : Math.round(t.applicable*t.cost);
+  const cps=Number(state.settings.cps)||15, raw=t.applicable/cps;
+  t.semRaw=raw;
+  t.semesters = t.flex ? 0 : state.settings.rounding==="round"? Math.round(raw) : state.settings.rounding==="exact"? Math.round(raw*10)/10 : Math.floor(raw);
+  return {college, rows, totals:t, coreName:cm.name};
+}
+const computeAll = ids => ids.filter(id=>COL[id]).map(id=>evaluate(COL[id], state.profile)).sort((a,b)=>b.totals.dollars-a.totals.dollars || b.totals.applicable-a.totals.applicable || a.college.name.localeCompare(b.college.name));
+
+/* "What do I get / what score do I need" for one course at one college */
+function lookup(college, course){
+  const scores=SCORES[course.type].slice().reverse(); // low -> high
+  const prof={courses:[], major:"UND"};
+  let credit=null, place=null, best=null, est=false;
+  scores.forEach(s=>{
+    const r=resolveAt(college, course, s, prof); est = est || r.est;
+    if(r.status!=="ok") return;
+    const hrs=r.awards.reduce((x,a)=>x+a.hrs,0);
+    if(hrs>0 && credit===null) credit=s;
+    if(hrs===0 && place===null) place=s;
+    best={s, r, hrs};
+  });
+  return {credit, place, best, est};
+}
+
+/* =====================================================================
+   State + persistence
+   ===================================================================== */
+const LS_KEY="creditcompass.v3";
+const clone=o=>JSON.parse(JSON.stringify(o));
+const DEFAULT_SETTINGS={cps:15, rounding:"floor", costs:{}, caps:{}};
+function load(){ try{ const s=JSON.parse(localStorage.getItem(LS_KEY)); if(s&&s.profile&&s.settings&&Array.isArray(s.profile.courses)) return s; }catch(e){} return null; }
+function save(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){} }
+var state = load() || {profile:clone(DEMO), settings:clone(DEFAULT_SETTINGS), theme:"light", cmpAll:false, tab:"start"};
+state.profile.courses = state.profile.courses.filter(c=>COURSE[c.id]);
+state.profile.colleges = state.profile.colleges.filter(id=>COL[id]);
+if(!MAJ[state.profile.major]) state.profile.major="CS";
+state.ui = Object.assign({ty:"ALL", q:"", cq:"", lk:"AP_CALC_AB", lkScore:"4", lkGroup:"all", pd:"comp", pdAp:"4", pdDc:"B", pdScope:"all"}, state.ui||{});
+
+/* =====================================================================
+   Helpers
+   ===================================================================== */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money=n=>"$"+Math.round(n).toLocaleString("en-US");
+const sem=n=> state.settings.rounding==="exact"? Number(n).toFixed(1) : String(n);
+const roundName=()=> ({floor:"floor",round:"round",exact:""})[state.settings.rounding];
+const GRP=Object.fromEntries(GROUPS.map(g=>[g.id,g]));
+const grpBadge=c=>`<span class="badge ${c.group==="txpub"?"pub":c.group==="txpriv"?"priv":c.group}">${GRP[c.group].short}</span>`;
+const ST_LABEL={verified:"✓ Verified", partial:"◐ Partly verified", estimated:"≈ Estimated"};
+const stBadge=c=>`<span class="st ${c.status}" title="${esc(c.status==="verified"?"Chart transcribed from the official page":c.status==="partial"?"Official page used; some rules modeled":"Official chart not available; modeled")}">${ST_LABEL[c.status]}</span>`;
+const EST='<span class="est" title="Modeled, not transcribed from an official chart">est.</span>';
+const norm=s=>s.toLowerCase().replace(/[^a-z0-9]+/g," ");
+function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("show"); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove("show"),1800); }
+const reqLabel=g=>g.split("|").map(t=> t==="LANG1"?"World language I":t==="LANG2"?"World language II":TAGS[t].name).join(" or ");
+COURSES.forEach(c=>{ c._q=norm(c.name+" "+c.type+" "+(c.code||"")+" "+(c.key||"")+" "+c.group+(c.type==="DC"?" dual credit dc tccn":c.type==="IB"?" ib":" ap")); });
+COLLEGES.forEach(c=>{ c._q=norm(c.name+" "+c.full+" "+c.city+" "+GRP[c.group].name+" "+GRP[c.group].short); });
+
+/* =====================================================================
+   Start tab
+   ===================================================================== */
+function renderStart(){
+  const n=s=>COLLEGES.filter(c=>c.status===s).length;
+  $("#trust").innerHTML=`
+    <div><b>${COLLEGES.length}</b><span>colleges · ${GROUPS.map(g=>COLLEGES.filter(c=>c.group===g.id).length+" "+g.short).join(" · ")}</span></div>
+    <div><b>${COURSES.length}</b><span>courses · ${AP_LIST.length} AP · ${IB_LIST.length} IB · ${DC_LIST.length} dual credit</span></div>
+    <div><b>${n("verified")} / ${COLLEGES.length}</b><span>charts verified against official pages · ${n("partial")} partial · ${n("estimated")} estimated</span></div>
+    <div><b>${CHECKED}</b><span>last checked · every school links its sources</span></div>`;
+  $("#svCite").textContent="Source: "+SURVEY.cite+".";
+  $("#svStats").innerHTML=SURVEY.stats.map(s=>`<div><b>${s.v}</b><span>${esc(s.k)}</span><small>${s.n}</small></div>`).join("");
+  $("#svQuotes").innerHTML=SURVEY.quotes.map(q=>`<blockquote>“${esc(q)}”<footer>Texas high-school student, ${esc(SURVEY.cite)}</footer></blockquote>`).join("");
+  $("#roadmap").innerHTML=`<div class="free"><h3>Free forever <span class="soon" style="background:var(--teal)">Core</span></h3><ul>${ROADMAP.free.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+    <div><h3>Premium <span class="soon">Coming soon</span></h3><ul>${ROADMAP.premium.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`;
+  $("#svPremium").textContent=SURVEY.premium+" ("+SURVEY.cite+"). Nothing is behind a paywall today.";
+  $("#glossary").innerHTML=GLOSSARY.map(([t,d])=>`<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join("");
+}
+
+/* =====================================================================
+   Profile tab
+   ===================================================================== */
+function renderCourseRows(){
+  const p=state.profile, list=$("#courseList");
+  list.innerHTML = !p.courses.length ? '<div class="empty" style="padding:20px">No courses yet. Search below to add one, or press <b>Reset to demo</b>.</div>' :
+    p.courses.map((c,i)=>{
+      const course=COURSE[c.id], type=course.type;
+      const sc=SCORES[type].map(s=>`<option ${s===c.score?"selected":""}>${s}</option>`).join("");
+      return `<div class="course v3 type-${type}" data-i="${i}">
+        <span class="ty ${type}">${type==="DC"?"DUAL":type}</span>
+        <div class="nm" title="${esc(course.name)}">${esc(course.name)}<small>${esc(course.group)}</small></div>
+        <select aria-label="${type==="DC"?"Grade":"Score"} for ${esc(course.name)}" data-f="score">${sc}</select>
+        <button class="rm" aria-label="Remove ${esc(course.name)}" data-f="rm">✕</button></div>`;
+    }).join("");
+}
+function renderPicker(){
+  const q=norm(state.ui.q).trim(), words=q.split(" ").filter(Boolean), ty=state.ui.ty, have=new Set(state.profile.courses.map(c=>c.id));
+  document.querySelectorAll("#typeSeg button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.ty===ty)));
+  const hits=COURSES.filter(c=>(ty==="ALL"||c.type===ty) && words.every(w=>c._q.includes(w)));
+  const groups={}; hits.forEach(c=>{ const g=(c.type==="DC"?"Dual credit":c.type)+" · "+c.group; (groups[g]=groups[g]||[]).push(c); });
+  $("#coursePick").innerHTML = hits.length ? Object.entries(groups).map(([g,cs])=>`<h4>${esc(g)}</h4>`+cs.map(c=>`<button class="opt" data-add="${c.id}" ${have.has(c.id)?"disabled":""} role="option"><span>${esc(c.name)}</span><small>${have.has(c.id)?"✓ added":"＋ add"}</small></button>`).join("")).join("")
+    : '<div class="empty" style="padding:14px">No course matches. Try "calc", "1301" or "HL".</div>';
+}
+function renderMajors(){
+  const p=state.profile, m=MAJ[p.major];
+  $("#majorList").innerHTML=MAJORS.map(m=>`<button class="major" aria-pressed="${p.major===m.id}" data-m="${m.id}"><b>${m.icon} ${esc(m.name)}</b><span>${m.req.length?m.req.length+" required courses tracked":"core & electives only"}</span></button>`).join("");
+  $("#majorNote").innerHTML=esc(m.why)+(m.warn?` <b>${esc(m.warn)}</b>`:"");
+}
+function renderColleges(){
+  const p=state.profile, sel=new Set(p.colleges), words=norm(state.ui.cq).trim().split(" ").filter(Boolean);
+  $("#collegeList").innerHTML=GROUPS.map(g=>{
+    const all=COLLEGES.filter(c=>c.group===g.id), cs=all.filter(c=>words.every(w=>c._q.includes(w)));
+    if(!cs.length) return "";
+    const n=all.filter(c=>sel.has(c.id)).length;
+    return `<div class="cgroup"><div class="gh"><div><b>${esc(g.name)}</b> <span>${n}/${all.length} selected</span></div><div><button class="linkbtn" data-gsel="${g.id}">Select group</button><button class="linkbtn" data-gclr="${g.id}">Clear</button></div></div>
+      <div class="chips">${cs.map(c=>`<button class="chip sm" aria-pressed="${sel.has(c.id)}" data-c="${c.id}" title="${esc(c.full)} · ${esc(c.city)}"><span class="dot"></span>${esc(c.name)}</button>`).join("")}</div></div>`;
+  }).join("") || '<div class="empty" style="padding:14px">No college matches.</div>';
+  $("#colCount").textContent=p.colleges.length+" of "+COLLEGES.length+" selected. Tap to select, or add a whole group.";
+}
+function renderProfile(){
+  const p=state.profile;
+  $("#stuName").value=p.name||"";
+  const ys=$("#stuYear"); if(!ys.options.length) ["2026","2027","2028","2029","2030"].forEach(y=>ys.add(new Option(y,y)));
+  ys.value=p.year||"2027";
+  if($("#courseSearch").value!==state.ui.q) $("#courseSearch").value=state.ui.q;
+  renderCourseRows(); renderPicker(); renderMajors(); renderColleges();
+}
+
+/* =====================================================================
+   Results
+   ===================================================================== */
+function stackBar(t){
+  const total=(t.major+t.core+t.elective+t.excess+t.lost)||1;
+  const seg=(v,c,l)=>v?`<span style="width:${v/total*100}%;background:var(${c})" title="${l}: ${v} hrs"></span>`:"";
+  return `<div class="stack" role="img" aria-label="${t.major} major, ${t.core} core, ${t.elective} elective, ${t.excess} excess, ${t.lost} lost hours">${seg(t.major,"--major","Major")}${seg(t.core,"--core","Core")}${seg(t.elective,"--elective","Elective")}${seg(t.excess,"--excess","Excess")}${seg(t.lost,"--lost","Lost")}</div>`;
+}
+const LEGEND=`<div class="legend"><span><i style="background:var(--major)"></i>Major</span><span><i style="background:var(--core)"></i>Core / gen-ed</span><span><i style="background:var(--elective)"></i>Free elective</span><span><i style="background:var(--excess)"></i>Excess</span><span><i style="background:var(--lost)"></i>Lost</span></div>`;
+const CATNAME={major:"Major",core:"Core",elective:"Elective",excess:"Excess",lost:"Lost",place:"Placement"};
+function rowLabel(r){
+  if(r.status==="lost") return '<span class="lab nothing">Nothing</span>';
+  const hrs=r.got.reduce((s,g)=>s+(g.cat==="lost"?0:g.hrs),0);
+  return hrs>0 ? '<span class="lab credit">Credit</span>' : r.got.some(g=>g.cat==="place") ? '<span class="lab place">Placement</span>' : '<span class="lab nothing">Nothing</span>';
+}
+function breakdown(res){
+  const trs=[];
+  res.rows.forEach(r=>{
+    const label=`<b>${esc(r.course.name)}</b>${r.est?EST:""}<div class="why">${r.course.type==="DC"?"Grade":"Score"} ${esc(r.entry.score)}</div><div>${rowLabel(r)}</div>`;
+    if(r.status==="lost") trs.push(`<tr><td>${label}</td><td>—</td><td class="num">0</td><td><span class="cat lost">Lost</span></td><td class="why">${esc(r.reason)}${r.hrs?` (≈${r.hrs} hrs)`:""}</td></tr>`);
+    else r.got.forEach((g,j)=>{
+      const hrs = g.partial!==undefined ? `${g.partial}<span class="why">/${g.hrs}</span>` : (g.cat==="lost"?0:g.hrs);
+      const cat = g.partial!==undefined ? `<span class="cat elective">Elective</span> <span class="cat excess">Excess</span>` : `<span class="cat ${g.cat}">${CATNAME[g.cat]}</span>`;
+      const cut = g.overCap && g.hrs>0 ? ` ${g.overCap} more hrs are over ${esc(res.college.name)}'s limit on exam / prior credit.` : "";
+      trs.push(`<tr><td>${j===0?label:""}</td><td><span class="code">${esc(g.code)}</span><div class="why">${esc(g.name)} · ${g.full||g.hrs} hrs</div></td><td class="num">${hrs}</td><td>${cat}</td><td class="why">${esc(g.reason+cut)}</td></tr>`);
+    });
+  });
+  return `<div class="tscroll"><table><thead><tr><th>Course</th><th>Awarded as</th><th class="num">Hrs counted</th><th>Counts as</th><th>Why</th></tr></thead><tbody>${trs.join("")}</tbody></table></div>`;
+}
+function cardNote(c,t){
+  const bits=[esc(c.note)];
+  if(t.flex) bits.push("<b>Flexibility, not savings:</b> exam credit here doesn't shorten the 8-semester degree, so dollars and semesters show $0. Credit can still free up room for a minor, double major or research.");
+  else if(c.group==="ivy"||c.group==="sel"||c.group==="txpriv") bits.push("Flat tuition: dollars are only saved if you actually graduate early. Many selective schools expect 8 semesters.");
+  if(c.hrsCap) bits.push("Limit: about "+c.hrsCap+" hrs of exam"+(c.capShared?" + prior college":"")+" credit count.");
+  return bits.join(" ");
+}
+function renderResults(){
+  const p=state.profile, major=MAJ[p.major];
+  const results=computeAll(p.colleges), sb=$("#summaryBar");
+  $("#resTitle").textContent=(p.name? p.name+"'s results" : "Results");
+  $("#resSub").textContent=`${major.name} · Class of ${p.year} · ${p.courses.length} course${p.courses.length===1?"":"s"} · ${p.colleges.length} college${p.colleges.length===1?"":"s"}, ranked by estimated savings`;
+  if(!results.length || !p.courses.length){
+    $("#metrics").innerHTML="";
+    $("#collegeCards").innerHTML=`<div class="card empty" style="grid-column:1/-1"><h3>Nothing to show yet</h3><p>Add at least one course and one target college on the Profile tab, or press <b>Reset to demo</b>.</p><button class="btn primary" data-go="profile">Go to profile</button></div>`;
+    sb.innerHTML=`<div class="wrap"><div><div class="lbl">CreditCompass</div><div class="val">Add courses and colleges to see savings</div></div></div>`;
+    return;
+  }
+  const best=results[0], bt=best.totals, worst=results[results.length-1];
+  const avgLost=results.reduce((s,r)=>s+r.totals.lost,0)/results.length;
+  const mostHrs=results.slice().sort((a,b)=>b.totals.applicable-a.totals.applicable)[0];
+  $("#metrics").innerHTML=`
+    <div class="metric hero-m"><div class="k">Best potential savings</div><div class="v">${money(bt.dollars)}</div><div class="d">at ${esc(best.college.name)} · ${bt.applicable} applicable hrs</div></div>
+    <div class="metric"><div class="k">Semesters saved</div><div class="v">${sem(bt.semesters)}</div><div class="d">at ${esc(best.college.name)} (${bt.semRaw.toFixed(1)} semesters of coursework)</div></div>
+    <div class="metric"><div class="k">Most hours that count</div><div class="v">${mostHrs.totals.applicable} hrs</div><div class="d">at ${esc(mostHrs.college.name)} · ${mostHrs.totals.major} toward ${esc(major.name)}</div></div>
+    <div class="metric"><div class="k">Spread across colleges</div><div class="v">${money(bt.dollars-worst.totals.dollars)}</div><div class="d">best vs. ${esc(worst.college.name)} · avg ${Math.round(avgLost*10)/10} hrs lost</div></div>`;
+  $("#collegeCards").innerHTML=results.map((r,i)=>{
+    const c=r.college, t=r.totals;
+    return `<article class="ccard ${i===0&&results.length>1?"best":""}">
+      <div class="chead"><div><h3>${esc(c.name)}</h3><div class="meta">${esc(c.city)} · ${money(t.cost)}/credit hr${c.oos?" (out-of-state)":c.group==="txpub"?" (in-state)":""}</div></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">${i===0&&results.length>1?'<span class="badge best">★ Best value</span>':""}${grpBadge(c)}${stBadge(c)}</div></div>
+      <div class="big"><div><div class="k">Est. dollars saved</div><div class="v money">${money(t.dollars)}</div></div><div><div class="k">Semesters saved</div><div class="v">${sem(t.semesters)}</div></div></div>
+      ${stackBar(t)}${LEGEND}
+      <div class="stats"><div><b>${t.awarded}</b><span>Accepted</span></div><div><b style="color:var(--major)">${t.major}</b><span>Major</span></div><div><b style="color:var(--core)">${Math.round((t.core+t.elective)*10)/10}</b><span>Core+Elec</span></div><div><b style="color:#d97706">${t.excess}</b><span>Excess</span></div><div><b style="color:var(--lost)">${t.lost}</b><span>Lost</span></div></div>
+      <div class="note">${cardNote(c,t)}${t.place?` ${t.place} course${t.place>1?"s":""} give placement only.`:""}${t.est?` ${t.est} row${t.est>1?"s are":" is"} estimated ${EST}.`:""}</div>
+      <details class="bd"><summary>Course-by-course breakdown</summary>${breakdown(r)}
+        <div class="note mono">${t.applicable} applicable hrs × ${money(t.cost)} (${money(c.annual)} ÷ 30) = <b>${money(t.flex?0:t.applicable*t.cost)}</b>${t.flex?" (flexibility only)":""} · ${roundName()}(${t.applicable} ÷ ${state.settings.cps}) = <b>${sem(t.semesters)}</b> semester(s)</div></details>
+    </article>`;
+  }).join("");
+  sb.innerHTML=`<div class="wrap">
+    <div><div class="lbl">Best value</div><div class="val">★ ${esc(best.college.name)}</div></div><div class="sep"></div>
+    <div><div class="lbl">Est. saved</div><div class="val" style="color:#5eead4">${money(bt.dollars)}</div></div><div class="sep"></div>
+    <div><div class="lbl">Semesters</div><div class="val">${sem(bt.semesters)}</div></div><div class="sep"></div>
+    <div><div class="lbl">Applicable hrs</div><div class="val">${bt.applicable} count · ${bt.lost} lost</div></div>
+    <div class="grow"></div><div class="hide-sm"><div class="lbl">Major</div><div class="val">${esc(major.name)}</div></div></div>`;
+}
+
+/* =====================================================================
+   Compare / Explore
+   ===================================================================== */
+function renderCompare(){
+  const estAll = COLLEGES.filter(c=>c.status==="estimated");
+  const hideEst = state.cmpAll && !state.incEst;
+  const ids = state.cmpAll ? COLLEGES.filter(c=>!hideEst || c.status!=="estimated").map(c=>c.id) : state.profile.colleges;
+  $("#estBar").hidden = !state.cmpAll; $("#incEst").checked = !!state.incEst;
+  $("#estNote").innerHTML = !estAll.length ? "All "+COLLEGES.length+" schools use official credit charts right now, so none are hidden."
+    : hideEst ? `${estAll.length} school${estAll.length>1?"s":""} hidden (${estAll.map(c=>esc(c.name)).join(", ")}): ${estAll.length>1?"their":"its"} official exam charts couldn't be confirmed, so ${estAll.length>1?"they're":"it's"} left out of the ranking. Turn this on to see ${estAll.length>1?"them":"it"} with an estimated badge.`
+    : `Showing ${estAll.length} estimated school${estAll.length>1?"s":""} (${estAll.map(c=>esc(c.name)).join(", ")}) with the ${stBadge(estAll[0])} badge. Treat ${estAll.length>1?"their":"its"} numbers as rough.`;
+  $("#cmpSel").setAttribute("aria-pressed", String(!state.cmpAll)); $("#cmpAll").setAttribute("aria-pressed", String(!!state.cmpAll));
+  const all=computeAll(ids);
+  if(!all.length || !state.profile.courses.length){ $("#chart").innerHTML='<div class="empty">Select colleges and add courses to compare.</div>'; $("#cmpTable").innerHTML=""; return; }
+  const results=all.slice(0,15);
+  $("#cmpSub").textContent = state.cmpAll ? `Explore mode: ${hideEst&&estAll.length?all.length+" of "+COLLEGES.length:"all "+all.length} colleges ranked for your profile. Chart shows the top ${results.length}; the table lists every school.` : "Ranked by estimated dollars saved from credits that actually apply to the degree.";
+  const narrow = window.innerWidth<640;
+  const W=narrow?520:900, rowH=46, padL=narrow?118:170, padR=narrow?96:120, top=10, H=top+results.length*rowH+26, bw=W-padL-padR;
+  const rawMax=Math.max(1,...results.map(r=>r.totals.dollars)), mag=Math.pow(10,Math.floor(Math.log10(rawMax/4))), step=[1,2,2.5,5,10].map(m=>m*mag).find(v=>v*4>=rawMax), maxD=step*4, maxH=Math.max(1,...results.map(r=>r.totals.applicable));
+  const dark=document.documentElement.dataset.theme==="dark";
+  const ink=dark?"#e8eef8":"#0f172a", mut=dark?"#8fa1bd":"#64748b", grid=dark?"#22324f":"#e2e8f0";
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Estimated dollars saved by college">`;
+  for(let g=0; g<=4; g++){ const x=padL+bw*g/4; s+=`<line x1="${x}" y1="${top}" x2="${x}" y2="${H-22}" stroke="${grid}"/><text x="${x}" y="${H-6}" font-size="11" fill="${mut}" text-anchor="middle">${money(maxD*g/4)}</text>`; }
+  results.forEach((r,i)=>{
+    const y=top+i*rowH, t=r.totals, w=Math.max(2,bw*t.dollars/maxD), w2=Math.max(2,bw*t.applicable/maxH);
+    const sel=state.profile.colleges.includes(r.college.id);
+    s+=`<text x="${padL-10}" y="${y+19}" font-size="14" font-weight="${i===0?800:600}" fill="${ink}" text-anchor="end">${i===0?"★ ":""}${esc(r.college.name)}</text>`;
+    s+=`<text x="${padL-10}" y="${y+34}" font-size="10.5" fill="${mut}" text-anchor="end">${GRP[r.college.group].short}${state.cmpAll&&sel?" · selected":""}</text>`;
+    s+=`<rect x="${padL}" y="${y+6}" width="${w}" height="18" rx="5" fill="${i===0?"#0d9488":"#14b8a6"}" opacity="${i===0?1:.72}" class="bargrow"/>`;
+    s+=`<rect x="${padL}" y="${y+28}" width="${w2}" height="7" rx="3" fill="#1d4e89" opacity=".85"/>`;
+    s+=`<text x="${padL+w+8}" y="${y+20}" font-size="13" font-weight="700" fill="${ink}">${money(t.dollars)}</text>`;
+    s+=`<text x="${padL+w2+8}" y="${y+36}" font-size="10.5" fill="${mut}">${t.applicable} hrs · ${sem(t.semesters)} sem</text>`;
+  });
+  const privs=all.filter(r=>r.college.group!=="txpub").length;
+  $("#chart").innerHTML=s+`</svg>`+(privs?`<div class="note">${privs} of these ${all.length} schools are private or out-of-state, so each hour is worth more at sticker price, before need-based aid. Compare the dark-blue <b>applicable hours</b> bars too: they show how much of your work actually counts.</div>`:"");
+  $("#cmpTable").innerHTML=`<thead><tr><th>#</th><th>College</th><th>Group</th><th class="num">Accepted</th><th class="num">Major</th><th class="num">Core</th><th class="num">Elective</th><th class="num">Excess</th><th class="num">Lost</th><th class="num">Applicable</th><th class="num">$/hr</th><th class="num">Est. $ saved</th><th class="num">Semesters</th></tr></thead><tbody>`+
+    all.map((r,i)=>{const t=r.totals;return `<tr class="${i===0?"top":""}"><td><span class="rank">${i+1}</span></td><td><b>${esc(r.college.name)}</b>${i===0?' <span class="badge best">Best value</span>':""}${r.college.status!=="verified"?" "+stBadge(r.college):""}</td><td>${grpBadge(r.college)}</td><td class="num">${t.awarded}</td><td class="num">${t.major}</td><td class="num">${t.core}</td><td class="num">${t.elective}</td><td class="num">${t.excess}</td><td class="num" style="color:var(--lost)">${t.lost}</td><td class="num"><b>${t.applicable}</b></td><td class="num">${money(t.cost)}</td><td class="num"><b>${money(t.dollars)}</b>${t.flex?'<div class="why">flexibility only</div>':""}</td><td class="num">${sem(t.semesters)}</td></tr>`;}).join("")+`</tbody>`;
+}
+
+/* =====================================================================
+   Score lookup
+   ===================================================================== */
+function courseOptions(sel, filter){
+  return [["AP","AP exams"],["IB","IB subjects"],["DC","Dual credit (TCCN)"]].map(([t,l])=>`<optgroup label="${l}">`+COURSES.filter(c=>c.type===t&&(!filter||filter(c))).map(c=>`<option value="${c.id}" ${c.id===sel?"selected":""}>${esc(c.name)}</option>`).join("")+`</optgroup>`).join("");
+}
+function awardText(awards){ return awards.map(a=>`<span class="code">${esc(a.code)}</span> <span class="why">${esc(a.name)}${a.hrs?" · "+a.hrs+" hrs":""}</span>`).join("<br>"); }
+function renderLookup(){
+  const course=COURSE[state.ui.lk]||COURSE.AP_CALC_AB;
+  $("#lkCourse").innerHTML=courseOptions(course.id);
+  if(!SCORES[course.type].includes(state.ui.lkScore)) state.ui.lkScore=SCORES[course.type][1];
+  $("#lkScore").innerHTML=SCORES[course.type].map(s=>`<option ${s===state.ui.lkScore?"selected":""}>${s}</option>`).join("");
+  $("#lkGroup").value=state.ui.lkGroup;
+  const mine=new Set(state.profile.colleges), prof={courses:[{id:course.id,score:state.ui.lkScore}], major:"UND"};
+  let html=`<thead><tr><th>College</th><th>Minimum for credit</th><th>At your ${course.type==="DC"?"grade":"score"} (${esc(state.ui.lkScore)})</th><th>What you get</th></tr></thead><tbody>`;
+  GROUPS.forEach(g=>{
+    const cs=COLLEGES.filter(c=>c.group===g.id && (state.ui.lkGroup==="all"||mine.has(c.id)));
+    if(!cs.length) return;
+    html+=`<tr class="grp"><td colspan="4">${esc(g.name)}</td></tr>`;
+    cs.forEach(c=>{
+      const L=lookup(c,course), r=resolveAt(c,course,state.ui.lkScore,prof);
+      const minTxt = L.credit!==null ? `<b>${course.type==="DC"?L.credit+" or better":L.credit+"+"}</b>` : L.place!==null ? `Placement only (${L.place}+)` : `<span style="color:var(--lost)">No credit</span>`;
+      const hrs = r.status==="ok" ? r.awards.reduce((s,a)=>s+a.hrs,0) : 0;
+      const lab = r.status!=="ok" ? '<span class="lab nothing">Nothing</span>' : hrs>0 ? `<span class="lab credit">Credit · ${hrs} hrs</span>` : '<span class="lab place">Placement</span>';
+      const what = r.status==="ok" ? awardText(r.awards) : `<span class="why">${esc(r.reason)}</span>`;
+      html+=`<tr><td><b>${esc(c.name)}</b>${(r.est||L.est)?EST:""}<div class="why">${esc(c.city)}</div></td><td>${minTxt}</td><td>${lab}</td><td>${what}</td></tr>`;
+    });
+  });
+  $("#lkTable").innerHTML=html+"</tbody>";
+}
+
+/* =====================================================================
+   AP vs DC
+   ===================================================================== */
+function renderApdc(){
+  const pair=PAIRS.find(p=>p.id===state.ui.pd)||PAIRS[0];
+  $("#pdSubj").innerHTML=PAIRS.map(p=>`<option value="${p.id}" ${p.id===pair.id?"selected":""}>${esc(p.name)}: ${esc(COURSE[p.ap].name)} vs ${p.dc.map(d=>COURSE[d].code).join(" + ")}</option>`).join("");
+  $("#pdAp").innerHTML=SCORES.AP.map(s=>`<option ${s===state.ui.pdAp?"selected":""}>${s}</option>`).join("");
+  $("#pdDc").innerHTML=SCORES.DC.map(s=>`<option ${s===state.ui.pdDc?"selected":""}>${s}</option>`).join("");
+  $("#pdScope").value=state.ui.pdScope;
+  const mine=new Set(state.profile.colleges);
+  const cs=COLLEGES.filter(c=>state.ui.pdScope==="all"||mine.has(c.id));
+  let ap=0, dc=0, tie=0, apSum=0, dcSum=0;
+  const prof={courses:[], major:"UND"};
+  let html=`<thead><tr><th>College</th><th>${esc(COURSE[pair.ap].name)} (score ${esc(state.ui.pdAp)})</th><th class="num">AP hrs</th><th>${pair.dc.map(d=>esc(COURSE[d].code)).join(" + ")} (grade ${esc(state.ui.pdDc)})</th><th class="num">DC hrs</th><th>Better route</th></tr></thead><tbody>`;
+  GROUPS.forEach(g=>{
+    const gs=cs.filter(c=>c.group===g.id); if(!gs.length) return;
+    html+=`<tr class="grp"><td colspan="6">${esc(g.name)}</td></tr>`;
+    gs.forEach(c=>{
+      const a=resolveAt(c,COURSE[pair.ap],state.ui.pdAp,prof);
+      const ah=a.status==="ok"?a.awards.reduce((s,x)=>s+x.hrs,0):0;
+      let dh=0, dEst=false, dTxt=[];
+      pair.dc.forEach(id=>{ const d=resolveAt(c,COURSE[id],state.ui.pdDc,prof); dEst=dEst||d.est; if(d.status==="ok"){ dh+=d.awards.reduce((s,x)=>s+x.hrs,0); dTxt.push(awardText(d.awards)); } else if(!dTxt.length) dTxt.push(`<span class="why">${esc(d.reason)}</span>`); });
+      apSum+=ah; dcSum+=dh;
+      const win = ah>dh ? (ap++, '<span class="win">AP</span>') : dh>ah ? (dc++, '<span class="win">Dual credit</span>') : (tie++, ah? "Tie":"<span class='why'>Neither</span>");
+      const aTxt = a.status==="ok" ? (ah? awardText(a.awards) : '<span class="lab place">Placement</span>') : `<span class="why">${esc(a.reason)}</span>`;
+      html+=`<tr><td><b>${esc(c.name)}</b></td><td>${aTxt}${a.est?EST:""}</td><td class="num"><b>${ah}</b></td><td>${dTxt.join("<br>")}${dEst?EST:""}</td><td class="num"><b>${dh}</b></td><td>${win}</td></tr>`;
+    });
+  });
+  $("#pdTable").innerHTML=html+"</tbody>";
+  $("#pdMetrics").innerHTML=`
+    <div class="metric hero-m"><div class="k">AP earns more at</div><div class="v">${ap}</div><div class="d">of ${cs.length} colleges</div></div>
+    <div class="metric"><div class="k">Dual credit earns more at</div><div class="v">${dc}</div><div class="d">of ${cs.length} colleges</div></div>
+    <div class="metric"><div class="k">Same either way</div><div class="v">${tie}</div><div class="d">including schools that give neither</div></div>
+    <div class="metric"><div class="k">Avg hours</div><div class="v">${cs.length?(apSum/cs.length).toFixed(1):0} vs ${cs.length?(dcSum/cs.length).toFixed(1):0}</div><div class="d">AP vs dual credit, per college</div></div>`;
+}
+
+/* =====================================================================
+   Counselor
+   ===================================================================== */
+function summaryText(){
+  const p=state.profile, major=MAJ[p.major], res=computeAll(p.colleges);
+  const lines=[`CreditCompass summary: ${p.name||"Student"} (Class of ${p.year}), intended major: ${major.name}`,"",
+    "Courses: "+(p.courses.map(c=>COURSE[c.id].name+" ("+c.score+")").join("; ")||"none yet"),"","Ranked by estimated savings:"];
+  res.forEach((r,i)=>{ const t=r.totals; lines.push(`${i+1}. ${r.college.name}: ${t.applicable} applicable hrs (${t.major} major, ${t.core} core, ${t.elective} elective), ${t.lost} hrs lost, est. ${money(t.dollars)} and ${sem(t.semesters)} semester(s) saved${t.flex?" (flexibility only)":""}${r.college.status!=="verified"?" [policy "+r.college.status+"]":""}`); });
+  if(!res.length) lines.push("No colleges selected yet.");
+  lines.push("","Cost per hour = IPEDS 2024-25 annual tuition & fees / 30. Savings are an upper bound before need-based aid.","Policies checked "+CHECKED+" against official college pages. Confirm with each college and an advisor.");
+  return lines.join("\n");
+}
+function renderCounselor(){
+  $("#sumText").textContent=summaryText();
+  const s=SURVEY.stats.find(x=>x.v==="84.3%");
+  $("#b2bStat").textContent=`${s.v} of students (${s.n}) want their school counselor to have access to a tool like this (${SURVEY.cite}).`;
+}
+
+/* =====================================================================
+   Sources & method
+   ===================================================================== */
+const DC_TXT=c=>{ const d=c.dc||{}; if(d.ok===false) return "Not counted"; return (d.as==="elective"?"Elective credit":"Course credit")+", grade "+(d.min||"C")+"+"+(d.cap?", max "+d.cap+" hrs":""); };
+const IB_TXT=c=>{ const i=c.ib||{}; return i.mode==="place"?"Placement only":i.mode==="hl"?"HL only, "+(i.min||6)+"+":"HL & SL"+(i.min?", "+i.min+"+":", 4+"); };
+function renderSources(){
+  $("#cps").value=state.settings.cps; $("#rounding").value=state.settings.rounding;
+  $("#fSem").textContent=roundName(); $("#fCps").textContent=state.settings.cps;
+  let html=`<thead><tr><th>College</th><th>Status</th><th>Annual tuition &amp; fees</th><th class="num">$ / credit hr</th><th>IB · Dual credit</th><th>Policy notes</th><th>Sources (checked ${CHECKED})</th></tr></thead><tbody>`;
+  GROUPS.forEach(g=>{
+    html+=`<tr class="grp"><td colspan="7">${esc(g.name)} (${COLLEGES.filter(c=>c.group===g.id).length})</td></tr>`;
+    COLLEGES.filter(c=>c.group===g.id).forEach(c=>{
+      const links=[...c.srcs.map(u=>[u, u.replace(/^https?:\/\//,"").replace(/\/$/,"")]), [CN(c.unitid),"College Navigator (IPEDS cost)"]];
+      if(c.group==="txpub") links.push([SRC_TX51968,"Tex. Educ. Code §51.968"],[SRC_TX61822,"Tex. Educ. Code §61.822"]);
+      html+=`<tr><td><b>${esc(c.name)}</b><div class="why">${esc(c.full)} · ${esc(c.city)}</div></td><td>${stBadge(c)}</td>
+        <td style="white-space:nowrap">${money(c.annual)}<div class="why">IPEDS 2024–25${c.oos?", out-of-state":c.group==="txpub"?", in-state":""}</div></td>
+        <td class="num">$ <input class="cost-in" type="number" min="50" step="5" data-cost="${c.id}" value="${costOf(c)}" aria-label="${esc(c.name)} cost per credit hour"></td>
+        <td class="why" style="min-width:150px">IB: ${esc(IB_TXT(c))}${(c.ib||{}).est!==false?EST:""}<br>DC: ${esc(DC_TXT(c))}${c.dc&&!c.dc.v?EST:""}<br>${esc((c.dc||{}).note||"")}</td>
+        <td class="why" style="min-width:220px">${esc(c.note)}${c.maxSem===0?" Exam credit doesn't shorten the degree here (modeled as $0).":""}</td>
+        <td class="srcs" style="min-width:200px">${links.map(([u,l])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a>`).join("")}</td></tr>`;
+    });
+  });
+  $("#costTable").innerHTML=html+"</tbody>";
+  $("#capTable").innerHTML=`<thead><tr><th>Major</th><th class="num">Elective room (hrs)</th></tr></thead><tbody>`+
+    MAJORS.map(m=>`<tr><td>${m.icon} ${esc(m.name)}</td><td class="num"><input class="cost-in" type="number" min="0" max="30" data-cap="${m.id}" value="${capOf(m)}" aria-label="${esc(m.name)} elective cap"></td></tr>`).join("")+`</tbody>`;
+  $("#majorTable").innerHTML=`<thead><tr><th>Major</th><th>Counts toward major</th></tr></thead><tbody>`+
+    MAJORS.map(m=>`<tr><td style="white-space:nowrap"><b>${m.icon} ${esc(m.name)}</b></td><td>${m.req.length?m.req.map(g=>esc(reqLabel(g))).join(", "):"<i>No major courses: credit goes to core, then electives.</i>"}<div class="why">${esc(m.why)}${m.warn?" "+esc(m.warn):""}</div></td></tr>`).join("")+`</tbody>`;
+  $("#coreTable").innerHTML=`<thead><tr><th>Area</th><th class="num">Texas Core</th><th class="num">Baylor*</th><th class="num">Private gen-ed*</th></tr></thead><tbody>`+
+    Object.entries(CORE_AREAS).map(([k,a])=>`<tr><td>${esc(a.name)}</td><td class="num">${a.hrs}</td><td class="num">${BAYLOR_CORE[k]}</td><td class="num">${PRIV_GENED[k]}</td></tr>`).join("")+
+    `</tbody><tfoot><tr><td colspan="4" class="why">*Private and out-of-state schools set their own general-education rules; values are simplified. Schools marked "exam credit can't fill gen-ed" (e.g. UChicago, MIT, Dartmouth, Emory) send exam credit to electives instead.</td></tr></tfoot>`;
+}
+
+/* =====================================================================
+   Render orchestration + navigation
+   ===================================================================== */
+function renderAll(){ renderStart(); renderProfile(); renderResults(); renderCompare(); renderLookup(); renderApdc(); renderCounselor(); renderSources(); save(); }
+function refresh(){ renderResults(); if(state.tab==="compare") renderCompare(); if(state.tab==="lookup") renderLookup(); if(state.tab==="apdc") renderApdc(); if(state.tab==="counselor") renderCounselor(); save(); }
+const TABS=["start","profile","results","compare","lookup","apdc","counselor","sources"];
+function go(tab){
+  if(!TABS.includes(tab)) tab="start";
+  state.tab=tab;
+  document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("active", p.id===tab));
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected", String(t.dataset.go===tab)));
+  ({compare:renderCompare, lookup:renderLookup, apdc:renderApdc, counselor:renderCounselor, sources:renderSources})[tab]?.();
+  save();
+  const box=document.querySelector(".stickybox"), y=box.getBoundingClientRect().top+window.scrollY;
+  if(window.scrollY>y) window.scrollTo({top:y, behavior:"smooth"});
+}
+function setColleges(ids){ state.profile.colleges=COLLEGES.map(c=>c.id).filter(id=>ids.has(id)); renderColleges(); refresh(); }
+document.addEventListener("click", e=>{
+  const g=e.target.closest("[data-go]"); if(g){ go(g.dataset.go); return; }
+  const m=e.target.closest("[data-m]"); if(m){ state.profile.major=m.dataset.m; renderMajors(); refresh(); return; }
+  const c=e.target.closest("[data-c]"); if(c){ const s=new Set(state.profile.colleges); s.has(c.dataset.c)?s.delete(c.dataset.c):s.add(c.dataset.c); setColleges(s); return; }
+  const gs=e.target.closest("[data-gsel]"); if(gs){ const s=new Set(state.profile.colleges); COLLEGES.filter(c=>c.group===gs.dataset.gsel).forEach(c=>s.add(c.id)); setColleges(s); toast("Added all "+GRP[gs.dataset.gsel].name); return; }
+  const gc=e.target.closest("[data-gclr]"); if(gc){ const s=new Set(state.profile.colleges); COLLEGES.filter(c=>c.group===gc.dataset.gclr).forEach(c=>s.delete(c.id)); setColleges(s); return; }
+  const ad=e.target.closest("[data-add]"); if(ad&&!ad.disabled){ const co=COURSE[ad.dataset.add]; state.profile.courses.push({id:co.id, score:SCORES[co.type][1]}); renderCourseRows(); renderPicker(); refresh(); toast("Added "+co.name); return; }
+  const ty=e.target.closest("[data-ty]"); if(ty){ state.ui.ty=ty.dataset.ty; renderPicker(); save(); return; }
+  const rm=e.target.closest("[data-f=rm]"); if(rm){ state.profile.courses.splice(+rm.closest(".course").dataset.i,1); renderCourseRows(); renderPicker(); refresh(); }
+});
+$("#courseList").addEventListener("change", e=>{
+  const row=e.target.closest(".course"); if(!row||e.target.dataset.f!=="score") return;
+  state.profile.courses[+row.dataset.i].score=e.target.value; refresh();
+});
+let qT; $("#courseSearch").addEventListener("input", e=>{ state.ui.q=e.target.value; clearTimeout(qT); qT=setTimeout(renderPicker,40); });
+let cT; $("#colSearch").addEventListener("input", e=>{ state.ui.cq=e.target.value; clearTimeout(cT); cT=setTimeout(renderColleges,40); });
+$("#stuName").oninput=e=>{ state.profile.name=e.target.value; refresh(); };
+$("#stuYear").onchange=e=>{ state.profile.year=e.target.value; refresh(); };
+$("#selAll").onclick=()=>{ setColleges(new Set(COLLEGES.map(c=>c.id))); toast("All "+COLLEGES.length+" colleges selected"); };
+$("#selNone").onclick=()=>{ setColleges(new Set()); };
+function loadDemo(){ state.profile=clone(DEMO); state.settings=clone(DEFAULT_SETTINGS); state.cmpAll=false; state.ui.q=""; state.ui.cq=""; $("#colSearch").value=""; renderAll(); go("results"); toast("Demo profile loaded: Maya R."); }
+$("#btnDemo").onclick=loadDemo; $("#btnDemo2").onclick=loadDemo;
+$("#btnClear").onclick=()=>{ state.profile={name:"",year:"2027",major:state.profile.major||"CS",colleges:[],courses:[]}; renderAll(); go("profile"); toast("Profile cleared"); };
+function printReport(){ go("results"); document.querySelectorAll("details.bd").forEach(d=>d.open=true); setTimeout(()=>window.print(),80); }
+$("#btnPrint").onclick=printReport; $("#btnPrint2").onclick=printReport;
+const present=()=>{ document.body.classList.toggle("present"); toast(document.body.classList.contains("present")?"Presentation mode on":"Presentation mode off"); };
+$("#btnPresent").onclick=present; $("#btnPresent2").onclick=present;
+$("#btnCopy").onclick=async()=>{
+  const txt=summaryText();
+  try{ await navigator.clipboard.writeText(txt); toast("Summary copied"); }
+  catch(e){ const ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); toast("Summary copied"); }catch(_){ toast("Select the text and copy it"); } ta.remove(); }
+};
+$("#btnTheme").onclick=()=>{ state.theme= state.theme==="dark"?"light":"dark"; document.documentElement.dataset.theme=state.theme; renderCompare(); save(); };
+$("#cmpSel").onclick=()=>{ state.cmpAll=false; renderCompare(); save(); };
+$("#cmpAll").onclick=()=>{ state.cmpAll=true; renderCompare(); save(); };
+$("#incEst").onchange=e=>{ state.incEst=e.target.checked; renderCompare(); save(); };
+$("#lkCourse").onchange=e=>{ state.ui.lk=e.target.value; renderLookup(); save(); };
+$("#lkScore").onchange=e=>{ state.ui.lkScore=e.target.value; renderLookup(); save(); };
+$("#lkGroup").onchange=e=>{ state.ui.lkGroup=e.target.value; renderLookup(); save(); };
+$("#pdSubj").onchange=e=>{ state.ui.pd=e.target.value; renderApdc(); save(); };
+$("#pdAp").onchange=e=>{ state.ui.pdAp=e.target.value; renderApdc(); save(); };
+$("#pdDc").onchange=e=>{ state.ui.pdDc=e.target.value; renderApdc(); save(); };
+$("#pdScope").onchange=e=>{ state.ui.pdScope=e.target.value; renderApdc(); save(); };
+$("#cps").onchange=e=>{ state.settings.cps=Math.min(18,Math.max(12,parseInt(e.target.value,10)||15)); renderSources(); refresh(); };
+$("#rounding").onchange=e=>{ state.settings.rounding=e.target.value; renderSources(); refresh(); };
+$("#costTable").addEventListener("change", e=>{ const id=e.target.dataset.cost; if(!id) return; const v=parseFloat(e.target.value); if(v>0) state.settings.costs[id]=v; else delete state.settings.costs[id]; refresh(); toast("Cost updated for "+COL[id].name); });
+$("#capTable").addEventListener("change", e=>{ const id=e.target.dataset.cap; if(!id) return; const v=parseInt(e.target.value,10); if(v>=0) state.settings.caps[id]=v; else delete state.settings.caps[id]; refresh(); });
+$("#resetCosts").onclick=()=>{ state.settings.costs={}; renderSources(); refresh(); toast("Costs reset to IPEDS figures"); };
+window.addEventListener("beforeprint", ()=>document.querySelectorAll("details.bd").forEach(d=>d.open=true));
+let rz; window.addEventListener("resize", ()=>{ clearTimeout(rz); rz=setTimeout(renderCompare,200); });
+
+/* Boot */
+document.documentElement.dataset.theme=state.theme||"light";
+renderAll();
+go(state.tab||"start");
+
+</script>
+</body>
+</html>
